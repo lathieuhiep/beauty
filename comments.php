@@ -27,12 +27,12 @@ if ( post_password_required() ) {
         <h2 class="comments-title">
 
             <?php
-            $beauty_comments_number = get_comments_number();
+            $cosmetics_comments_number = get_comments_number();
 
-            if ( '1' === $beauty_comments_number ) :
+            if ( '1' === $cosmetics_comments_number ) :
 
                 /* translators: %s: post title */
-                printf( _x( 'One Reply to &ldquo;%s&rdquo;', 'comments title', 'beauty' ), get_the_title() );
+                printf( _x( 'One Reply to &ldquo;%s&rdquo;', 'comments title', 'cosmetics' ), get_the_title() );
 
             else :
 
@@ -41,11 +41,11 @@ if ( post_password_required() ) {
                     _nx(
                         '%1$s Reply to &ldquo;%2$s&rdquo;',
                         '%1$s Replies to &ldquo;%2$s&rdquo;',
-                        $beauty_comments_number,
+                        $cosmetics_comments_number,
                         'comments title',
-                        'beauty'
+                        'cosmetics'
                     ),
-                    number_format_i18n( $beauty_comments_number ),
+                    number_format_i18n( $cosmetics_comments_number ),
                     get_the_title()
                 );
 
@@ -55,7 +55,7 @@ if ( post_password_required() ) {
 
         </h2>
 
-        <?php beauty_comment_nav(); ?>
+        <?php cosmetics_comment_nav(); ?>
 
         <ul class="comment-list">
 
@@ -64,7 +64,7 @@ if ( post_password_required() ) {
                 'type'          =>  'comment',
                 'short_ping'    =>  true,
                 'avatar_size'   =>  60,
-                'callback'      =>  'beauty_comments'
+                'callback'      =>  'cosmetics_comments'
             ) );
             ?>
 
@@ -72,7 +72,7 @@ if ( post_password_required() ) {
 
         <?php
 
-            beauty_comment_nav();
+            cosmetics_comment_nav();
 
         endif; // have_comments()
 
@@ -86,40 +86,40 @@ if ( post_password_required() ) {
     ?>
 
         <p class="no-comments">
-            <?php esc_html_e( 'Comments are closed.', 'beauty' ); ?>
+            <?php esc_html_e( 'Comments are closed.', 'cosmetics' ); ?>
         </p>
 
     <?php endif; ?>
 
     <?php
 
-    $beauty_commenter        =   wp_get_current_commenter();
-    $beauty_req              =   get_option( 'require_name_email' );
-    $beauty_comments_args    =   ( $beauty_req ? " aria-required='true'" : '' );
+    $cosmetics_commenter        =   wp_get_current_commenter();
+    $cosmetics_req              =   get_option( 'require_name_email' );
+    $cosmetics_comments_args    =   ( $cosmetics_req ? " aria-required='true'" : '' );
 
-    $beauty_comments_args = array(
+    $cosmetics_comments_args = array(
 
-        'title_reply'       => '<span>'.esc_html__( 'Leave a comment','beauty' ).'</span>',
+        'title_reply'       => '<span>'.esc_html__( 'Leave a comment','cosmetics' ).'</span>',
 
         'fields' => apply_filters( 'comment_form_default_fields',
             array(
 
                 'comment_notes_before' => '<div class="comment-fields-row order-1"><div class="row">',
 
-                'author' => '<div class="col-12 col-sm-6 col-md-6"><div class="form-comment-item"><input id="author" placeholder="'.esc_html__('Full Name','beauty').'" class="form-control" name="author" type="text" value="' . esc_attr( $beauty_commenter['comment_author'] ) . '" size="30" ' . $beauty_comments_args . ' /></div></div>',
+                'author' => '<div class="col-12 col-sm-6 col-md-6"><div class="form-comment-item"><input id="author" placeholder="'.esc_html__('Full Name','cosmetics').'" class="form-control" name="author" type="text" value="' . esc_attr( $cosmetics_commenter['comment_author'] ) . '" size="30" ' . $cosmetics_comments_args . ' /></div></div>',
 
-                'email' => '<div class="col-12 col-sm-6 col-md-6"><div class="form-comment-item"><input id="email" placeholder="'.esc_html__('Your Email','beauty').'" class="form-control" name="email" type="text" value="' . esc_attr( $beauty_commenter['comment_author_email'] ) . '" size="30" ' . $beauty_comments_args . ' /></div></div>',
+                'email' => '<div class="col-12 col-sm-6 col-md-6"><div class="form-comment-item"><input id="email" placeholder="'.esc_html__('Your Email','cosmetics').'" class="form-control" name="email" type="text" value="' . esc_attr( $cosmetics_commenter['comment_author_email'] ) . '" size="30" ' . $cosmetics_comments_args . ' /></div></div>',
 
                 'comment_notes_after' => '</div></div>',
 
             )
         ),
 
-        'comment_field' => '<div class="form-comment-item form-comment-field order-3"><textarea rows="7" id="comment" placeholder="'.esc_html__('Comment','beauty').'" name="comment" class="form-control"></textarea></div>',
+        'comment_field' => '<div class="form-comment-item form-comment-field order-3"><textarea rows="7" id="comment" placeholder="'.esc_html__('Comment','cosmetics').'" name="comment" class="form-control"></textarea></div>',
 
     );
 
-    comment_form( $beauty_comments_args );
+    comment_form( $cosmetics_comments_args );
 
     ?>
 

@@ -13,7 +13,7 @@
     $( window ).on( 'elementor/frontend/init', function() {
 
         /* Element slider */
-        elementorFrontend.hooks.addAction( 'frontend/element_ready/beauty-slides.default', ElementCarouselSlider  );
+        elementorFrontend.hooks.addAction( 'frontend/element_ready/cosmetics-slides.default', ElementCarouselSlider  );
 
     } );
 

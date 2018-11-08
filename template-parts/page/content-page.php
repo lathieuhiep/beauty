@@ -14,13 +14,13 @@
             <?php
             the_content();
 
-            beauty_link_page();
+            cosmetics_link_page();
             ?>
 
         </div>
 
     <?php
-        beauty_comment_form();
+        cosmetics_comment_form();
 
     endwhile;
     ?>

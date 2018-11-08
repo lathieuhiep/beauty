@@ -324,77 +324,77 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 
 			// Load class strings.
 			$this->strings = array(
-				'page_title'                      => __( 'Install Required Plugins', 'beauty' ),
-				'menu_title'                      => __( 'Install Plugins', 'beauty' ),
+				'page_title'                      => __( 'Install Required Plugins', 'cosmetics' ),
+				'menu_title'                      => __( 'Install Plugins', 'cosmetics' ),
 				/* translators: %s: plugin name. */
-				'installing'                      => __( 'Installing Plugin: %s', 'beauty' ),
+				'installing'                      => __( 'Installing Plugin: %s', 'cosmetics' ),
 				/* translators: %s: plugin name. */
-				'updating'                        => __( 'Updating Plugin: %s', 'beauty' ),
-				'oops'                            => __( 'Something went wrong with the plugin API.', 'beauty' ),
+				'updating'                        => __( 'Updating Plugin: %s', 'cosmetics' ),
+				'oops'                            => __( 'Something went wrong with the plugin API.', 'cosmetics' ),
 				'notice_can_install_required'     => _n_noop(
 					/* translators: 1: plugin name(s). */
 					'This theme requires the following plugin: %1$s.',
 					'This theme requires the following plugins: %1$s.',
-					'beauty'
+					'cosmetics'
 				),
 				'notice_can_install_recommended'  => _n_noop(
 					/* translators: 1: plugin name(s). */
 					'This theme recommends the following plugin: %1$s.',
 					'This theme recommends the following plugins: %1$s.',
-					'beauty'
+					'cosmetics'
 				),
 				'notice_ask_to_update'            => _n_noop(
 					/* translators: 1: plugin name(s). */
 					'The following plugin needs to be updated to its latest version to ensure maximum compatibility with this theme: %1$s.',
 					'The following plugins need to be updated to their latest version to ensure maximum compatibility with this theme: %1$s.',
-					'beauty'
+					'cosmetics'
 				),
 				'notice_ask_to_update_maybe'      => _n_noop(
 					/* translators: 1: plugin name(s). */
 					'There is an update available for: %1$s.',
 					'There are updates available for the following plugins: %1$s.',
-					'beauty'
+					'cosmetics'
 				),
 				'notice_can_activate_required'    => _n_noop(
 					/* translators: 1: plugin name(s). */
 					'The following required plugin is currently inactive: %1$s.',
 					'The following required plugins are currently inactive: %1$s.',
-					'beauty'
+					'cosmetics'
 				),
 				'notice_can_activate_recommended' => _n_noop(
 					/* translators: 1: plugin name(s). */
 					'The following recommended plugin is currently inactive: %1$s.',
 					'The following recommended plugins are currently inactive: %1$s.',
-					'beauty'
+					'cosmetics'
 				),
 				'install_link'                    => _n_noop(
 					'Begin installing plugin',
 					'Begin installing plugins',
-					'beauty'
+					'cosmetics'
 				),
 				'update_link'                     => _n_noop(
 					'Begin updating plugin',
 					'Begin updating plugins',
-					'beauty'
+					'cosmetics'
 				),
 				'activate_link'                   => _n_noop(
 					'Begin activating plugin',
 					'Begin activating plugins',
-					'beauty'
+					'cosmetics'
 				),
-				'return'                          => __( 'Return to Required Plugins Installer', 'beauty' ),
-				'dashboard'                       => __( 'Return to the Dashboard', 'beauty' ),
-				'plugin_activated'                => __( 'Plugin activated successfully.', 'beauty' ),
-				'activated_successfully'          => __( 'The following plugin was activated successfully:', 'beauty' ),
+				'return'                          => __( 'Return to Required Plugins Installer', 'cosmetics' ),
+				'dashboard'                       => __( 'Return to the Dashboard', 'cosmetics' ),
+				'plugin_activated'                => __( 'Plugin activated successfully.', 'cosmetics' ),
+				'activated_successfully'          => __( 'The following plugin was activated successfully:', 'cosmetics' ),
 				/* translators: 1: plugin name. */
-				'plugin_already_active'           => __( 'No action taken. Plugin %1$s was already active.', 'beauty' ),
+				'plugin_already_active'           => __( 'No action taken. Plugin %1$s was already active.', 'cosmetics' ),
 				/* translators: 1: plugin name. */
-				'plugin_needs_higher_version'     => __( 'Plugin not activated. A higher version of %s is needed for this theme. Please update the plugin.', 'beauty' ),
+				'plugin_needs_higher_version'     => __( 'Plugin not activated. A higher version of %s is needed for this theme. Please update the plugin.', 'cosmetics' ),
 				/* translators: 1: dashboard link. */
-				'complete'                        => __( 'All plugins installed and activated successfully. %1$s', 'beauty' ),
-				'dismiss'                         => __( 'Dismiss this notice', 'beauty' ),
-				'notice_cannot_install_activate'  => __( 'There are one or more required or recommended plugins to install, update or activate.', 'beauty' ),
-				'contact_admin'                   => __( 'Please contact the administrator of this site for help.', 'beauty' ),
+				'complete'                        => __( 'All plugins installed and activated successfully. %1$s', 'cosmetics' ),
+				'dismiss'                         => __( 'Dismiss this notice', 'cosmetics' ),
+				'notice_cannot_install_activate'  => __( 'There are one or more required or recommended plugins to install, update or activate.', 'cosmetics' ),
+				'contact_admin'                   => __( 'Please contact the administrator of this site for help.', 'cosmetics' ),
 			);
 
 			do_action( 'tgmpa_register' );
@@ -519,8 +519,8 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 			$actions['update'] = sprintf(
 				'<a href="%1$s" title="%2$s" class="edit">%3$s</a>',
 				esc_url( $this->get_tgmpa_status_url( 'update' ) ),
-				esc_attr__( 'This plugin needs to be updated to be compatible with your theme.', 'beauty' ),
-				esc_html__( 'Update Required', 'beauty' )
+				esc_attr__( 'This plugin needs to be updated to be compatible with your theme.', 'cosmetics' ),
+				esc_html__( 'Update Required', 'cosmetics' )
 			);
 
 			return $actions;
@@ -610,7 +610,7 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 				return;
 			}
 
-			$beauty_opt_args = apply_filters(
+			$cosmetics_opt_args = apply_filters(
 				'tgmpa_admin_menu_args',
 				array(
 					'parent_slug' => $this->parent_slug,                     // Parent Menu slug.
@@ -622,7 +622,7 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 				)
 			);
 
-			$this->add_admin_menu( $beauty_opt_args );
+			$this->add_admin_menu( $cosmetics_opt_args );
 		}
 
 		/**
@@ -633,10 +633,10 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 		 *
 		 * @since 2.5.0
 		 *
-		 * @param array $beauty_opt_args Menu item configuration.
+		 * @param array $cosmetics_opt_args Menu item configuration.
 		 */
-		protected function add_admin_menu( array $beauty_opt_args ) {
-			$this->page_hook = add_theme_page( $beauty_opt_args['page_title'], $beauty_opt_args['menu_title'], $beauty_opt_args['capability'], $beauty_opt_args['menu_slug'], $beauty_opt_args['function'] );
+		protected function add_admin_menu( array $cosmetics_opt_args ) {
+			$this->page_hook = add_theme_page( $cosmetics_opt_args['page_title'], $cosmetics_opt_args['menu_title'], $cosmetics_opt_args['capability'], $cosmetics_opt_args['menu_slug'], $cosmetics_opt_args['function'] );
 		}
 
 		/**
@@ -824,7 +824,7 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 
 				// Display message based on if all plugins are now active or not.
 				if ( $this->is_tgmpa_complete() ) {
-					echo '<p>', sprintf( esc_html( $this->strings['complete'] ), '<a href="' . esc_url( self_admin_url() ) . '">' . esc_html__( 'Return to the Dashboard', 'beauty' ) . '</a>' ), '</p>';
+					echo '<p>', sprintf( esc_html( $this->strings['complete'] ), '<a href="' . esc_url( self_admin_url() ) . '">' . esc_html__( 'Return to the Dashboard', 'cosmetics' ) . '</a>' ), '</p>';
 					echo '<style type="text/css">#adminmenu .wp-submenu li.current { display: none !important; }</style>';
 				} else {
 					echo '<p><a href="', esc_url( $this->get_tgmpa_url() ), '" target="_parent">', esc_html( $this->strings['return'] ), '</a></p>';
@@ -931,10 +931,10 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 					if ( true === $GLOBALS['wp_filesystem']->move( $from_path, $to_path ) ) {
 						return trailingslashit( $to_path );
 					} else {
-						return new WP_Error( 'rename_failed', esc_html__( 'The remote plugin package does not contain a folder with the desired slug and renaming did not work.', 'beauty' ) . ' ' . esc_html__( 'Please contact the plugin provider and ask them to package their plugin according to the WordPress guidelines.', 'beauty' ), array( 'found' => $subdir_name, 'expected' => $desired_slug ) );
+						return new WP_Error( 'rename_failed', esc_html__( 'The remote plugin package does not contain a folder with the desired slug and renaming did not work.', 'cosmetics' ) . ' ' . esc_html__( 'Please contact the plugin provider and ask them to package their plugin according to the WordPress guidelines.', 'cosmetics' ), array( 'found' => $subdir_name, 'expected' => $desired_slug ) );
 					}
 				} elseif ( empty( $subdir_name ) ) {
-					return new WP_Error( 'packaged_wrong', esc_html__( 'The remote plugin package consists of more than one file, but the files are not packaged in a folder.', 'beauty' ) . ' ' . esc_html__( 'Please contact the plugin provider and ask them to package their plugin according to the WordPress guidelines.', 'beauty' ), array( 'found' => $subdir_name, 'expected' => $desired_slug ) );
+					return new WP_Error( 'packaged_wrong', esc_html__( 'The remote plugin package consists of more than one file, but the files are not packaged in a folder.', 'cosmetics' ) . ' ' . esc_html__( 'Please contact the plugin provider and ask them to package their plugin according to the WordPress guidelines.', 'cosmetics' ), array( 'found' => $subdir_name, 'expected' => $desired_slug ) );
 				}
 			}
 
@@ -1118,12 +1118,12 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 						$count          = count( $plugin_group );
 						$linked_plugins = array_map( array( 'TGMPA_Utils', 'wrap_in_em' ), $linked_plugins );
 						$last_plugin    = array_pop( $linked_plugins ); // Pop off last name to prep for readability.
-						$imploded       = empty( $linked_plugins ) ? $last_plugin : ( implode( ', ', $linked_plugins ) . ' ' . esc_html_x( 'and', 'plugin A *and* plugin B', 'beauty' ) . ' ' . $last_plugin );
+						$imploded       = empty( $linked_plugins ) ? $last_plugin : ( implode( ', ', $linked_plugins ) . ' ' . esc_html_x( 'and', 'plugin A *and* plugin B', 'cosmetics' ) . ' ' . $last_plugin );
 
 						$rendered .= sprintf(
 							$line_template,
 							sprintf(
-								translate_nooped_plural( $this->strings[ $type ], $count, 'beauty' ),
+								translate_nooped_plural( $this->strings[ $type ], $count, 'cosmetics' ),
 								$imploded,
 								$count
 							)
@@ -1171,14 +1171,14 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 				if ( $install_count > 0 ) {
 					$action_links['install'] = sprintf(
 						$link_template,
-						translate_nooped_plural( $this->strings['install_link'], $install_count, 'beauty' ),
+						translate_nooped_plural( $this->strings['install_link'], $install_count, 'cosmetics' ),
 						esc_url( $this->get_tgmpa_status_url( 'install' ) )
 					);
 				}
 				if ( $update_count > 0 ) {
 					$action_links['update'] = sprintf(
 						$link_template,
-						translate_nooped_plural( $this->strings['update_link'], $update_count, 'beauty' ),
+						translate_nooped_plural( $this->strings['update_link'], $update_count, 'cosmetics' ),
 						esc_url( $this->get_tgmpa_status_url( 'update' ) )
 					);
 				}
@@ -1187,7 +1187,7 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 			if ( current_user_can( 'activate_plugins' ) && $activate_count > 0 ) {
 				$action_links['activate'] = sprintf(
 					$link_template,
-					translate_nooped_plural( $this->strings['activate_link'], $activate_count, 'beauty' ),
+					translate_nooped_plural( $this->strings['activate_link'], $activate_count, 'cosmetics' ),
 					esc_url( $this->get_tgmpa_status_url( 'activate' ) )
 				);
 			}
@@ -1979,7 +1979,7 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 				esc_html(
 					sprintf(
 						/* translators: %s: version number */
-						__( 'TGMPA v%s', 'beauty' ),
+						__( 'TGMPA v%s', 'cosmetics' ),
 						self::TGMPA_VERSION
 					)
 				),
@@ -2270,10 +2270,10 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 		 */
 		protected function get_plugin_advise_type_text( $required ) {
 			if ( true === $required ) {
-				return __( 'Required', 'beauty' );
+				return __( 'Required', 'cosmetics' );
 			}
 
-			return __( 'Recommended', 'beauty' );
+			return __( 'Recommended', 'cosmetics' );
 		}
 
 		/**
@@ -2289,13 +2289,13 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 
 			switch ( $type ) {
 				case 'repo':
-					$string = __( 'WordPress Repository', 'beauty' );
+					$string = __( 'WordPress Repository', 'cosmetics' );
 					break;
 				case 'external':
-					$string = __( 'External Source', 'beauty' );
+					$string = __( 'External Source', 'cosmetics' );
 					break;
 				case 'bundled':
-					$string = __( 'Pre-Packaged', 'beauty' );
+					$string = __( 'Pre-Packaged', 'cosmetics' );
 					break;
 			}
 
@@ -2312,25 +2312,25 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 		 */
 		protected function get_plugin_status_text( $slug ) {
 			if ( ! $this->tgmpa->is_plugin_installed( $slug ) ) {
-				return __( 'Not Installed', 'beauty' );
+				return __( 'Not Installed', 'cosmetics' );
 			}
 
 			if ( ! $this->tgmpa->is_plugin_active( $slug ) ) {
-				$install_status = __( 'Installed But Not Activated', 'beauty' );
+				$install_status = __( 'Installed But Not Activated', 'cosmetics' );
 			} else {
-				$install_status = __( 'Active', 'beauty' );
+				$install_status = __( 'Active', 'cosmetics' );
 			}
 
 			$update_status = '';
 
 			if ( $this->tgmpa->does_plugin_require_update( $slug ) && false === $this->tgmpa->does_plugin_have_update( $slug ) ) {
-				$update_status = __( 'Required Update not Available', 'beauty' );
+				$update_status = __( 'Required Update not Available', 'cosmetics' );
 
 			} elseif ( $this->tgmpa->does_plugin_require_update( $slug ) ) {
-				$update_status = __( 'Requires Update', 'beauty' );
+				$update_status = __( 'Requires Update', 'cosmetics' );
 
 			} elseif ( false !== $this->tgmpa->does_plugin_have_update( $slug ) ) {
-				$update_status = __( 'Update recommended', 'beauty' );
+				$update_status = __( 'Update recommended', 'cosmetics' );
 			}
 
 			if ( '' === $update_status ) {
@@ -2339,7 +2339,7 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 
 			return sprintf(
 				/* translators: 1: install status, 2: update status */
-				_x( '%1$s, %2$s', 'Install/Update Status', 'beauty' ),
+				_x( '%1$s, %2$s', 'Install/Update Status', 'cosmetics' ),
 				$install_status,
 				$update_status
 			);
@@ -2385,19 +2385,19 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 				switch ( $type ) {
 					case 'all':
 						/* translators: 1: number of plugins. */
-						$text = _nx( 'All <span class="count">(%s)</span>', 'All <span class="count">(%s)</span>', $count, 'plugins', 'beauty' );
+						$text = _nx( 'All <span class="count">(%s)</span>', 'All <span class="count">(%s)</span>', $count, 'plugins', 'cosmetics' );
 						break;
 					case 'install':
 						/* translators: 1: number of plugins. */
-						$text = _n( 'To Install <span class="count">(%s)</span>', 'To Install <span class="count">(%s)</span>', $count, 'beauty' );
+						$text = _n( 'To Install <span class="count">(%s)</span>', 'To Install <span class="count">(%s)</span>', $count, 'cosmetics' );
 						break;
 					case 'update':
 						/* translators: 1: number of plugins. */
-						$text = _n( 'Update Available <span class="count">(%s)</span>', 'Update Available <span class="count">(%s)</span>', $count, 'beauty' );
+						$text = _n( 'Update Available <span class="count">(%s)</span>', 'Update Available <span class="count">(%s)</span>', $count, 'cosmetics' );
 						break;
 					case 'activate':
 						/* translators: 1: number of plugins. */
-						$text = _n( 'To Activate <span class="count">(%s)</span>', 'To Activate <span class="count">(%s)</span>', $count, 'beauty' );
+						$text = _n( 'To Activate <span class="count">(%s)</span>', 'To Activate <span class="count">(%s)</span>', $count, 'cosmetics' );
 						break;
 					default:
 						$text = '';
@@ -2479,7 +2479,7 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 			$output = array();
 
 			if ( $this->tgmpa->is_plugin_installed( $item['slug'] ) ) {
-				$installed = ! empty( $item['installed_version'] ) ? $item['installed_version'] : _x( 'unknown', 'as in: "version nr unknown"', 'beauty' );
+				$installed = ! empty( $item['installed_version'] ) ? $item['installed_version'] : _x( 'unknown', 'as in: "version nr unknown"', 'cosmetics' );
 
 				$color = '';
 				if ( ! empty( $item['minimum_version'] ) && $this->tgmpa->does_plugin_require_update( $item['slug'] ) ) {
@@ -2487,7 +2487,7 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 				}
 
 				$output[] = sprintf(
-					'<p><span style="min-width: 32px; text-align: right; float: right;%1$s">%2$s</span>' . __( 'Installed version:', 'beauty' ) . '</p>',
+					'<p><span style="min-width: 32px; text-align: right; float: right;%1$s">%2$s</span>' . __( 'Installed version:', 'cosmetics' ) . '</p>',
 					$color,
 					$installed
 				);
@@ -2495,7 +2495,7 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 
 			if ( ! empty( $item['minimum_version'] ) ) {
 				$output[] = sprintf(
-					'<p><span style="min-width: 32px; text-align: right; float: right;">%1$s</span>' . __( 'Minimum required version:', 'beauty' ) . '</p>',
+					'<p><span style="min-width: 32px; text-align: right; float: right;">%1$s</span>' . __( 'Minimum required version:', 'cosmetics' ) . '</p>',
 					$item['minimum_version']
 				);
 			}
@@ -2507,7 +2507,7 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 				}
 
 				$output[] = sprintf(
-					'<p><span style="min-width: 32px; text-align: right; float: right;%1$s">%2$s</span>' . __( 'Available version:', 'beauty' ) . '</p>',
+					'<p><span style="min-width: 32px; text-align: right; float: right;%1$s">%2$s</span>' . __( 'Available version:', 'cosmetics' ) . '</p>',
 					$color,
 					$item['available_version']
 				);
@@ -2530,7 +2530,7 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 		 * @since 2.2.0
 		 */
 		public function no_items() {
-			echo esc_html__( 'No plugins to install, update or activate.', 'beauty' ) . ' <a href="' . esc_url( self_admin_url() ) . '"> ' . esc_html__( 'Return to the Dashboard', 'beauty' ) . '</a>';
+			echo esc_html__( 'No plugins to install, update or activate.', 'cosmetics' ) . ' <a href="' . esc_url( self_admin_url() ) . '"> ' . esc_html__( 'Return to the Dashboard', 'cosmetics' ) . '</a>';
 			echo '<style type="text/css">#adminmenu .wp-submenu li.current { display: none !important; }</style>';
 		}
 
@@ -2544,14 +2544,14 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 		public function get_columns() {
 			$columns = array(
 				'cb'     => '<input type="checkbox" />',
-				'plugin' => __( 'Plugin', 'beauty' ),
-				'source' => __( 'Source', 'beauty' ),
-				'type'   => __( 'Type', 'beauty' ),
+				'plugin' => __( 'Plugin', 'cosmetics' ),
+				'source' => __( 'Source', 'cosmetics' ),
+				'type'   => __( 'Type', 'cosmetics' ),
 			);
 
 			if ( 'all' === $this->view_context || 'update' === $this->view_context ) {
-				$columns['version'] = __( 'Version', 'beauty' );
-				$columns['status']  = __( 'Status', 'beauty' );
+				$columns['version'] = __( 'Version', 'cosmetics' );
+				$columns['status']  = __( 'Status', 'cosmetics' );
 			}
 
 			return apply_filters( 'tgmpa_table_columns', $columns );
@@ -2600,18 +2600,18 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 			// Display the 'Install' action link if the plugin is not yet available.
 			if ( ! $this->tgmpa->is_plugin_installed( $item['slug'] ) ) {
 				/* translators: %2$s: plugin name in screen reader markup */
-				$actions['install'] = __( 'Install %2$s', 'beauty' );
+				$actions['install'] = __( 'Install %2$s', 'cosmetics' );
 			} else {
 				// Display the 'Update' action link if an update is available and WP complies with plugin minimum.
 				if ( false !== $this->tgmpa->does_plugin_have_update( $item['slug'] ) && $this->tgmpa->can_plugin_update( $item['slug'] ) ) {
 					/* translators: %2$s: plugin name in screen reader markup */
-					$actions['update'] = __( 'Update %2$s', 'beauty' );
+					$actions['update'] = __( 'Update %2$s', 'cosmetics' );
 				}
 
 				// Display the 'Activate' action link, but only if the plugin meets the minimum version.
 				if ( $this->tgmpa->can_plugin_activate( $item['slug'] ) ) {
 					/* translators: %2$s: plugin name in screen reader markup */
-					$actions['activate'] = __( 'Activate %2$s', 'beauty' );
+					$actions['activate'] = __( 'Activate %2$s', 'cosmetics' );
 				}
 			}
 
@@ -2681,7 +2681,7 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 				<tr class="plugin-update-tr">
 					<td colspan="', absint( $this->get_column_count() ), '" class="plugin-update colspanchange">
 						<div class="update-message">',
-							esc_html__( 'Upgrade message from the plugin author:', 'beauty' ),
+							esc_html__( 'Upgrade message from the plugin author:', 'cosmetics' ),
 							' <strong>', wp_kses_data( $item['upgrade_notice'] ), '</strong>
 						</div>
 					</td>
@@ -2714,16 +2714,16 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 
 			if ( 'update' !== $this->view_context && 'activate' !== $this->view_context ) {
 				if ( current_user_can( 'install_plugins' ) ) {
-					$actions['tgmpa-bulk-install'] = __( 'Install', 'beauty' );
+					$actions['tgmpa-bulk-install'] = __( 'Install', 'cosmetics' );
 				}
 			}
 
 			if ( 'install' !== $this->view_context ) {
 				if ( current_user_can( 'update_plugins' ) ) {
-					$actions['tgmpa-bulk-update'] = __( 'Update', 'beauty' );
+					$actions['tgmpa-bulk-update'] = __( 'Update', 'cosmetics' );
 				}
 				if ( current_user_can( 'activate_plugins' ) ) {
-					$actions['tgmpa-bulk-activate'] = __( 'Activate', 'beauty' );
+					$actions['tgmpa-bulk-activate'] = __( 'Activate', 'cosmetics' );
 				}
 			}
 
@@ -2754,9 +2754,9 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 				// Did user actually select any plugins to install/update ?
 				if ( empty( $_POST['plugin'] ) ) {
 					if ( 'install' === $install_type ) {
-						$message = __( 'No plugins were selected to be installed. No action taken.', 'beauty' );
+						$message = __( 'No plugins were selected to be installed. No action taken.', 'cosmetics' );
 					} else {
-						$message = __( 'No plugins were selected to be updated. No action taken.', 'beauty' );
+						$message = __( 'No plugins were selected to be updated. No action taken.', 'cosmetics' );
 					}
 
 					echo '<div id="message" class="error"><p>', esc_html( $message ), '</p></div>';
@@ -2797,9 +2797,9 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 				// No need to proceed further if we have no plugins to handle.
 				if ( empty( $plugins_to_install ) ) {
 					if ( 'install' === $install_type ) {
-						$message = __( 'No plugins are available to be installed at this time.', 'beauty' );
+						$message = __( 'No plugins are available to be installed at this time.', 'cosmetics' );
 					} else {
-						$message = __( 'No plugins are available to be updated at this time.', 'beauty' );
+						$message = __( 'No plugins are available to be updated at this time.', 'cosmetics' );
 					}
 
 					echo '<div id="message" class="error"><p>', esc_html( $message ), '</p></div>';
@@ -2905,7 +2905,7 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 
 				// Did user actually select any plugins to activate ?
 				if ( empty( $_POST['plugin'] ) ) {
-					echo '<div id="message" class="error"><p>', esc_html__( 'No plugins were selected to be activated. No action taken.', 'beauty' ), '</p></div>';
+					echo '<div id="message" class="error"><p>', esc_html__( 'No plugins were selected to be activated. No action taken.', 'cosmetics' ), '</p></div>';
 
 					return false;
 				}
@@ -2931,7 +2931,7 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 
 				// Return early if there are no plugins to activate.
 				if ( empty( $plugins_to_activate ) ) {
-					echo '<div id="message" class="error"><p>', esc_html__( 'No plugins are available to be activated at this time.', 'beauty' ), '</p></div>';
+					echo '<div id="message" class="error"><p>', esc_html__( 'No plugins are available to be activated at this time.', 'cosmetics' ), '</p></div>';
 
 					return false;
 				}
@@ -2945,11 +2945,11 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 					$count        = count( $plugin_names ); // Count so we can use _n function.
 					$plugin_names = array_map( array( 'TGMPA_Utils', 'wrap_in_strong' ), $plugin_names );
 					$last_plugin  = array_pop( $plugin_names ); // Pop off last name to prep for readability.
-					$imploded     = empty( $plugin_names ) ? $last_plugin : ( implode( ', ', $plugin_names ) . ' ' . esc_html_x( 'and', 'plugin A *and* plugin B', 'beauty' ) . ' ' . $last_plugin );
+					$imploded     = empty( $plugin_names ) ? $last_plugin : ( implode( ', ', $plugin_names ) . ' ' . esc_html_x( 'and', 'plugin A *and* plugin B', 'cosmetics' ) . ' ' . $last_plugin );
 
 					printf( // WPCS: xss ok.
 						'<div id="message" class="updated"><p>%1$s %2$s.</p></div>',
-						esc_html( _n( 'The following plugin was activated successfully:', 'The following plugins were activated successfully:', $count, 'beauty' ) ),
+						esc_html( _n( 'The following plugin was activated successfully:', 'The following plugins were activated successfully:', $count, 'cosmetics' ) ),
 						$imploded
 					);
 
@@ -3155,8 +3155,8 @@ if ( ! function_exists( 'tgmpa_load_bulk_installer' ) ) {
 					 * @since 2.2.0
 					 */
 					public function activate_strings() {
-						$this->strings['activation_failed']  = __( 'Plugin activation failed.', 'beauty' );
-						$this->strings['activation_success'] = __( 'Plugin activated successfully.', 'beauty' );
+						$this->strings['activation_failed']  = __( 'Plugin activation failed.', 'cosmetics' );
+						$this->strings['activation_success'] = __( 'Plugin activated successfully.', 'cosmetics' );
 					}
 
 					/**
@@ -3200,17 +3200,17 @@ if ( ! function_exists( 'tgmpa_load_bulk_installer' ) ) {
 					 * (@internal Last synced: Dec 31st 2015 against https://core.trac.wordpress.org/browser/trunk?rev=36134}}
 					 *
 					 * @param array $plugins The plugin sources needed for installation.
-					 * @param array $beauty_opt_args    Arbitrary passed extra arguments.
+					 * @param array $cosmetics_opt_args    Arbitrary passed extra arguments.
 					 * @return array|false   Install confirmation messages on success, false on failure.
 					 */
-					public function bulk_install( $plugins, $beauty_opt_args = array() ) {
+					public function bulk_install( $plugins, $cosmetics_opt_args = array() ) {
 						// [TGMPA + ] Hook auto-activation in.
 						add_filter( 'upgrader_post_install', array( $this, 'auto_activate' ), 10 );
 
 						$defaults    = array(
 							'clear_update_cache' => true,
 						);
-						$parsed_args = wp_parse_args( $beauty_opt_args, $defaults );
+						$parsed_args = wp_parse_args( $cosmetics_opt_args, $defaults );
 
 						$this->init();
 						$this->bulk = true;
@@ -3345,14 +3345,14 @@ if ( ! function_exists( 'tgmpa_load_bulk_installer' ) ) {
 					 * @see Plugin_Upgrader::bulk_upgrade()
 					 *
 					 * @param array $plugins The local WP file_path's of the plugins which should be upgraded.
-					 * @param array $beauty_opt_args    Arbitrary passed extra arguments.
+					 * @param array $cosmetics_opt_args    Arbitrary passed extra arguments.
 					 * @return string|bool Install confirmation messages on success, false on failure.
 					 */
-					public function bulk_upgrade( $plugins, $beauty_opt_args = array() ) {
+					public function bulk_upgrade( $plugins, $cosmetics_opt_args = array() ) {
 
 						add_filter( 'upgrader_post_install', array( $this, 'auto_activate' ), 10 );
 
-						$result = parent::bulk_upgrade( $plugins, $beauty_opt_args );
+						$result = parent::bulk_upgrade( $plugins, $cosmetics_opt_args );
 
 						remove_filter( 'upgrader_post_install', array( $this, 'auto_activate' ), 10 );
 
@@ -3461,9 +3461,9 @@ if ( ! function_exists( 'tgmpa_load_bulk_installer' ) ) {
 					 *
 					 * @since 2.2.0
 					 *
-					 * @param array $beauty_opt_args Arguments to pass for use within the class.
+					 * @param array $cosmetics_opt_args Arguments to pass for use within the class.
 					 */
-					public function __construct( $beauty_opt_args = array() ) {
+					public function __construct( $cosmetics_opt_args = array() ) {
 						// Get TGMPA class instance.
 						$this->tgmpa = call_user_func( array( get_class( $GLOBALS['tgmpa'] ), 'get_instance' ) );
 
@@ -3474,13 +3474,13 @@ if ( ! function_exists( 'tgmpa_load_bulk_installer' ) ) {
 							'names'        => array(),
 							'install_type' => 'install',
 						);
-						$beauty_opt_args     = wp_parse_args( $beauty_opt_args, $defaults );
+						$cosmetics_opt_args     = wp_parse_args( $cosmetics_opt_args, $defaults );
 
 						// Set plugin names to $this->plugin_names property.
-						$this->plugin_names = $beauty_opt_args['names'];
+						$this->plugin_names = $cosmetics_opt_args['names'];
 
 						// Extract the new args.
-						parent::__construct( $beauty_opt_args );
+						parent::__construct( $cosmetics_opt_args );
 					}
 
 					/**
@@ -3495,29 +3495,29 @@ if ( ! function_exists( 'tgmpa_load_bulk_installer' ) ) {
 						if ( 'update' === $this->options['install_type'] ) {
 							parent::add_strings();
 							/* translators: 1: plugin name, 2: action number 3: total number of actions. */
-							$this->upgrader->strings['skin_before_update_header'] = __( 'Updating Plugin %1$s (%2$d/%3$d)', 'beauty' );
+							$this->upgrader->strings['skin_before_update_header'] = __( 'Updating Plugin %1$s (%2$d/%3$d)', 'cosmetics' );
 						} else {
 							/* translators: 1: plugin name, 2: error message. */
-							$this->upgrader->strings['skin_update_failed_error'] = __( 'An error occurred while installing %1$s: <strong>%2$s</strong>.', 'beauty' );
+							$this->upgrader->strings['skin_update_failed_error'] = __( 'An error occurred while installing %1$s: <strong>%2$s</strong>.', 'cosmetics' );
 							/* translators: 1: plugin name. */
-							$this->upgrader->strings['skin_update_failed'] = __( 'The installation of %1$s failed.', 'beauty' );
+							$this->upgrader->strings['skin_update_failed'] = __( 'The installation of %1$s failed.', 'cosmetics' );
 
 							if ( $this->tgmpa->is_automatic ) {
 								// Automatic activation strings.
-								$this->upgrader->strings['skin_upgrade_start'] = __( 'The installation and activation process is starting. This process may take a while on some hosts, so please be patient.', 'beauty' );
+								$this->upgrader->strings['skin_upgrade_start'] = __( 'The installation and activation process is starting. This process may take a while on some hosts, so please be patient.', 'cosmetics' );
 								/* translators: 1: plugin name. */
-								$this->upgrader->strings['skin_update_successful'] = __( '%1$s installed and activated successfully.', 'beauty' ) . ' <a href="#" class="hide-if-no-js" onclick="%2$s"><span>' . esc_html__( 'Show Details', 'beauty' ) . '</span><span class="hidden">' . esc_html__( 'Hide Details', 'beauty' ) . '</span>.</a>';
-								$this->upgrader->strings['skin_upgrade_end']       = __( 'All installations and activations have been completed.', 'beauty' );
+								$this->upgrader->strings['skin_update_successful'] = __( '%1$s installed and activated successfully.', 'cosmetics' ) . ' <a href="#" class="hide-if-no-js" onclick="%2$s"><span>' . esc_html__( 'Show Details', 'cosmetics' ) . '</span><span class="hidden">' . esc_html__( 'Hide Details', 'cosmetics' ) . '</span>.</a>';
+								$this->upgrader->strings['skin_upgrade_end']       = __( 'All installations and activations have been completed.', 'cosmetics' );
 								/* translators: 1: plugin name, 2: action number 3: total number of actions. */
-								$this->upgrader->strings['skin_before_update_header'] = __( 'Installing and Activating Plugin %1$s (%2$d/%3$d)', 'beauty' );
+								$this->upgrader->strings['skin_before_update_header'] = __( 'Installing and Activating Plugin %1$s (%2$d/%3$d)', 'cosmetics' );
 							} else {
 								// Default installation strings.
-								$this->upgrader->strings['skin_upgrade_start'] = __( 'The installation process is starting. This process may take a while on some hosts, so please be patient.', 'beauty' );
+								$this->upgrader->strings['skin_upgrade_start'] = __( 'The installation process is starting. This process may take a while on some hosts, so please be patient.', 'cosmetics' );
 								/* translators: 1: plugin name. */
-								$this->upgrader->strings['skin_update_successful'] = esc_html__( '%1$s installed successfully.', 'beauty' ) . ' <a href="#" class="hide-if-no-js" onclick="%2$s"><span>' . esc_html__( 'Show Details', 'beauty' ) . '</span><span class="hidden">' . esc_html__( 'Hide Details', 'beauty' ) . '</span>.</a>';
-								$this->upgrader->strings['skin_upgrade_end']       = __( 'All installations have been completed.', 'beauty' );
+								$this->upgrader->strings['skin_update_successful'] = esc_html__( '%1$s installed successfully.', 'cosmetics' ) . ' <a href="#" class="hide-if-no-js" onclick="%2$s"><span>' . esc_html__( 'Show Details', 'cosmetics' ) . '</span><span class="hidden">' . esc_html__( 'Hide Details', 'cosmetics' ) . '</span>.</a>';
+								$this->upgrader->strings['skin_upgrade_end']       = __( 'All installations have been completed.', 'cosmetics' );
 								/* translators: 1: plugin name, 2: action number 3: total number of actions. */
-								$this->upgrader->strings['skin_before_update_header'] = __( 'Installing Plugin %1$s (%2$d/%3$d)', 'beauty' );
+								$this->upgrader->strings['skin_before_update_header'] = __( 'Installing Plugin %1$s (%2$d/%3$d)', 'cosmetics' );
 							}
 						}
 					}
@@ -3577,7 +3577,7 @@ if ( ! function_exists( 'tgmpa_load_bulk_installer' ) ) {
 							echo '<style type="text/css">#adminmenu .wp-submenu li.current { display: none !important; }</style>';
 							$update_actions['dashboard'] = sprintf(
 								esc_html( $this->tgmpa->strings['complete'] ),
-								'<a href="' . esc_url( self_admin_url() ) . '">' . esc_html__( 'Return to the Dashboard', 'beauty' ) . '</a>'
+								'<a href="' . esc_url( self_admin_url() ) . '">' . esc_html__( 'Return to the Dashboard', 'cosmetics' ) . '</a>'
 							);
 						} else {
 							$update_actions['tgmpa_page'] = '<a href="' . esc_url( $this->tgmpa->get_tgmpa_url() ) . '" target="_parent">' . esc_html( $this->tgmpa->strings['return'] ) . '</a>';

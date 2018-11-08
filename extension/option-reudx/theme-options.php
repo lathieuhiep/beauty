@@ -8,29 +8,29 @@ if ( ! class_exists( 'Redux' ) ) {
 
 
 // This is your option name where all the Redux data is stored.
-$beauty_opt_name = "beauty_options";
+$cosmetics_opt_name = "cosmetics_options";
 
 /**
  * ---> SET ARGUMENTS
  * All the possible arguments for Redux.
  * */
 
-$beauty_theme = wp_get_theme(); // For use with some settings. Not necessary.
+$cosmetics_theme = wp_get_theme(); // For use with some settings. Not necessary.
 
-$beauty_opt_args = array(
+$cosmetics_opt_args = array(
 
-    'opt_name'             => $beauty_opt_name,
+    'opt_name'             => $cosmetics_opt_name,
     // This is where your data is stored in the database and also becomes your global variable name.
-    'display_name'         => $beauty_theme->get( 'Name' ),
+    'display_name'         => $cosmetics_theme->get( 'Name' ),
     // Name that appears at the top of your panel
-    'display_version'      => $beauty_theme->get( 'Version' ),
+    'display_version'      => $cosmetics_theme->get( 'Version' ),
     // Version that appears at the top of your panel
     'menu_type'            => 'menu',
     //Specify if the admin menu should appear or not. Options: menu or submenu (Under appearance only)
     'allow_sub_menu'       => false,
     // Show the sections below the admin menu item or not
-    'menu_title'           => $beauty_theme->get( 'Name' ) . esc_html__(' Options', 'beauty'),
-    'page_title'           => $beauty_theme->get( 'Name' ) . esc_html__(' Options', 'beauty'),
+    'menu_title'           => $cosmetics_theme->get( 'Name' ) . esc_html__(' Options', 'cosmetics'),
+    'page_title'           => $cosmetics_theme->get( 'Name' ) . esc_html__(' Options', 'cosmetics'),
     // You will need to generate a Google API key to use this feature.
     // Please visit: https://developers.google.com/fonts/docs/developer_api#Auth
     'google_api_key'       => '',
@@ -122,7 +122,7 @@ $beauty_opt_args = array(
         ),
     )
 );
-Redux::setArgs( $beauty_opt_name, $beauty_opt_args );
+Redux::setArgs( $cosmetics_opt_name, $cosmetics_opt_args );
 /*
  * ---> END ARGUMENTS
  */
@@ -131,23 +131,23 @@ Redux::setArgs( $beauty_opt_name, $beauty_opt_args );
  * ---> START HELP TABS
  */
 
-$beauty_opt_tabs = array(
+$cosmetics_opt_tabs = array(
     array(
         'id'        =>  'redux-help-tab-1',
-        'title'     =>  esc_html__( 'Theme Information 1', 'beauty' ),
-        'content'   =>  esc_html__( '<p>This is the tab content, HTML is allowed.</p>', 'beauty' )
+        'title'     =>  esc_html__( 'Theme Information 1', 'cosmetics' ),
+        'content'   =>  esc_html__( '<p>This is the tab content, HTML is allowed.</p>', 'cosmetics' )
     ),
     array(
         'id'        =>  'redux-help-tab-2',
-        'title'     =>  esc_html__( 'Theme Information 2', 'beauty' ),
-        'content'   =>  esc_html__( '<p>This is the tab content, HTML is allowed.</p>', 'beauty' )
+        'title'     =>  esc_html__( 'Theme Information 2', 'cosmetics' ),
+        'content'   =>  esc_html__( '<p>This is the tab content, HTML is allowed.</p>', 'cosmetics' )
     )
 );
-Redux::setHelpTab( $beauty_opt_name, $beauty_opt_tabs );
+Redux::setHelpTab( $cosmetics_opt_name, $cosmetics_opt_tabs );
 
 // Set the help sidebar
-$beauty_opt_content = esc_html__( '<p>This is the sidebar content, HTML is allowed.</p>', 'beauty' );
-Redux::setHelpSidebar( $beauty_opt_name, $beauty_opt_content );
+$cosmetics_opt_content = esc_html__( '<p>This is the sidebar content, HTML is allowed.</p>', 'cosmetics' );
+Redux::setHelpSidebar( $cosmetics_opt_name, $cosmetics_opt_content );
 
 
 /*
@@ -162,9 +162,9 @@ Redux::setHelpSidebar( $beauty_opt_name, $beauty_opt_content );
 
 // -> START option background
 
-Redux::setSection( $beauty_opt_name, array(
-    'id'                =>   'beauty_theme_option',
-    'title'             =>   $beauty_theme->get( 'Name' ).' '.$beauty_theme->get( 'Version' ),
+Redux::setSection( $cosmetics_opt_name, array(
+    'id'                =>   'cosmetics_theme_option',
+    'title'             =>   $cosmetics_theme->get( 'Name' ).' '.$cosmetics_theme->get( 'Version' ),
     'customizer_width'  =>   '400px',
     'icon'              =>   '',
 ));
@@ -173,73 +173,73 @@ Redux::setSection( $beauty_opt_name, array(
 
 /* Start General Options */
 
-Redux::setSection( $beauty_opt_name, array(
-    'title'             =>  esc_html__( 'General Options', 'beauty' ),
-    'id'                =>  'beauty_general',
-    'desc'              =>  esc_html__( 'General all config', 'beauty' ),
+Redux::setSection( $cosmetics_opt_name, array(
+    'title'             =>  esc_html__( 'General Options', 'cosmetics' ),
+    'id'                =>  'cosmetics_general',
+    'desc'              =>  esc_html__( 'General all config', 'cosmetics' ),
     'customizer_width'  =>  '400px',
     'icon'              =>  'el el-th-large',
 ));
 
 // Favicon Config
-Redux::setSection( $beauty_opt_name, array(
-    'title'         =>  esc_html__( 'Favicon', 'beauty' ),
-    'id'            =>  'beauty_favicon_config',
-    'desc'          =>  esc_html__( '', 'beauty' ),
+Redux::setSection( $cosmetics_opt_name, array(
+    'title'         =>  esc_html__( 'Favicon', 'cosmetics' ),
+    'id'            =>  'cosmetics_favicon_config',
+    'desc'          =>  esc_html__( '', 'cosmetics' ),
     'subsection'    =>  true,
     'fields'        =>  array(
         array(
-            'id'        =>  'beauty_favicon_upload',
+            'id'        =>  'cosmetics_favicon_upload',
             'type'      =>  'media',
             'url'       =>  true,
-            'title'     =>  esc_html__( 'Upload Favicon Image', 'beauty' ),
-            'subtitle'  =>  esc_html__( 'Favicon image for your website', 'beauty' ),
-            'desc'      =>  esc_html__( '', 'beauty' ),
+            'title'     =>  esc_html__( 'Upload Favicon Image', 'cosmetics' ),
+            'subtitle'  =>  esc_html__( 'Favicon image for your website', 'cosmetics' ),
+            'desc'      =>  esc_html__( '', 'cosmetics' ),
             'default'   =>  false,
         ),
     )
 ));
 
 //Loading config
-Redux::setSection( $beauty_opt_name, array(
-    'title'         =>  esc_html__( 'Loading config', 'beauty' ),
-    'id'            =>  'beauty_general_loading',
-    'desc'          =>  esc_html__( '', 'beauty' ),
+Redux::setSection( $cosmetics_opt_name, array(
+    'title'         =>  esc_html__( 'Loading config', 'cosmetics' ),
+    'id'            =>  'cosmetics_general_loading',
+    'desc'          =>  esc_html__( '', 'cosmetics' ),
     'subsection'    =>  true,
     'fields'        =>  array(
         array(
-            'id'        =>  'beauty_general_show_loading',
+            'id'        =>  'cosmetics_general_show_loading',
             'type'      =>  'switch',
-            'title'     =>  esc_html__( 'Loading On/Off', 'beauty' ),
+            'title'     =>  esc_html__( 'Loading On/Off', 'cosmetics' ),
             'default'   =>  false,
         ),
         array(
-            'id'        =>  'beauty_general_image_loading',
+            'id'        =>  'cosmetics_general_image_loading',
             'type'      =>  'media',
             'url'       =>  true,
-            'title'     =>  esc_html__( 'Upload image loading', 'beauty' ),
-            'subtitle'  =>  esc_html__( 'Upload image .gif', 'beauty' ),
+            'title'     =>  esc_html__( 'Upload image loading', 'cosmetics' ),
+            'subtitle'  =>  esc_html__( 'Upload image .gif', 'cosmetics' ),
             'default'   =>  '',
-            'required'  =>  array( 'beauty_general_show_loading', '=', true ),
+            'required'  =>  array( 'cosmetics_general_show_loading', '=', true ),
         ),
     )
 ));
 
 //Background Options
-Redux::setSection( $beauty_opt_name, array(
-    'title'             =>  esc_html__( 'Background', 'beauty' ),
-    'id'                =>  'beauty_background',
-    'desc'              =>  esc_html__( 'Background all config', 'beauty' ),
+Redux::setSection( $cosmetics_opt_name, array(
+    'title'             =>  esc_html__( 'Background', 'cosmetics' ),
+    'id'                =>  'cosmetics_background',
+    'desc'              =>  esc_html__( 'Background all config', 'cosmetics' ),
     'customizer_width'  =>  '400px',
     'subsection'        => true,
     'fields'            => array(
         array(
-            'id'        =>  'beauty_background_body',
+            'id'        =>  'cosmetics_background_body',
             'output'    =>  'body',
             'type'      =>  'background',
             'clone'     =>  'true',
-            'title'     =>  esc_html__( 'Body background', 'beauty' ),
-            'subtitle'  =>  esc_html__( 'Body background with image, color, etc.', 'beauty' ),
+            'title'     =>  esc_html__( 'Body background', 'cosmetics' ),
+            'subtitle'  =>  esc_html__( 'Body background with image, color, etc.', 'cosmetics' ),
             'hint'      =>  array(
                 'content'   =>  'This is a <b>hint</b> tool-tip for the text field.<br/><br/>Add any HTML based text you like here.',
             )
@@ -250,38 +250,38 @@ Redux::setSection( $beauty_opt_name, array(
 /* End General Options */
 
 /* Start Header Options */
-Redux::setSection( $beauty_opt_name, array(
-    'title'             =>  esc_html__( 'Header Options', 'beauty' ),
-    'id'                =>  'beauty_header',
-    'desc'              =>  esc_html__( 'Header all config', 'beauty' ),
+Redux::setSection( $cosmetics_opt_name, array(
+    'title'             =>  esc_html__( 'Header Options', 'cosmetics' ),
+    'id'                =>  'cosmetics_header',
+    'desc'              =>  esc_html__( 'Header all config', 'cosmetics' ),
     'customizer_width'  =>  '400px',
     'icon'              =>  'el el-arrow-up',
 ));
 
 //Logo Config
-Redux::setSection( $beauty_opt_name, array(
-    'title'         =>  esc_html__( 'Logo', 'beauty' ),
-    'id'            =>  'beauty_logo_config',
-    'desc'          =>  esc_html__( '', 'beauty' ),
+Redux::setSection( $cosmetics_opt_name, array(
+    'title'         =>  esc_html__( 'Logo', 'cosmetics' ),
+    'id'            =>  'cosmetics_logo_config',
+    'desc'          =>  esc_html__( '', 'cosmetics' ),
     'subsection'    =>  true,
     'fields'        =>  array(
 
         array(
-            'id'        =>  'beauty_logo_image',
+            'id'        =>  'cosmetics_logo_image',
             'type'      =>  'media',
             'url'       =>  true,
-            'title'     =>  esc_html__( 'Upload logo', 'beauty' ),
-            'subtitle'  =>  esc_html__( 'logo image for your website', 'beauty' ),
-            'desc'      =>  esc_html__( '', 'beauty' ),
+            'title'     =>  esc_html__( 'Upload logo', 'cosmetics' ),
+            'subtitle'  =>  esc_html__( 'logo image for your website', 'cosmetics' ),
+            'desc'      =>  esc_html__( '', 'cosmetics' ),
             'default'   =>  false,
         ),
 
         array(
-            'id'                => 'beauty_logo_images_size',
+            'id'                => 'cosmetics_logo_images_size',
             'type'              => 'dimensions',
             'units'             => array( 'em', 'px', '%' ),
-            'title'             => esc_html__( 'Set width/height for logo', 'beauty' ),
-            'subtitle'          => esc_html__( '', 'beauty' ),
+            'title'             => esc_html__( 'Set width/height for logo', 'cosmetics' ),
+            'subtitle'          => esc_html__( '', 'cosmetics' ),
             'units_extended'    => 'true',
             'default'           => array(
                 'width'     =>  '',
@@ -293,42 +293,42 @@ Redux::setSection( $beauty_opt_name, array(
 ));
 
 // information
-Redux::setSection( $beauty_opt_name, array(
-    'title'         =>  esc_html__( 'Information', 'beauty' ),
-    'id'            =>  'beauty_information_config',
-    'desc'          =>  esc_html__( '', 'beauty' ),
+Redux::setSection( $cosmetics_opt_name, array(
+    'title'         =>  esc_html__( 'Information', 'cosmetics' ),
+    'id'            =>  'cosmetics_information_config',
+    'desc'          =>  esc_html__( '', 'cosmetics' ),
     'subsection'    =>  true,
     'fields'        =>  array(
 
         array(
-            'id'        =>  'beauty_information_show_hide',
+            'id'        =>  'cosmetics_information_show_hide',
             'type'      =>  'select',
-            'title'     =>  esc_html__( 'Show Or Hide Information', 'beauty' ),
+            'title'     =>  esc_html__( 'Show Or Hide Information', 'cosmetics' ),
             'default'   =>  1,
             'options'   =>  array(
-                1   =>  esc_html__( 'Show', 'beauty' ),
-                0   =>  esc_html__( 'Hide', 'beauty' )
+                1   =>  esc_html__( 'Show', 'cosmetics' ),
+                0   =>  esc_html__( 'Hide', 'cosmetics' )
             )
         ),
 
         array(
-            'id'        =>  'beauty_information_address',
+            'id'        =>  'cosmetics_information_address',
             'type'      =>  'text',
-            'title'     =>  esc_html__( 'Address', 'beauty' ),
+            'title'     =>  esc_html__( 'Address', 'cosmetics' ),
             'default'   =>  '988782, Our Street, S State.',
         ),
 
         array(
-            'id'        =>  'beauty_information_mail',
+            'id'        =>  'cosmetics_information_mail',
             'type'      =>  'text',
-            'title'     =>  esc_html__( 'Mail', 'beauty' ),
+            'title'     =>  esc_html__( 'Mail', 'cosmetics' ),
             'default'   =>  'info@domain.com',
         ),
 
         array(
-            'id'        =>  'beauty_information_phone',
+            'id'        =>  'cosmetics_information_phone',
             'type'      =>  'text',
-            'title'     =>  esc_html__( 'Phone', 'beauty' ),
+            'title'     =>  esc_html__( 'Phone', 'cosmetics' ),
             'default'   =>  '+1 234 567 186',
         ),
 
@@ -338,18 +338,18 @@ Redux::setSection( $beauty_opt_name, array(
 /* End Header Options */
 
 /* Start Blog Option */
-Redux::setSection( $beauty_opt_name, array(
-    'title'             =>  esc_html__( 'Blog Options', 'beauty' ),
-    'id'                =>  'beauty_blog_option',
+Redux::setSection( $cosmetics_opt_name, array(
+    'title'             =>  esc_html__( 'Blog Options', 'cosmetics' ),
+    'id'                =>  'cosmetics_blog_option',
     'customizer_width'  =>  '400px',
     'icon'              =>  'el el-blogger',
     'fields'            =>  array(
 
         array(
-            'id'        =>  'beauty_blog_sidebar_archive',
+            'id'        =>  'cosmetics_blog_sidebar_archive',
             'type'      =>  'image_select',
-            'title'     =>  esc_html__( 'Sidebar Archive', 'beauty' ),
-            'desc'      =>  esc_html__( 'Use for archive, index, page search', 'beauty' ),
+            'title'     =>  esc_html__( 'Sidebar Archive', 'cosmetics' ),
+            'desc'      =>  esc_html__( 'Use for archive, index, page search', 'cosmetics' ),
             'default'   =>  'right',
             'options'   =>  array(
                 'hide' =>  array(
@@ -371,9 +371,9 @@ Redux::setSection( $beauty_opt_name, array(
         ),
 
         array(
-            'id'        =>  'beauty_blog_sidebar_single',
+            'id'        =>  'cosmetics_blog_sidebar_single',
             'type'      =>  'image_select',
-            'title'     =>  esc_html__( 'Sidebar Single', 'beauty' ),
+            'title'     =>  esc_html__( 'Sidebar Single', 'cosmetics' ),
             'default'   =>  'right',
             'options'   =>  array(
                 'hide' =>  array(
@@ -395,9 +395,9 @@ Redux::setSection( $beauty_opt_name, array(
         ),
 
         array(
-            'id'        =>  'beauty_on_off_share_single',
+            'id'        =>  'cosmetics_on_off_share_single',
             'type'      =>  'switch',
-            'title'     =>  esc_html__( 'On/Off Share Post Single', 'beauty' ),
+            'title'     =>  esc_html__( 'On/Off Share Post Single', 'cosmetics' ),
             'default'   =>  true,
         ),
 
@@ -406,65 +406,65 @@ Redux::setSection( $beauty_opt_name, array(
 /* End Blog Option */
 
 /* Start Social Network */
-Redux::setSection( $beauty_opt_name, array(
-    'title'             =>  esc_html__( 'Social Network', 'beauty' ),
-    'id'                =>  'beauty_social_network',
+Redux::setSection( $cosmetics_opt_name, array(
+    'title'             =>  esc_html__( 'Social Network', 'cosmetics' ),
+    'id'                =>  'cosmetics_social_network',
     'customizer_width'  =>  '400px',
     'icon'              =>  'el el-globe-alt',
     'fields'            =>  array(
         array(
-            'id'        =>  'beauty_social_network_facebook',
+            'id'        =>  'cosmetics_social_network_facebook',
             'type'      =>  'text',
-            'title'     =>  esc_html__( 'Facebook', 'beauty' ),
+            'title'     =>  esc_html__( 'Facebook', 'cosmetics' ),
             'default'   =>  '#',
         ),
 
         array(
-            'id'        =>  'beauty_social_network_twitter',
+            'id'        =>  'cosmetics_social_network_twitter',
             'type'      =>  'text',
-            'title'     =>  esc_html__( 'Twitter', 'beauty' ),
+            'title'     =>  esc_html__( 'Twitter', 'cosmetics' ),
             'default'   =>  '#',
         ),
 
         array(
-            'id'        =>  'beauty_social_network_google-plus',
+            'id'        =>  'cosmetics_social_network_google-plus',
             'type'      =>  'text',
-            'title'     =>  esc_html__( 'Google Plus', 'beauty' ),
+            'title'     =>  esc_html__( 'Google Plus', 'cosmetics' ),
             'default'   =>  '#',
         ),
 
         array(
-            'id'        =>  'beauty_social_network_linkedin',
+            'id'        =>  'cosmetics_social_network_linkedin',
             'type'      =>  'text',
-            'title'     =>  esc_html__( 'Linkedin', 'beauty' ),
+            'title'     =>  esc_html__( 'Linkedin', 'cosmetics' ),
             'default'   =>  '#',
         ),
 
         array(
-            'id'        =>  'beauty_social_network_pinterest',
+            'id'        =>  'cosmetics_social_network_pinterest',
             'type'      =>  'text',
-            'title'     =>  esc_html__( 'Pinterest', 'beauty' ),
+            'title'     =>  esc_html__( 'Pinterest', 'cosmetics' ),
             'default'   =>  '#',
         ),
 
         array(
-            'id'        =>  'beauty_social_network_youtube',
+            'id'        =>  'cosmetics_social_network_youtube',
             'type'      =>  'text',
-            'title'     =>  esc_html__( 'Youtube', 'beauty' ),
+            'title'     =>  esc_html__( 'Youtube', 'cosmetics' ),
             'default'   =>  '#',
         ),
 
         array(
-            'id'        =>  'beauty_social_network_instagram',
+            'id'        =>  'cosmetics_social_network_instagram',
             'type'      =>  'text',
-            'title'     =>  esc_html__( 'Instagram', 'beauty' ),
+            'title'     =>  esc_html__( 'Instagram', 'cosmetics' ),
             'default'   =>  '#',
         ),
 
         array(
-            'id'        =>  'beauty_social_network_vimeo',
+            'id'        =>  'cosmetics_social_network_vimeo',
             'type'      =>  'text',
-            'title'     =>  esc_html__( 'Vimeo', 'beauty' ),
+            'title'     =>  esc_html__( 'Vimeo', 'cosmetics' ),
             'default'   =>  '#',
         ),
 
@@ -473,17 +473,17 @@ Redux::setSection( $beauty_opt_name, array(
 /* End Social Network */
 
 /* Start Shop */
-Redux::setSection( $beauty_opt_name, array(
-    'title'             =>  esc_html__( 'Shop', 'beauty' ),
-    'id'                =>  'beauty_shop_woo',
-    'desc'              =>  esc_html__( 'Settings WooCommerce', 'beauty' ),
+Redux::setSection( $cosmetics_opt_name, array(
+    'title'             =>  esc_html__( 'Shop', 'cosmetics' ),
+    'id'                =>  'cosmetics_shop_woo',
+    'desc'              =>  esc_html__( 'Settings WooCommerce', 'cosmetics' ),
     'customizer_width'  =>  '400px',
     'icon'              =>  'el el-shopping-cart',
     'fields'            =>  array(
         array(
-            'id'            =>  'beauty_product_limit',
+            'id'            =>  'cosmetics_product_limit',
             'type'          =>  'slider',
-            'title'         =>  esc_html__( 'Product Limit Page Shop', 'beauty' ),
+            'title'         =>  esc_html__( 'Product Limit Page Shop', 'cosmetics' ),
             'min'           =>  1,
             'step'          =>  1,
             'max'           =>  250,
@@ -492,9 +492,9 @@ Redux::setSection( $beauty_opt_name, array(
         ),
 
         array(
-            'id'        =>  'beauty_products_per_row',
+            'id'        =>  'cosmetics_products_per_row',
             'type'      =>  'select',
-            'title'     =>  esc_html__( 'Products Per Row', 'beauty' ),
+            'title'     =>  esc_html__( 'Products Per Row', 'cosmetics' ),
             'default'   =>  4,
             'options'   =>  array(
                 3   =>  '3 Column',
@@ -504,10 +504,10 @@ Redux::setSection( $beauty_opt_name, array(
         ),
 
         array(
-            'id'        =>  'beauty_sidebar_woo',
+            'id'        =>  'cosmetics_sidebar_woo',
             'type'      =>  'select',
-            'title'     =>  esc_html__( 'Position Sidebar Woocommerce', 'beauty' ),
-            'desc'          =>  esc_html__( 'Position Sidebar Woocommerce', 'beauty' ),
+            'title'     =>  esc_html__( 'Position Sidebar Woocommerce', 'cosmetics' ),
+            'desc'          =>  esc_html__( 'Position Sidebar Woocommerce', 'cosmetics' ),
             'default'   =>  'left',
             'options'   =>  array(
                 'left'  =>  'Left',
@@ -520,28 +520,28 @@ Redux::setSection( $beauty_opt_name, array(
 /* End Shop */
 
 /* Start Typography Options */
-Redux::setSection( $beauty_opt_name, array(
-    'title'             =>  esc_html__( 'Typography', 'beauty' ),
-    'id'                =>  'beauty_typography',
-    'desc'              =>  esc_html__( 'Typography all config', 'beauty' ),
+Redux::setSection( $cosmetics_opt_name, array(
+    'title'             =>  esc_html__( 'Typography', 'cosmetics' ),
+    'id'                =>  'cosmetics_typography',
+    'desc'              =>  esc_html__( 'Typography all config', 'cosmetics' ),
     'customizer_width'  =>  '400px',
     'icon'              =>  'el el-fontsize'
 ));
 
 // Body font
-Redux::setSection( $beauty_opt_name, array(
-    'title'         =>  esc_html__( 'Body Typography', 'beauty' ),
-    'id'            =>  'beauty_body_typography',
-    'desc'          =>  esc_html__( '', 'beauty' ),
+Redux::setSection( $cosmetics_opt_name, array(
+    'title'         =>  esc_html__( 'Body Typography', 'cosmetics' ),
+    'id'            =>  'cosmetics_body_typography',
+    'desc'          =>  esc_html__( '', 'cosmetics' ),
     'subsection'    =>  true,
     'fields'        =>  array(
 
         array(
-            'id'        =>  'beauty_body_typography_font',
+            'id'        =>  'cosmetics_body_typography_font',
             'type'      =>  'typography',
             'output'    =>  array( 'body' ),
-            'title'     =>  esc_html__( 'Body Font', 'beauty' ),
-            'subtitle'  =>  esc_html__( 'Specify the body font properties.', 'beauty' ),
+            'title'     =>  esc_html__( 'Body Font', 'cosmetics' ),
+            'subtitle'  =>  esc_html__( 'Specify the body font properties.', 'cosmetics' ),
             'google'    =>  true,
             'default'   =>  array(
                 'color'         =>  '',
@@ -552,29 +552,29 @@ Redux::setSection( $beauty_opt_name, array(
         ),
 
         array(
-            'id'        =>  'beauty_link_color',
+            'id'        =>  'cosmetics_link_color',
             'type'      =>  'link_color',
             'output'    =>  array( 'a' ),
-            'title'     =>  esc_html__( 'Link Color', 'beauty' ),
-            'subtitle'  =>  esc_html__( 'Controls the color of all text links.', 'beauty' ),
+            'title'     =>  esc_html__( 'Link Color', 'cosmetics' ),
+            'subtitle'  =>  esc_html__( 'Controls the color of all text links.', 'cosmetics' ),
             'default'   =>  ''
         ),
     )
 ));
 
 // Header font
-Redux::setSection( $beauty_opt_name, array(
-    'title'         =>  esc_html__( 'Custom Typography', 'beauty' ),
-    'id'            =>  'beauty_custom_typography',
-    'desc'          =>  esc_html__( '', 'beauty' ),
+Redux::setSection( $cosmetics_opt_name, array(
+    'title'         =>  esc_html__( 'Custom Typography', 'cosmetics' ),
+    'id'            =>  'cosmetics_custom_typography',
+    'desc'          =>  esc_html__( '', 'cosmetics' ),
     'subsection'    =>  true,
     'fields'        =>  array(
 
         array(
-            'id'        =>  'beauty_custom_typography_1',
+            'id'        =>  'cosmetics_custom_typography_1',
             'type'      =>  'typography',
-            'title'     =>  esc_html__( 'Custom 1 Typography', 'beauty' ),
-            'subtitle'  =>  esc_html__( 'These settings control the typography for all Custom 1.', 'beauty' ),
+            'title'     =>  esc_html__( 'Custom 1 Typography', 'cosmetics' ),
+            'subtitle'  =>  esc_html__( 'These settings control the typography for all Custom 1.', 'cosmetics' ),
             'google'    =>  true,
             'default'   =>  array(
                 'font-size'     =>  '',
@@ -586,18 +586,18 @@ Redux::setSection( $beauty_opt_name, array(
 
         //selector custom typo 1
         array(
-            'id'        =>  'beauty_custom_typography_1_selector',
+            'id'        =>  'cosmetics_custom_typography_1_selector',
             'type'      =>  'textarea',
-            'title'     =>  esc_html__( 'Selectors 1', 'beauty' ),
-            'desc'      =>  esc_html__( 'Import selectors. You can import one or multi selector.Example: #selector1,#selector2,.selector3', 'beauty' ),
+            'title'     =>  esc_html__( 'Selectors 1', 'cosmetics' ),
+            'desc'      =>  esc_html__( 'Import selectors. You can import one or multi selector.Example: #selector1,#selector2,.selector3', 'cosmetics' ),
             'default'   =>  ''
         ),
 
         array(
-            'id'        =>  'beauty_custom_typography_2',
+            'id'        =>  'cosmetics_custom_typography_2',
             'type'      =>  'typography',
-            'title'     =>  esc_html__( 'Custom 2 Typography', 'beauty' ),
-            'subtitle'  =>  esc_html__( 'These settings control the typography for all Custom 2.', 'beauty' ),
+            'title'     =>  esc_html__( 'Custom 2 Typography', 'cosmetics' ),
+            'subtitle'  =>  esc_html__( 'These settings control the typography for all Custom 2.', 'cosmetics' ),
             'google'    =>  true,
             'default'   =>  array(
                 'font-size'     =>  '',
@@ -609,18 +609,18 @@ Redux::setSection( $beauty_opt_name, array(
 
         //selector custom typo 2
         array(
-            'id'        => 'beauty_custom_typography_2_selector',
+            'id'        => 'cosmetics_custom_typography_2_selector',
             'type'      => 'textarea',
-            'title'     => esc_html__( 'Selectors 2', 'beauty' ),
-            'desc'      => esc_html__( 'Import selectors. You can import one or multi selector.Example: #selector1,#selector2,.selector3', 'beauty' ),
+            'title'     => esc_html__( 'Selectors 2', 'cosmetics' ),
+            'desc'      => esc_html__( 'Import selectors. You can import one or multi selector.Example: #selector1,#selector2,.selector3', 'cosmetics' ),
             'default'   => ''
         ),
 
         array(
-            'id'        =>  'beauty_custom_typography_3',
+            'id'        =>  'cosmetics_custom_typography_3',
             'type'      =>  'typography',
-            'title'     =>  esc_html__( 'Custom 3 Typography', 'beauty' ),
-            'subtitle'  =>  esc_html__( 'These settings control the typography for all Custom 3.', 'beauty' ),
+            'title'     =>  esc_html__( 'Custom 3 Typography', 'cosmetics' ),
+            'subtitle'  =>  esc_html__( 'These settings control the typography for all Custom 3.', 'cosmetics' ),
             'google'    =>  true,
             'default'   =>  array(
                 'font-size'     =>  '',
@@ -633,10 +633,10 @@ Redux::setSection( $beauty_opt_name, array(
 
         //selector custom typo 3
         array(
-            'id'        =>  'beauty_custom_typography_3_selector',
+            'id'        =>  'cosmetics_custom_typography_3_selector',
             'type'      =>  'textarea',
-            'title'     =>  esc_html__( 'Selectors 3', 'beauty' ),
-            'desc'      =>  esc_html__( 'Import selectors. You can import one or multi selector.Example: #selector1,#selector2,.selector3', 'beauty' ),
+            'title'     =>  esc_html__( 'Selectors 3', 'cosmetics' ),
+            'desc'      =>  esc_html__( 'Import selectors. You can import one or multi selector.Example: #selector1,#selector2,.selector3', 'cosmetics' ),
             'default'   =>  ''
         ),
 
@@ -646,34 +646,34 @@ Redux::setSection( $beauty_opt_name, array(
 /* End Typography Options */
 
 /* Start 404 Options */
-Redux::setSection( $beauty_opt_name, array(
-    'title'             =>  esc_html__( '404 Options', 'beauty' ),
-    'id'                =>  'beauty_404',
-    'desc'              =>  esc_html__( '404 page all config', 'beauty' ),
+Redux::setSection( $cosmetics_opt_name, array(
+    'title'             =>  esc_html__( '404 Options', 'cosmetics' ),
+    'id'                =>  'cosmetics_404',
+    'desc'              =>  esc_html__( '404 page all config', 'cosmetics' ),
     'customizer_width'  =>  '400px',
     'icon'              =>  'el el-warning-sign',
     'fields'            =>  array(
 
         array(
-            'id'        =>  'beauty_404_background',
+            'id'        =>  'cosmetics_404_background',
             'type'      =>  'media',
             'url'       =>  true,
-            'title'     =>  esc_html__( '404 Background', 'beauty' ),
+            'title'     =>  esc_html__( '404 Background', 'cosmetics' ),
             'default'   =>  false,
         ),
 
         array(
-            'id'        =>  'beauty_404_title',
+            'id'        =>  'cosmetics_404_title',
             'type'      =>  'text',
-            'title'     =>  esc_html__( '404 Title', 'beauty' ),
+            'title'     =>  esc_html__( '404 Title', 'cosmetics' ),
             'default'   =>  'Awww...Do Not Cry',
         ),
 
         array(
-            'id'        =>  'beauty_404_editor',
+            'id'        =>  'cosmetics_404_editor',
             'type'      =>  'editor',
-            'title'     =>  esc_html__( '404 Content', 'beauty' ),
-            'default'   =>  esc_html__( 'It is just a 404 Error! What you are looking for may have been misplaced in Long Term Memory.', 'beauty' ),
+            'title'     =>  esc_html__( '404 Content', 'cosmetics' ),
+            'default'   =>  esc_html__( 'It is just a 404 Error! What you are looking for may have been misplaced in Long Term Memory.', 'cosmetics' ),
             'args'          =>  array(
                 'wpautop'       => false,
                 'media_buttons' => false,
@@ -688,25 +688,25 @@ Redux::setSection( $beauty_opt_name, array(
 /* End 404 Options */
 
 /* Start Footer Options */
-Redux::setSection( $beauty_opt_name, array(
-    'title'             =>  esc_html__( 'Footer Options', 'beauty' ),
-    'id'                =>  'beauty_footer',
-    'desc'              =>  esc_html__( 'Footer all config', 'beauty' ),
+Redux::setSection( $cosmetics_opt_name, array(
+    'title'             =>  esc_html__( 'Footer Options', 'cosmetics' ),
+    'id'                =>  'cosmetics_footer',
+    'desc'              =>  esc_html__( 'Footer all config', 'cosmetics' ),
     'customizer_width'  =>  '400px',
     'icon'              =>  'el el-arrow-down'
 ));
 
 // Footer Sidebar Multi Column
-Redux::setSection( $beauty_opt_name, array(
-    'title'         =>  esc_html__( 'Sidebar Footer Multi Column', 'beauty' ),
-    'id'            =>  'beauty_footer_sidebar_multi_column',
+Redux::setSection( $cosmetics_opt_name, array(
+    'title'         =>  esc_html__( 'Sidebar Footer Multi Column', 'cosmetics' ),
+    'id'            =>  'cosmetics_footer_sidebar_multi_column',
     'subsection'    =>  true,
     'fields'        =>  array(
         array(
-            'id'        =>  'beauty_footer_multi_column',
+            'id'        =>  'cosmetics_footer_multi_column',
             'type'      =>  'image_select',
-            'title'     =>  esc_html__( 'Number of Footer Columns', 'beauty' ),
-            'subtitle'  =>  esc_html__( 'Controls the number of columns in the footer', 'beauty' ),
+            'title'     =>  esc_html__( 'Number of Footer Columns', 'cosmetics' ),
+            'subtitle'  =>  esc_html__( 'Controls the number of columns in the footer', 'cosmetics' ),
             'default'   =>  0,
             'options'   =>  array(
                 '0' =>  array(
@@ -735,76 +735,76 @@ Redux::setSection( $beauty_opt_name, array(
         ),
 
         array(
-            'id'            =>  'beauty_footer_multi_column_1',
+            'id'            =>  'cosmetics_footer_multi_column_1',
             'type'          =>  'slider',
-            'title'         =>  esc_html__( 'Column width 1', 'beauty' ),
-            'subtitle'      =>  esc_html__( 'Select the number of columns to display in the footer', 'beauty' ),
-            'desc'          =>  esc_html__( 'Min: 1, max: 12, default value: 1', 'beauty' ),
+            'title'         =>  esc_html__( 'Column width 1', 'cosmetics' ),
+            'subtitle'      =>  esc_html__( 'Select the number of columns to display in the footer', 'cosmetics' ),
+            'desc'          =>  esc_html__( 'Min: 1, max: 12, default value: 1', 'cosmetics' ),
             'default'       =>  1,
             'min'           =>  1,
             'step'          =>  1,
             'max'           =>  12,
             'display_value' =>  'label',
             'required'      =>  array(
-                array( 'beauty_footer_multi_column', 'equals','1', '2', '3', '4' ),
-                array( 'beauty_footer_multi_column', '!=', '0' ),
+                array( 'cosmetics_footer_multi_column', 'equals','1', '2', '3', '4' ),
+                array( 'cosmetics_footer_multi_column', '!=', '0' ),
             )
         ),
 
         array(
-            'id'            =>  'beauty_footer_multi_column_2',
+            'id'            =>  'cosmetics_footer_multi_column_2',
             'type'          =>  'slider',
-            'title'         =>  esc_html__( 'Column width 2', 'beauty' ),
-            'subtitle'      =>  esc_html__( 'Select the number of columns to display in the footer', 'beauty' ),
-            'desc'          =>  esc_html__( 'Min: 1, max: 12, default value: 1', 'beauty' ),
+            'title'         =>  esc_html__( 'Column width 2', 'cosmetics' ),
+            'subtitle'      =>  esc_html__( 'Select the number of columns to display in the footer', 'cosmetics' ),
+            'desc'          =>  esc_html__( 'Min: 1, max: 12, default value: 1', 'cosmetics' ),
             'default'       =>  1,
             'min'           =>  1,
             'step'          =>  1,
             'max'           =>  12,
             'display_value' =>  'label',
             'required'      =>  array(
-                array( 'beauty_footer_multi_column', 'equals', '2', '3', '4' ),
-                array( 'beauty_footer_multi_column', '!=', '1' ),
-                array( 'beauty_footer_multi_column', '!=', '0' ),
+                array( 'cosmetics_footer_multi_column', 'equals', '2', '3', '4' ),
+                array( 'cosmetics_footer_multi_column', '!=', '1' ),
+                array( 'cosmetics_footer_multi_column', '!=', '0' ),
             )
         ),
 
         array(
-            'id'            =>  'beauty_footer_multi_column_3',
+            'id'            =>  'cosmetics_footer_multi_column_3',
             'type'          =>  'slider',
-            'title'         =>  esc_html__( 'Column width 3', 'beauty' ),
-            'subtitle'      =>  esc_html__( 'Select the number of columns to display in the footer', 'beauty' ),
-            'desc'          =>  esc_html__( 'Min: 1, max: 12, default value: 1', 'beauty' ),
+            'title'         =>  esc_html__( 'Column width 3', 'cosmetics' ),
+            'subtitle'      =>  esc_html__( 'Select the number of columns to display in the footer', 'cosmetics' ),
+            'desc'          =>  esc_html__( 'Min: 1, max: 12, default value: 1', 'cosmetics' ),
             'default'       =>  1,
             'min'           =>  1,
             'step'          =>  1,
             'max'           =>  12,
             'display_value' =>  'label',
             'required'      =>  array(
-                array( 'beauty_footer_multi_column', 'equals', '3', '4' ),
-                array( 'beauty_footer_multi_column', '!=', '1' ),
-                array( 'beauty_footer_multi_column', '!=', '2' ),
-                array( 'beauty_footer_multi_column', '!=', '0' ),
+                array( 'cosmetics_footer_multi_column', 'equals', '3', '4' ),
+                array( 'cosmetics_footer_multi_column', '!=', '1' ),
+                array( 'cosmetics_footer_multi_column', '!=', '2' ),
+                array( 'cosmetics_footer_multi_column', '!=', '0' ),
             )
         ),
 
         array(
-            'id'            =>  'beauty_footer_multi_column_4',
+            'id'            =>  'cosmetics_footer_multi_column_4',
             'type'          =>  'slider',
-            'title'         =>  esc_html__( 'Column width 4', 'beauty' ),
-            'subtitle'      =>  esc_html__( 'Select the number of columns to display in the footer', 'beauty' ),
-            'desc'          =>  esc_html__( 'Min: 1, max: 12, default value: 1', 'beauty' ),
+            'title'         =>  esc_html__( 'Column width 4', 'cosmetics' ),
+            'subtitle'      =>  esc_html__( 'Select the number of columns to display in the footer', 'cosmetics' ),
+            'desc'          =>  esc_html__( 'Min: 1, max: 12, default value: 1', 'cosmetics' ),
             'default'       =>  1,
             'min'           =>  1,
             'step'          =>  1,
             'max'           =>  12,
             'display_value' =>  'label',
             'required'      =>  array(
-                array( 'beauty_footer_multi_column',  'equals', '4' ),
-                array( 'beauty_footer_multi_column', '!=', '1' ),
-                array( 'beauty_footer_multi_column', '!=', '2' ),
-                array( 'beauty_footer_multi_column', '!=', '3' ),
-                array( 'beauty_footer_multi_column', '!=', '0' ),
+                array( 'cosmetics_footer_multi_column',  'equals', '4' ),
+                array( 'cosmetics_footer_multi_column', '!=', '1' ),
+                array( 'cosmetics_footer_multi_column', '!=', '2' ),
+                array( 'cosmetics_footer_multi_column', '!=', '3' ),
+                array( 'cosmetics_footer_multi_column', '!=', '0' ),
             )
         ),
     )
@@ -812,16 +812,16 @@ Redux::setSection( $beauty_opt_name, array(
 ));
 
 //Copyright
-Redux::setSection( $beauty_opt_name, array(
-    'title'         =>  esc_html__( 'Copyright', 'beauty' ),
-    'id'            =>  'beauty_footer_copyright',
-    'desc'          =>  esc_html__( '', 'beauty' ),
+Redux::setSection( $cosmetics_opt_name, array(
+    'title'         =>  esc_html__( 'Copyright', 'cosmetics' ),
+    'id'            =>  'cosmetics_footer_copyright',
+    'desc'          =>  esc_html__( '', 'cosmetics' ),
     'subsection'    =>  true,
     'fields'        =>  array(
         array(
-            'id'            =>  'beauty_footer_copyright_editor',
+            'id'            =>  'cosmetics_footer_copyright_editor',
             'type'          =>  'editor',
-            'title'         =>  esc_html__( 'Enter content copyright', 'beauty' ),
+            'title'         =>  esc_html__( 'Enter content copyright', 'cosmetics' ),
             'full_width'    =>  true,
             'default'       =>  'Copyright &amp; DiepLK',
             'args'          =>  array(
@@ -843,7 +843,7 @@ Redux::setSection( $beauty_opt_name, array(
  */
 
 // Function to test the compiler hook and demo CSS output.
-add_filter('redux/options/' . $beauty_opt_name . '/compiler', 'compiler_action', 10, 3);
+add_filter('redux/options/' . $cosmetics_opt_name . '/compiler', 'compiler_action', 10, 3);
 
 /**
  * This is a test function that will let you see when the compiler hook occurs.

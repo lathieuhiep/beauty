@@ -1,11 +1,11 @@
 <?php
 get_header();
 
-global $beauty_options;
+global $cosmetics_options;
 
-$beauty_blog_sidebar_single = !empty( $beauty_options['beauty_blog_sidebar_single'] ) ? $beauty_options['beauty_blog_sidebar_single'] : 'right';
+$cosmetics_blog_sidebar_single = !empty( $cosmetics_options['cosmetics_blog_sidebar_single'] ) ? $cosmetics_options['cosmetics_blog_sidebar_single'] : 'right';
 
-$beauty_class_col_content = beauty_col_use_sidebar( $beauty_blog_sidebar_single, 'beauty-sidebar-main' );
+$cosmetics_class_col_content = cosmetics_col_use_sidebar( $cosmetics_blog_sidebar_single, 'cosmetics-sidebar-main' );
 
 ?>
 
@@ -15,13 +15,13 @@ $beauty_class_col_content = beauty_col_use_sidebar( $beauty_blog_sidebar_single,
 
             <?php
 
-            if( $beauty_blog_sidebar_single == 'left' ):
+            if( $cosmetics_blog_sidebar_single == 'left' ):
                 get_sidebar();
             endif;
 
             ?>
 
-            <div class="<?php echo esc_attr( $beauty_class_col_content ); ?>">
+            <div class="<?php echo esc_attr( $cosmetics_class_col_content ); ?>">
 
                 <?php
                 if ( have_posts() ) : while (have_posts()) : the_post();
@@ -36,7 +36,7 @@ $beauty_class_col_content = beauty_col_use_sidebar( $beauty_blog_sidebar_single,
 
             <?php
 
-            if( $beauty_blog_sidebar_single == 'right' ):
+            if( $cosmetics_blog_sidebar_single == 'right' ):
                 get_sidebar();
             endif;
 

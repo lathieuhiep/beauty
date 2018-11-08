@@ -7,7 +7,7 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
 
-class beauty_social_widget extends WP_Widget {
+class cosmetics_social_widget extends WP_Widget {
 
 	/**
 	 * Widget setup.
@@ -15,12 +15,12 @@ class beauty_social_widget extends WP_Widget {
 
     public function __construct() {
 
-        $beauty_social_widget_ops = array(
-            'classname'     =>  'beauty_social_widget',
+        $cosmetics_social_widget_ops = array(
+            'classname'     =>  'cosmetics_social_widget',
             'description'   =>  'A widget that displays your social icons',
         );
 
-        parent::__construct( 'beauty_social_widget', 'Basic Theme: Social Icons', $beauty_social_widget_ops );
+        parent::__construct( 'cosmetics_social_widget', 'Basic Theme: Social Icons', $cosmetics_social_widget_ops );
 
     }
 
@@ -41,7 +41,7 @@ class beauty_social_widget extends WP_Widget {
     ?>
 		
         <div class="social-widget social-network-toTopFromBottom">
-            <?php beauty_get_social_url(); ?>
+            <?php cosmetics_get_social_url(); ?>
         </div>
 
     <?php
@@ -65,14 +65,14 @@ class beauty_social_widget extends WP_Widget {
 		<!-- Widget Title: Text Input -->
 		<p>
 			<label for="<?php echo $this->get_field_id( 'title' ); ?>">
-                <?php esc_html_e( 'Title:', 'beauty' ); ?>
+                <?php esc_html_e( 'Title:', 'cosmetics' ); ?>
             </label>
 
 			<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" value="<?php echo $instance['title']; ?>" style="width:90%;" />
 		</p>
 		
 		<p>
-            <?php esc_html_e( 'Note: Set your social links in the beauty Options', 'beauty' ); ?>
+            <?php esc_html_e( 'Note: Set your social links in the cosmetics Options', 'cosmetics' ); ?>
         </p>
 
 	<?php
@@ -98,8 +98,8 @@ class beauty_social_widget extends WP_Widget {
 }
 
 // Register social widget
-function beauty_social_widget_register() {
-    register_widget( 'beauty_social_widget' );
+function cosmetics_social_widget_register() {
+    register_widget( 'cosmetics_social_widget' );
 }
 
-add_action( 'widgets_init', 'beauty_social_widget_register' );
+add_action( 'widgets_init', 'cosmetics_social_widget_register' );

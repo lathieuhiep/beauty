@@ -1,8 +1,8 @@
 <?php
 //Global variable redux
-global $beauty_options;
+global $cosmetics_options;
 
-$beauty_copyright = $beauty_options ['beauty_footer_copyright_editor'] == '' ? 'Copyright &amp; DiepLK' : $beauty_options ['beauty_footer_copyright_editor'];
+$cosmetics_copyright = $cosmetics_options ['cosmetics_footer_copyright_editor'] == '' ? 'Copyright &amp; DiepLK' : $cosmetics_options ['cosmetics_footer_copyright_editor'];
 
 ?>
 
@@ -11,7 +11,7 @@ $beauty_copyright = $beauty_options ['beauty_footer_copyright_editor'] == '' ? '
         <div class="site-copyright-menu d-flex align-items-center">
 
             <div class="site-copyright">
-                <?php echo wp_kses_post( $beauty_copyright ); ?>
+                <?php echo wp_kses_post( $cosmetics_copyright ); ?>
             </div>
 
             <div class="site-footer__menu">
@@ -34,7 +34,7 @@ $beauty_copyright = $beauty_options ['beauty_footer_copyright_editor'] == '' ? '
                         <ul class="main-menu">
                             <li>
                                 <a href="<?php echo get_admin_url().'/nav-menus.php'; ?>">
-                                    <?php esc_html_e( 'ADD TO MENU','beauty' ); ?>
+                                    <?php esc_html_e( 'ADD TO MENU','cosmetics' ); ?>
                                 </a>
                             </li>
                         </ul>

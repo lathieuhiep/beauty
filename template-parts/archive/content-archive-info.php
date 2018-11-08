@@ -12,9 +12,9 @@
     </h2>
 
     <?php
-    beauty_post_formats();
+    cosmetics_post_formats();
 
-    beauty_post_meta();
+    cosmetics_post_meta();
     ?>
 
     <div class="site-post-excerpt">
@@ -29,10 +29,10 @@
         </p>
 
         <a href="<?php the_permalink();?>" class="text-read-more">
-            <?php echo esc_html__('Read more','beauty');?>
+            <?php echo esc_html__('Read more','cosmetics');?>
         </a>
 
-        <?php beauty_link_page(); ?>
+        <?php cosmetics_link_page(); ?>
 
     </div>
 </div>

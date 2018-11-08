@@ -1,26 +1,26 @@
 <?php
 
-global $beauty_options;
+global $cosmetics_options;
 
-$beauty_on_off_share_single = $beauty_options['beauty_on_off_share_single'];
+$cosmetics_on_off_share_single = $cosmetics_options['cosmetics_on_off_share_single'];
 
 ?>
 
 <div id="post-<?php the_ID() ?>" <?php post_class( 'site-post-single-item' ); ?>>
-    <?php beauty_post_formats(); ?>
+    <?php cosmetics_post_formats(); ?>
 
     <div class="site-post-content">
         <h2 class="site-post-title">
             <?php the_title(); ?>
         </h2>
 
-        <?php beauty_post_meta(); ?>
+        <?php cosmetics_post_meta(); ?>
 
         <div class="site-post-excerpt">
             <?php
             the_content();
 
-            beauty_link_page()
+            cosmetics_link_page()
             ?>
         </div>
 
@@ -30,7 +30,7 @@ $beauty_on_off_share_single = $beauty_options['beauty_on_off_share_single'];
 
                 <p class="site-post-category">
                     <?php
-                    esc_html_e('Category: ','beauty');
+                    esc_html_e('Category: ','cosmetics');
                     the_category( ' ' );;
                     ?>
                 </p>
@@ -45,7 +45,7 @@ $beauty_on_off_share_single = $beauty_options['beauty_on_off_share_single'];
 
                 <p class="site-post-tag">
                     <?php
-                    esc_html_e('Tag: ','beauty');
+                    esc_html_e('Tag: ','cosmetics');
                     the_tags('',' ');
                     ?>
                 </p>
@@ -55,10 +55,10 @@ $beauty_on_off_share_single = $beauty_options['beauty_on_off_share_single'];
         </div>
     </div>
 
-    <?php if ( $beauty_on_off_share_single == 1 || $beauty_on_off_share_single == null ) : ?>
+    <?php if ( $cosmetics_on_off_share_single == 1 || $cosmetics_on_off_share_single == null ) : ?>
         <div class="site-post-share">
             <span>
-                <?php  esc_html_e('Share this post:', 'beauty') ; ?>
+                <?php  esc_html_e('Share this post:', 'cosmetics') ; ?>
             </span>
 
             <!-- Facebook Button -->
@@ -66,13 +66,13 @@ $beauty_on_off_share_single = $beauty_options['beauty_on_off_share_single'];
                 <i class="fa fa-facebook"></i>
             </a>
 
-            <a target="_blank" href="https://twitter.com/home?status=Check%20out%20this%20article:%20<?php print beauty_social_title( get_the_title() ); ?>%20-%20<?php the_permalink(); ?>">
+            <a target="_blank" href="https://twitter.com/home?status=Check%20out%20this%20article:%20<?php print cosmetics_social_title( get_the_title() ); ?>%20-%20<?php the_permalink(); ?>">
                 <i class="fa fa-twitter"></i>
             </a>
 
-            <?php $beauty_pin_image = wp_get_attachment_url( get_post_thumbnail_id( get_the_ID() )); ?>
+            <?php $cosmetics_pin_image = wp_get_attachment_url( get_post_thumbnail_id( get_the_ID() )); ?>
 
-            <a data-pin-do="skipLink" target="_blank" href="https://pinterest.com/pin/create/button/?url=<?php the_permalink(); ?>&media=<?php echo esc_url( $beauty_pin_image ); ?>&description=<?php the_title(); ?>">
+            <a data-pin-do="skipLink" target="_blank" href="https://pinterest.com/pin/create/button/?url=<?php the_permalink(); ?>&media=<?php echo esc_url( $cosmetics_pin_image ); ?>&description=<?php the_title(); ?>">
                 <i class="fa fa-pinterest"></i>
             </a>
 
@@ -84,7 +84,7 @@ $beauty_on_off_share_single = $beauty_options['beauty_on_off_share_single'];
 </div>
 
 <?php
-beauty_comment_form();
+cosmetics_comment_form();
 
 get_template_part( 'template-parts/post/inc','related-post' );
 ?>

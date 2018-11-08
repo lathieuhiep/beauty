@@ -12,7 +12,7 @@ while ( have_posts() ) : the_post() ;
         <?php
         the_content();
 
-        beauty_link_page();
+        cosmetics_link_page();
         ?>
 
     </div>

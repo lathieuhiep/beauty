@@ -1,15 +1,15 @@
 <?php
-    global $beauty_options;
+    global $cosmetics_options;
 
-    $beauty_logo_image_id    =   $beauty_options['beauty_logo_image']['id'];
-    $beauty_information_show_hide = $beauty_options['beauty_information_show_hide'] == '' ? 1 : $beauty_options['beauty_information_show_hide'];
+    $cosmetics_logo_image_id    =   $cosmetics_options['cosmetics_logo_image']['id'];
+    $cosmetics_information_show_hide = $cosmetics_options['cosmetics_information_show_hide'] == '' ? 1 : $cosmetics_options['cosmetics_information_show_hide'];
 ?>
 
 <header id="home" class="header">
     <nav id="navigation" class="navbar-expand-lg">
 
         <?php
-        if ( $beauty_information_show_hide == 1 ) :
+        if ( $cosmetics_information_show_hide == 1 ) :
             get_template_part( 'template-parts/header/inc', 'information' );
         endif;
         ?>
@@ -20,8 +20,8 @@
                     <div class="site-logo">
                         <a href="<?php echo esc_url( get_home_url( '/' ) ); ?>" title="<?php bloginfo( 'name' ); ?>">
                             <?php
-                                if ( !empty( $beauty_logo_image_id ) ) :
-                                    echo wp_get_attachment_image( $beauty_logo_image_id, 'full' );
+                                if ( !empty( $cosmetics_logo_image_id ) ) :
+                                    echo wp_get_attachment_image( $cosmetics_logo_image_id, 'full' );
                                 else :
                                     echo'<img class="logo-default" src="'.esc_url( get_theme_file_uri( '/images/logo.png' ) ).'" alt="'.get_bloginfo('title').'" />';
                                 endif;
@@ -52,7 +52,7 @@
                             <ul class="main-menu">
                                 <li>
                                     <a href="<?php echo get_admin_url().'/nav-menus.php'; ?>">
-                                        <?php esc_html_e( 'ADD TO MENU','beauty' ); ?>
+                                        <?php esc_html_e( 'ADD TO MENU','cosmetics' ); ?>
                                     </a>
                                 </li>
                             </ul>

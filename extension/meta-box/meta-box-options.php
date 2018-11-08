@@ -1,20 +1,20 @@
 <?php
 
-add_filter( 'rwmb_meta_boxes', 'beauty_register_meta_boxes' );
+add_filter( 'rwmb_meta_boxes', 'cosmetics_register_meta_boxes' );
 
-function beauty_register_meta_boxes() {
+function cosmetics_register_meta_boxes() {
 
     /* Start meta box post */
-    $beauty_meta_boxes[] = array(
+    $cosmetics_meta_boxes[] = array(
         'id'         => 'post_format_option',
-        'title'      => esc_html__( 'Post Format', 'beauty' ),
+        'title'      => esc_html__( 'Post Format', 'cosmetics' ),
         'post_types' => array( 'post' ),
         'context'    => 'normal',
         'priority'   => 'high',
         'fields' => array(
 
             array(
-                'id'               => 'beauty_gallery_post',
+                'id'               => 'cosmetics_gallery_post',
                 'name'             => 'Gallery',
                 'type'             => 'image_advanced',
                 'force_delete'     => false,
@@ -23,7 +23,7 @@ function beauty_register_meta_boxes() {
             ),
 
             array(
-                'id'            => 'beauty_video_post',
+                'id'            => 'cosmetics_video_post',
                 'name'          => 'Video Or Audio',
                 'type'          => 'oembed',
             ),
@@ -33,6 +33,6 @@ function beauty_register_meta_boxes() {
     );
     /* End meta box post */
 
-    return $beauty_meta_boxes;
+    return $cosmetics_meta_boxes;
 
 }
