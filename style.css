@@ -362,6 +362,10 @@ pre {
   background-color: #ff5555;
 }
 
+.elementor-column-gap-default > .elementor-row > .elementor-column > .elementor-element-populated.elementor-column-wrap {
+  padding: 15px;
+}
+
 /* =WordPress Core
 -------------------------------------------------------------- */
 .alignnone {
@@ -2362,6 +2366,12 @@ section.widget.woocommerce .woocommerce-widget-layered-nav-list .woocommerce-wid
 /**
 # Responsive
 -----------------------------------------------------------------------------*/
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1200px;
+  }
+}
+
 @media (min-width: 992px) and (max-width: 1400px) {
   .site-menu ul li:nth-last-child(1) .sub-menu,
   .site-menu ul li:nth-last-child(2) .sub-menu {
