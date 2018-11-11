@@ -1,0 +1,31 @@
+.element-products-carousel {
+  .owl-item {
+    padding-left: 1px;
+  }
+  .item-product {
+    border: 1px solid $border-color;
+
+    .item-detail {
+      padding: 10px 5px ;
+    }
+    .item-title {
+      font-size: 14px;
+      font-weight: 400;
+      color: $color-primary;
+    }
+    .price {
+      font-weight: 700;
+      font-size: 18px;
+      color: $color-hover;
+
+      del {
+        font-size: 14px;
+        color: #666;
+        font-weight: 400;
+      }
+      ins {
+        text-decoration: none;
+      }
+    }
+  }
+}

@@ -376,7 +376,7 @@ if ( ! function_exists( 'cosmetics_fonts_url' ) ) :
             $cosmetics_font_families = array();
 
             if ( 'off' !== $cosmetics_font_google ) {
-                $cosmetics_font_families[] = 'Roboto:400,700';
+                $cosmetics_font_families[] = 'Roboto:400,500,700';
             }
 
             $cosmetics_query_args = array(

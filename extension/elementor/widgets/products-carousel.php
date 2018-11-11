@@ -251,6 +251,7 @@ class cosmetics_widget_products_carousel extends Widget_Base {
         if ( $query->have_posts() ) :
 
             $settings_data     =   [
+                'margin_item'   =>  8,
                 'number_item'   =>  $settings['item_desktop'],
                 'item_tablet'   =>  $settings['item_tablet'],
                 'item_mobile'   =>  $settings['item_mobile'],
@@ -282,13 +283,15 @@ class cosmetics_widget_products_carousel extends Widget_Base {
                             <?php endif; ?>
                         </div>
 
-                        <h2 class="item-title">
-                            <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-                                <?php the_title(); ?>
-                            </a>
-                        </h2>
+                        <div class="item-detail">
+                            <h2 class="item-title">
+                                <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+                                    <?php the_title(); ?>
+                                </a>
+                            </h2>
 
-                        <?php woocommerce_template_loop_price(); ?>
+                            <?php woocommerce_template_loop_price(); ?>
+                        </div>
                     </div>
 
                 <?php endwhile; wp_reset_postdata(); ?>
