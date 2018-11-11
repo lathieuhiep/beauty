@@ -27,7 +27,7 @@ class cosmetics_plugin_elementor_widgets {
         Plugin::instance()->elements_manager->add_category(
             'cosmetics_widgets',
             [
-                'title' => esc_html__( 'Basic theme Widgets', 'cosmetics' ),
+                'title' => esc_html__( 'Cosmetics theme Widgets', 'cosmetics' ),
                 'icon'  => 'icon-goes-here'
             ]
         );

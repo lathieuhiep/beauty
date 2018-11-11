@@ -334,7 +334,7 @@ class cosmetics_widget_slides extends Widget_Base {
                     ],
                 ],
                 'default' => [
-                    'size' => 400,
+                    'size' => 450,
                 ],
                 'size_units' => [ 'px', 'vh', 'em' ],
                 'selectors' => [

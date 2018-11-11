@@ -13,7 +13,7 @@ function cosmetics_register_taxonomy_product() {
     $taxonomy_labels = array(
 
         'name'              => _x( 'Thương hiệu sản phẩm', 'taxonomy general name', 'cosmetics' ),
-        'singular_name'     => _x( 'Brands category', 'taxonomy singular name', 'cosmetics' ),
+        'singular_name'     => _x( 'Danh mục thương hiệu', 'taxonomy singular name', 'cosmetics' ),
         'search_items'      => __( 'Search template category', 'cosmetics' ),
         'all_items'         => __( 'Tất cả danh mục', 'cosmetics' ),
         'parent_item'       => __( 'Parent category', 'cosmetics' ),
