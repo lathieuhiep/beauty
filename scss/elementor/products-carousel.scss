@@ -1,4 +1,15 @@
 .element-products-carousel {
+  .title {
+    font-size: 16px;
+    padding-right: 70px;
+    border-bottom: 1px solid #e6e6e6;
+
+    span {
+      padding: 0 0 8px;
+      display: inline-block;
+      border-bottom: 3px solid $color-hover;
+    }
+  }
   .owl-item {
     padding-left: 1px;
   }
@@ -25,6 +36,18 @@
       }
       ins {
         text-decoration: none;
+      }
+    }
+  }
+  .item-box-products {
+    position: relative;
+
+    &.owl-carousel {
+      .owl-nav {
+        position: absolute;
+        margin: 0;
+        top: -50px;
+        right: 0;
       }
     }
   }

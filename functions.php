@@ -251,6 +251,8 @@ function cosmetics_register_front_end() {
         wp_enqueue_script( 'comment-reply' );
     }
 
+    wp_register_script( 'jquery-countdown', get_theme_file_uri( '/js/library/jquery.countdown.min.js' ), array(), '2.2.0', true );
+
     wp_enqueue_script( 'cosmetics-custom', get_theme_file_uri( '/js/custom.js' ), array(), '1.0.0', true );
 
     /*

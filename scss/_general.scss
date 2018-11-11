@@ -19,7 +19,7 @@ body {
   flex: 1 0 auto;
 }
 h1, h2, h3, h4, h5, h6 {
-  margin: 0 0 15px;
+  margin: 0 0 20px;
   font-weight: $font-weight-bold;
   color: $color-title;
 }
@@ -227,9 +227,13 @@ pre {
       &.owl-prev {
         display: inline-block;
         margin: 0 5px;
-        padding: 5px 15px !important;
-        background-color: #ff5555;
-        @include border-radius(5px);
+        padding: 0 !important;
+        width: 24px;
+        height: 24px;
+        text-align: center;
+        line-height: 24px;
+        background-color: #a3a3a3;
+        @include border-radius(0);
         @include transition(all 0.4s ease-in-out);
 
         &:hover {
@@ -238,7 +242,7 @@ pre {
       }
       i.fa {
         color: #ffffff;
-        font-size: 20px;
+        font-size: 16px;
         line-height: inherit;
         @include transition(all 0.4s ease-in-out);
       }

@@ -23,7 +23,7 @@ class cosmetics_widget_products_carousel extends Widget_Base {
     }
 
     public function get_script_depends() {
-        return ['cosmetics-elementor-custom'];
+        return ['jquery-countdown', 'cosmetics-elementor-custom'];
     }
 
     protected function _register_controls() {
@@ -109,6 +109,31 @@ class cosmetics_widget_products_carousel extends Widget_Base {
                     'ASC'   =>  esc_html__( 'Sắp xếp tăng dần', 'cosmetics' ),
                     'DESC'  =>  esc_html__( 'Sắp xếp giảm dần', 'cosmetics' ),
                 ],
+            ]
+        );
+
+        $this->end_controls_section();
+
+        /* Section Countdown */
+        $this->start_controls_section(
+            'section_countdown',
+            [
+                'label' => esc_html__( 'Kết thúc khuyến mãi', 'cosmetics' ),
+                'tab' => Controls_Manager::SECTION,
+                'condition'    =>  [
+                    'select_get_product'   =>  'product_on_sale'
+                ]
+            ]
+        );
+
+        $this->add_control(
+            'countdown_date',
+            [
+                'label'             =>  esc_html__( 'Ngày giờ kết thúc', 'cosmetics' ),
+                'type'              =>  Controls_Manager::DATE_TIME,
+                'picker_options'    =>  array(
+                    'enableSeconds' =>  true
+                )
             ]
         );
 
@@ -263,11 +288,19 @@ class cosmetics_widget_products_carousel extends Widget_Base {
     ?>
 
         <div class="element-products-carousel">
-            <?php if ( !empty( $settings['title'] ) ) : ?>
-                <h4 class="title">
+            <h4 class="title">
+                <span>
                     <?php echo esc_html( $settings['title'] ); ?>
-                </h4>
-            <?php endif; ?>
+                </span>
+            </h4>
+
+            <div class="deals-of-countdown-product">
+                <span class="title-countdown">
+                    <?php esc_html_e( 'Kết thúc', 'cosmetics' ); ?>
+                </span>
+
+                <div class="count-down-time-product" data-countdown="2018/11/12 23:59:59"></div>
+            </div>
 
             <div class="item-box-products owl-carousel owl-theme" data-settings='<?php echo esc_attr( wp_json_encode( $settings_data ) ); ?>'>
                 <?php while ( $query->have_posts() ): $query->the_post(); ?>
