@@ -1,14 +1,42 @@
 .element-products-carousel {
+  .header {
+    padding-right: 80px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #e6e6e6;
+  }
+
+  .deals-of-countdown-product {
+    .title-countdown {
+      display: inline-block;
+      margin-right: 10px;
+    }
+    .count-down-time-product {
+      display: inline-block;
+
+      .box-count {
+        display: inline-block;
+        margin-right: 10px;
+
+        &:last-child {
+          margin-right: 0;
+        }
+
+        span {
+          display: inline-block;
+
+          &.number {
+            margin-right: 3px;
+          }
+        }
+      }
+    }
+  }
   .title {
     font-size: 16px;
-    padding-right: 70px;
-    border-bottom: 1px solid #e6e6e6;
-
-    span {
-      padding: 0 0 8px;
-      display: inline-block;
-      border-bottom: 3px solid $color-hover;
-    }
+    margin: 0;
+    padding-bottom: 5px;
+    line-height: 1.5em;
+    border-bottom: 3px solid $color-hover;
   }
   .owl-item {
     padding-left: 1px;
@@ -23,6 +51,9 @@
       font-size: 14px;
       font-weight: 400;
       color: $color-primary;
+      line-height: 1.5em;
+      height: 3em;
+      overflow: hidden;
     }
     .price {
       font-weight: 700;

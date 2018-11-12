@@ -1765,15 +1765,43 @@ section.widget.woocommerce .woocommerce-widget-layered-nav-list .woocommerce-wid
 }
 
 /* Products Carousel */
-.element-products-carousel .title {
-  font-size: 16px;
-  padding-right: 70px;
+.element-products-carousel .header {
+  padding-right: 80px;
+  margin-bottom: 20px;
   border-bottom: 1px solid #e6e6e6;
 }
 
-.element-products-carousel .title span {
-  padding: 0 0 8px;
+.element-products-carousel .deals-of-countdown-product .title-countdown {
   display: inline-block;
+  margin-right: 10px;
+}
+
+.element-products-carousel .deals-of-countdown-product .count-down-time-product {
+  display: inline-block;
+}
+
+.element-products-carousel .deals-of-countdown-product .count-down-time-product .box-count {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.element-products-carousel .deals-of-countdown-product .count-down-time-product .box-count:last-child {
+  margin-right: 0;
+}
+
+.element-products-carousel .deals-of-countdown-product .count-down-time-product .box-count span {
+  display: inline-block;
+}
+
+.element-products-carousel .deals-of-countdown-product .count-down-time-product .box-count span.number {
+  margin-right: 3px;
+}
+
+.element-products-carousel .title {
+  font-size: 16px;
+  margin: 0;
+  padding-bottom: 5px;
+  line-height: 1.5em;
   border-bottom: 3px solid #199427;
 }
 
@@ -1793,6 +1821,9 @@ section.widget.woocommerce .woocommerce-widget-layered-nav-list .woocommerce-wid
   font-size: 14px;
   font-weight: 400;
   color: #666666;
+  line-height: 1.5em;
+  height: 3em;
+  overflow: hidden;
 }
 
 .element-products-carousel .item-product .price {

@@ -95,6 +95,7 @@ class cosmetics_widget_products_carousel extends Widget_Base {
                     'id'    =>  esc_html__( 'ID', 'cosmetics' ),
                     'title' =>  esc_html__( 'Tên sản phẩm', 'cosmetics' ),
                     'date'  =>  esc_html__( 'Ngày đăng', 'cosmetics' ),
+                    'rand' =>  esc_html__( 'Random', 'cosmetics' ),
                 ],
             ]
         );
@@ -288,18 +289,20 @@ class cosmetics_widget_products_carousel extends Widget_Base {
     ?>
 
         <div class="element-products-carousel">
-            <h4 class="title">
-                <span>
+            <div class="header d-flex justify-content-between align-items-center">
+                <h4 class="title">
                     <?php echo esc_html( $settings['title'] ); ?>
-                </span>
-            </h4>
+                </h4>
 
-            <div class="deals-of-countdown-product">
-                <span class="title-countdown">
-                    <?php esc_html_e( 'Kết thúc', 'cosmetics' ); ?>
-                </span>
+                <?php if ( $settings['select_get_product'] == 'product_on_sale' )  : ?>
+                    <div class="deals-of-countdown-product">
+                        <span class="title-countdown">
+                            <?php esc_html_e( 'Kết thúc:', 'cosmetics' ); ?>
+                        </span>
 
-                <div class="count-down-time-product" data-countdown="2018/11/12 23:59:59"></div>
+                        <div class="count-down-time-product" data-countdown="<?php echo esc_attr(  $settings['countdown_date'] ); ?>"></div>
+                    </div>
+                <?php endif; ?>
             </div>
 
             <div class="item-box-products owl-carousel owl-theme" data-settings='<?php echo esc_attr( wp_json_encode( $settings_data ) ); ?>'>
@@ -314,6 +317,13 @@ class cosmetics_widget_products_carousel extends Widget_Base {
                             ?>
                                 <img src="<?php echo esc_url( get_theme_file_uri( '/images/no-image.png' ) ); ?>" alt="<?php the_title(); ?>">
                             <?php endif; ?>
+
+                            <div class="item-add-cart">
+                                <?php
+                                do_action( 'woocommerce_before_shop_loop_item' );
+                                do_action( 'woocommerce_after_shop_loop_item' );
+                                ?>
+                            </div>
                         </div>
 
                         <div class="item-detail">
@@ -335,8 +345,6 @@ class cosmetics_widget_products_carousel extends Widget_Base {
 
         endif;
     }
-
-    protected function _content_template() {}
 
 }
 
