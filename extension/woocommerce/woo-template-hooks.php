@@ -79,3 +79,7 @@ add_action( 'woocommerce_after_single_product_summary', 'cosmetics_woo_after_sin
 
 add_action( 'woocommerce_after_single_product', 'cosmetics_woo_after_single_product', 30 );
 
+/*
+ * Addons Elementor
+ * */
+add_action( 'woo_elementor_add_to_cart', 'woocommerce_template_loop_add_to_cart', 5 );

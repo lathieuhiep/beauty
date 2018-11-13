@@ -36,11 +36,22 @@
     };
     /* End element slider */
 
+    /* Start element partners */
+    let ElementPartners   =   function( $scope, $ ) {
+
+        let element_partners  =   $scope.find('.element-partners__logo');
+
+        $( document ).general_multi_owlCarouse( element_partners );
+
+    };
+    /* End element partners */
+
     $( window ).on( 'elementor/frontend/init', function() {
 
         /* Element slider */
         elementorFrontend.hooks.addAction( 'frontend/element_ready/cosmetics-slides.default', ElementCarouselSlider  );
         elementorFrontend.hooks.addAction( 'frontend/element_ready/cosmetics-products-carousel.default', ElementProductlSlider  );
+        elementorFrontend.hooks.addAction( 'frontend/element_ready/cosmetics-partners.default', ElementPartners  );
 
     } );
 

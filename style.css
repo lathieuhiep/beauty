@@ -24,6 +24,7 @@ Text Domain: cosmetics
 ## Elementor
   ## Slider
   ## Products Carousel
+  ## Partners
 ## Shop Woocommerce
 # Footer
 # Responsive
@@ -1813,6 +1814,18 @@ section.widget.woocommerce .woocommerce-widget-layered-nav-list .woocommerce-wid
   border: 1px solid #eeeeee;
 }
 
+.element-products-carousel .item-product .item-thumbnail {
+  position: relative;
+  overflow: hidden;
+}
+
+.element-products-carousel .item-product .item-thumbnail img {
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
 .element-products-carousel .item-product .item-detail {
   padding: 10px 5px;
 }
@@ -1842,6 +1855,18 @@ section.widget.woocommerce .woocommerce-widget-layered-nav-list .woocommerce-wid
   text-decoration: none;
 }
 
+.element-products-carousel .item-product:hover .item-thumbnail img {
+  -webkit-transform: scale(1.15);
+  -moz-transform: scale(1.15);
+  -o-transform: scale(1.15);
+  -ms-transform: scale(1.15);
+  transform: scale(1.15);
+}
+
+.element-products-carousel .item-product:hover .item-thumbnail .item-add-cart {
+  bottom: 0;
+}
+
 .element-products-carousel .item-box-products {
   position: relative;
 }
@@ -1851,6 +1876,95 @@ section.widget.woocommerce .woocommerce-widget-layered-nav-list .woocommerce-wid
   margin: 0;
   top: -50px;
   right: 0;
+}
+
+.item-add-cart {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: -50px;
+  padding: 5px;
+  text-align: center;
+  background-color: rgba(51, 51, 51, 0.5);
+  z-index: 2;
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+.item-add-cart a {
+  position: relative;
+  display: inline-block;
+  color: #ffffff;
+}
+
+.item-add-cart a.add_to_cart_button:before {
+  position: absolute;
+  content: "\f07a";
+  font-weight: 900;
+  top: -2px;
+  left: -22px;
+  font-family: 'Font Awesome 5 Free';
+}
+
+.item-add-cart a.add_to_cart_button.loading:after {
+  position: absolute;
+  content: "\f013";
+  top: 0;
+  left: 50%;
+  font-weight: 900;
+  font-family: 'Font Awesome 5 Free';
+  -webkit-animation: fa-spin 2s infinite linear;
+  animation: fa-spin 2s infinite linear;
+}
+
+.item-add-cart a.added_to_cart {
+  font-size: 0;
+}
+
+.item-add-cart a.added_to_cart:before {
+  position: absolute;
+  content: "\f061";
+  top: -4px;
+  left: 8px;
+  font-weight: 900;
+  font-size: 11px;
+  font-family: 'Font Awesome 5 Free';
+}
+
+.item-add-cart:hover {
+  background-color: #199427;
+}
+
+/* Partners */
+.element-partners .title {
+  font-size: 16px;
+  font-weight: 500;
+  color: #555555;
+  text-align: center;
+  border-bottom: 1px solid #eeeeee;
+  letter-spacing: 2px;
+}
+
+.element-partners .title span {
+  display: inline-block;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #000000;
+}
+
+.element-partners__logo .logo-item {
+  text-align: center;
+}
+
+.element-partners__logo .logo-item a {
+  display: inline-block;
+}
+
+.element-partners__logo .logo-item img {
+  display: inline-block;
+  max-width: 100%;
+  width: auto;
 }
 
 /**

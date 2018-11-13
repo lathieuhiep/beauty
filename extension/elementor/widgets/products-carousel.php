@@ -319,10 +319,7 @@ class cosmetics_widget_products_carousel extends Widget_Base {
                             <?php endif; ?>
 
                             <div class="item-add-cart">
-                                <?php
-                                do_action( 'woocommerce_before_shop_loop_item' );
-                                do_action( 'woocommerce_after_shop_loop_item' );
-                                ?>
+                                <?php do_action( 'woo_elementor_add_to_cart' ); ?>
                             </div>
                         </div>
 

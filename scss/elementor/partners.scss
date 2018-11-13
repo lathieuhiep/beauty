@@ -1,0 +1,30 @@
+.element-partners {
+  .title {
+    font-size: 16px;
+    font-weight: 500;
+    color: #555555;
+    text-align: center;
+    border-bottom: 1px solid $border-color;
+    letter-spacing: 2px;
+
+    span {
+      display: inline-block;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #000000;
+    }
+  }
+}
+.element-partners__logo {
+  .logo-item {
+    text-align: center;
+
+    a {
+      display: inline-block;
+    }
+    img {
+      display: inline-block;
+      max-width: 100%;
+      width: auto;
+    }
+  }
+}

@@ -175,7 +175,7 @@
                     autoplaySpeed: 800,
                     navSpeed: 800,
                     dotsSpeed: 800,
-                    smartSpeed: 800,
+                    smartSpeed: 600,
                     autoHeight:true,
                     responsive:{
                         0:{
