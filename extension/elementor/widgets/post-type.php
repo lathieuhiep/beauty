@@ -15,11 +15,15 @@ class cosmetics_post_type extends Widget_Base {
     }
 
     public function get_title() {
-        return esc_html__( 'Basic theme Post Type', 'cosmetics' );
+        return esc_html__( 'Bài viết', 'cosmetics' );
     }
 
     public function get_icon() {
         return ' eicon-post';
+    }
+
+    public function get_script_depends() {
+        return ['cosmetics-elementor-custom'];
     }
 
     protected function _register_controls() {
@@ -27,39 +31,24 @@ class cosmetics_post_type extends Widget_Base {
         $this->start_controls_section(
             'section_post_type',
             [
-                'label' =>  esc_html__( 'Post Type', 'cosmetics' )
+                'label' =>  esc_html__( 'Bài viết', 'cosmetics' )
             ]
         );
 
         $this->add_control(
-            'post_type_title',
+            'heading',
             [
-                'label'         =>  esc_html__( 'Title', 'cosmetics' ),
+                'label'         =>  esc_html__( 'Tiêu đề', 'cosmetics' ),
                 'type'          =>  Controls_Manager::TEXT,
-                'default'       =>  esc_html__( 'Post', 'cosmetics' ),
+                'default'       =>  esc_html__( 'THÔNG TIN NỔI BẬT', 'cosmetics' ),
                 'label_block'   =>  true
             ]
         );
 
         $this->add_control(
-            'post_type__column_number',
+            'select_cat',
             [
-                'label'     =>  esc_html__( 'Column', 'cosmetics' ),
-                'type'      =>  Controls_Manager::SELECT,
-                'default'   =>  3,
-                'options'   =>  [
-                    4   =>  esc_html__( '4 Column', 'cosmetics' ),
-                    3   =>  esc_html__( '3 Column', 'cosmetics' ),
-                    2   =>  esc_html__( '2 Column', 'cosmetics' ),
-                    1   =>  esc_html__( '1 Column', 'cosmetics' ),
-                ],
-            ]
-        );
-
-        $this->add_control(
-            'post_type_select_cat',
-            [
-                'label'         =>  esc_html__( 'Select Category Post', 'cosmetics' ),
+                'label'         =>  esc_html__( 'Chọn danh mục', 'cosmetics' ),
                 'type'          =>  Controls_Manager::SELECT2,
                 'options'       =>  cosmetics_check_get_cat( 'category' ),
                 'multiple'      =>  true,
@@ -68,11 +57,11 @@ class cosmetics_post_type extends Widget_Base {
         );
 
         $this->add_control(
-            'post_type_limit',
+            'limit',
             [
-                'label'     =>  esc_html__( 'Number of Posts', 'cosmetics' ),
+                'label'     =>  esc_html__( 'Số bài viết lấy ra', 'cosmetics' ),
                 'type'      =>  Controls_Manager::NUMBER,
-                'default'   =>  6,
+                'default'   =>  8,
                 'min'       =>  1,
                 'max'       =>  100,
                 'step'      =>  1,
@@ -80,32 +69,120 @@ class cosmetics_post_type extends Widget_Base {
         );
 
         $this->add_control(
-            'post_type_order_by',
+            'order_by',
             [
-                'label'     =>  esc_html__( 'Order By', 'cosmetics' ),
+                'label'     =>  esc_html__( 'Sắp xếp theo', 'cosmetics' ),
                 'type'      =>  Controls_Manager::SELECT,
                 'default'   =>  'id',
                 'options'   =>  [
-                    'id'            =>  esc_html__( 'Post ID', 'cosmetics' ),
-                    'author'        =>  esc_html__( 'Post Author', 'cosmetics' ),
-                    'title'         =>  esc_html__( 'Title', 'cosmetics' ),
-                    'date'          =>  esc_html__( 'Date', 'cosmetics' ),
+                    'id'            =>  esc_html__( 'ID', 'cosmetics' ),
+                    'title'         =>  esc_html__( 'Tên sản phẩm', 'cosmetics' ),
+                    'date'          =>  esc_html__( 'Ngày đăng', 'cosmetics' ),
                     'rand'          =>  esc_html__( 'Random', 'cosmetics' ),
-                    'comment_count' =>  esc_html__( 'Comment count', 'cosmetics' ),
                 ],
             ]
         );
 
         $this->add_control(
-            'post_type_order',
+            'order',
             [
-                'label'     =>  esc_html__( 'Order', 'cosmetics' ),
+                'label'     =>  esc_html__( 'Sắp xếp', 'cosmetics' ),
                 'type'      =>  Controls_Manager::SELECT,
                 'default'   =>  'ASC',
                 'options'   =>  [
-                    'ASC'   =>  esc_html__( 'Ascending', 'cosmetics' ),
-                    'DESC'  =>  esc_html__( 'Descending', 'cosmetics' ),
+                    'ASC'   =>  esc_html__( 'Sắp xếp tăng dần', 'cosmetics' ),
+                    'DESC'  =>  esc_html__( 'Sắp xếp giảm dần', 'cosmetics' ),
                 ],
+            ]
+        );
+
+        $this->add_control(
+            'excerpt_length',
+            [
+                'label'     =>  esc_html__( 'Excerpt Words', 'cosmetics' ),
+                'type'      =>  Controls_Manager::NUMBER,
+                'default'   =>  '22',
+            ]
+        );
+
+        $this->end_controls_section();
+
+        /* Section Slides */
+        $this->start_controls_section(
+            'section_slides',
+            [
+                'label' =>  esc_html__( 'Cài đặt Slides', 'cosmetics' )
+            ]
+        );
+
+        $this->add_control(
+            'item_desktop',
+            [
+                'label'     =>  esc_html__( 'Bài viết trên một hàng( Desktop )', 'event_conference' ),
+                'type'      =>  Controls_Manager::NUMBER,
+                'default'   =>  4,
+                'min'       =>  1,
+                'max'       =>  100,
+                'step'      =>  1,
+            ]
+        );
+
+        $this->add_control(
+            'item_tablet',
+            [
+                'label'     =>  esc_html__( 'Bài viết trên một hàng( Tablet )', 'event_conference' ),
+                'type'      =>  Controls_Manager::NUMBER,
+                'default'   =>  3,
+                'min'       =>  1,
+                'max'       =>  100,
+                'step'      =>  1,
+            ]
+        );
+
+        $this->add_control(
+            'item_mobile',
+            [
+                'label'     =>  esc_html__( 'Bài viết trên một hàng( Mobile )', 'event_conference' ),
+                'type'      =>  Controls_Manager::NUMBER,
+                'default'   =>  1,
+                'min'       =>  1,
+                'max'       =>  100,
+                'step'      =>  1,
+            ]
+        );
+
+        $this->add_control(
+            'loop',
+            [
+                'type'          =>  Controls_Manager::SWITCHER,
+                'label'         =>  esc_html__('Vòng lặp ?', 'event_conference'),
+                'label_off'     =>  esc_html__('Không', 'event_conference'),
+                'label_on'      =>  esc_html__('Có', 'event_conference'),
+                'return_value'  =>  'yes',
+                'default'       =>  'yes',
+            ]
+        );
+        $this->add_control(
+            'autoplay',
+            [
+                'label'         => esc_html__('Tự động chạy ?', 'event_conference'),
+                'type'          => Controls_Manager::SWITCHER,
+                'label_off'     => esc_html__('Không', 'event_conference'),
+                'label_on'      => esc_html__('Có', 'event_conference'),
+                'return_value'  => 'yes',
+                'default'       => 'no',
+            ]
+        );
+
+        $this->add_control(
+            'nav',
+            [
+                'label'         => esc_html__('Nav Slider', 'event_conference'),
+                'type'          => Controls_Manager::SWITCHER,
+                'label_on'      => esc_html__('Có', 'event_conference'),
+                'label_off'     => esc_html__('Không', 'event_conference'),
+                'return_value'  => 'yes',
+                'default'       => 'yes',
             ]
         );
 
@@ -115,29 +192,29 @@ class cosmetics_post_type extends Widget_Base {
 
     protected function render() {
 
-        $settings       =   $this->get_settings_for_display();
-        $cat_post       =   $settings['post_type_select_cat'];
-        $limit_post     =   $settings['post_type_limit'];
-        $order_by_post  =   $settings['post_type_order_by'];
-        $order_post     =   $settings['post_type_order'];
+        $settings   =   $this->get_settings_for_display();
+        $select_cat =   $settings['select_cat'];
+        $limit      =   $settings['limit'];
+        $order_by   =   $settings['order_by'];
+        $order      =   $settings['order'];
 
-        if ( !empty( $cat_post ) ) :
+        if ( !empty( $select_cat ) ) :
 
             $cosmetics_post_type_arg = array(
                 'post_type'         =>  'post',
-                'posts_per_page'    =>  $limit_post,
-                'orderby'           =>  $order_by_post,
-                'order'             =>  $order_post,
-                'cat'               =>  $cat_post
+                'posts_per_page'    =>  $limit,
+                'orderby'           =>  $order_by,
+                'order'             =>  $order,
+                'cat'               =>  $select_cat
             );
 
         else:
 
             $cosmetics_post_type_arg = array(
                 'post_type'         =>  'post',
-                'posts_per_page'    =>  $limit_post,
-                'orderby'           =>  $order_by_post,
-                'order'             =>  $order_post
+                'posts_per_page'    =>  $limit,
+                'orderby'           =>  $order_by,
+                'order'             =>  $order,
             );
 
         endif;
@@ -146,18 +223,64 @@ class cosmetics_post_type extends Widget_Base {
 
         if ( $cosmetics_post_type_query->have_posts() ) :
 
+            $settings_data     =   [
+                'margin_item'   =>  30,
+                'number_item'   =>  $settings['item_desktop'],
+                'item_tablet'   =>  $settings['item_tablet'],
+                'item_mobile'   =>  $settings['item_mobile'],
+                'loop'          =>  ( 'yes' === $settings['loop'] ),
+                'autoplay'      =>  ( 'yes' === $settings['autoplay'] ),
+                'nav'           =>  ( 'yes' === $settings['nav'] ),
+            ];
+
     ?>
 
-        <div class="elementor-post-type">
+        <div class="element-post-type">
+            <h4 class="element-heading-global">
+                <span>
+                    <?php echo esc_html( $settings['heading'] ); ?>
+                </span>
+            </h4>
 
-            <?php while ( $cosmetics_post_type_query->have_posts() ): $cosmetics_post_type_query->the_post(); ?>
+            <div class="element-post-carousel owl-carousel owl-theme" data-settings='<?php echo esc_attr( wp_json_encode( $settings_data ) ); ?>'>
+                <?php while ( $cosmetics_post_type_query->have_posts() ): $cosmetics_post_type_query->the_post(); ?>
 
-                <h3>
-                    <?php the_title(); ?>
-                </h3>
+                    <div class="item-post">
+                        <div class="item-post__image">
+                            <?php
+                            if ( has_post_thumbnail() ) :
+                                the_post_thumbnail( 'large' );
+                            else:
+                            ?>
 
-            <?php endwhile; wp_reset_postdata(); ?>
+                                <img src="<?php echo esc_url( get_theme_file_uri( '/images/no-image.png' ) ) ?>" alt="<?php the_title(); ?>" />
 
+                            <?php endif; ?>
+                        </div>
+
+                        <div class="item-post__detail">
+                            <h4 class="item-post__title">
+                                <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+                                    <?php the_title(); ?>
+                                </a>
+                            </h4>
+
+                            <div class="item-post__des">
+                                <p>
+                                    <?php
+                                    if ( has_excerpt() ) :
+                                        echo esc_html( wp_trim_words( get_the_excerpt(), $settings['excerpt_length'], '...' ) );
+                                    else:
+                                        echo esc_html( wp_trim_words( get_the_content(), $settings['excerpt_length'], '...' ) );
+                                    endif;
+                                    ?>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                <?php endwhile; wp_reset_postdata(); ?>
+            </div>
         </div>
 
     <?php

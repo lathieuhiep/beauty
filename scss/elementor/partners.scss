@@ -1,17 +1,15 @@
-.element-partners {
-  .title {
-    font-size: 16px;
-    font-weight: 500;
-    color: #555555;
-    text-align: center;
-    border-bottom: 1px solid $border-color;
-    letter-spacing: 2px;
+.element-heading-global {
+  font-size: 16px;
+  font-weight: 500;
+  color: #555555;
+  text-align: center;
+  border-bottom: 1px solid $border-color;
+  letter-spacing: 2px;
 
-    span {
-      display: inline-block;
-      padding-bottom: 10px;
-      border-bottom: 1px solid #000000;
-    }
+  span {
+    display: inline-block;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #000000;
   }
 }
 .element-partners__logo {
@@ -25,6 +23,22 @@
       display: inline-block;
       max-width: 100%;
       width: auto;
+    }
+  }
+  .owl-nav {
+    margin: 0;
+
+    .owl-prev,
+    .owl-next {
+      position: absolute;
+      top: 50%;
+      @include transform( translateY(-50%) );
+    }
+    .owl-prev {
+      left: 0;
+    }
+    .owl-next {
+      right: 0;
     }
   }
 }

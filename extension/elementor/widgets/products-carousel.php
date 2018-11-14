@@ -103,7 +103,7 @@ class cosmetics_widget_products_carousel extends Widget_Base {
         $this->add_control(
             'order',
             [
-                'label'     =>  esc_html__( 'Order', 'cosmetics' ),
+                'label'     =>  esc_html__( 'Sắp xếp', 'cosmetics' ),
                 'type'      =>  Controls_Manager::SELECT,
                 'default'   =>  'ASC',
                 'options'   =>  [
@@ -202,7 +202,7 @@ class cosmetics_widget_products_carousel extends Widget_Base {
                 'type'          => Controls_Manager::SWITCHER,
                 'label_off'     => esc_html__('Không', 'event_conference'),
                 'label_on'      => esc_html__('Có', 'event_conference'),
-                'return_value'  => 'no',
+                'return_value'  => 'yes',
                 'default'       => 'no',
             ]
         );

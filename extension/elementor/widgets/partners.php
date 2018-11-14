@@ -111,148 +111,87 @@ class cosmetics_widget_partners extends Widget_Base {
 
         $this->end_controls_section();
 
-        /*STYLE TAB*/
+        /* Section Slides */
         $this->start_controls_section(
-            'section_style_title',
+            'section_slides',
             [
-                'label' => esc_html__( 'Title', 'cosmetics' ),
-                'tab' => Controls_Manager::TAB_STYLE,
+                'label' =>  esc_html__( 'Cài đặt Slides', 'cosmetics' )
             ]
         );
 
         $this->add_control(
-            'title_color',
+            'item_desktop',
             [
-                'label'     =>  __( 'Title Color', 'cosmetics' ),
-                'type'      =>  Controls_Manager::COLOR,
-                'selectors' =>  [
-                    '{{WRAPPER}} .element-partners .element-partners__content .title' => 'color: {{VALUE}}',
-                ],
+                'label'     =>  esc_html__( 'Thương Hiệu trên một hàng( Desktop )', 'event_conference' ),
+                'type'      =>  Controls_Manager::NUMBER,
+                'default'   =>  5,
+                'min'       =>  1,
+                'max'       =>  100,
+                'step'      =>  1,
             ]
         );
 
-        $this->add_group_control(
-            Group_Control_Typography::get_type(),
+        $this->add_control(
+            'item_tablet',
             [
-                'name' => 'title_typography',
-                'scheme' => Scheme_Typography::TYPOGRAPHY_1,
-                'selector' => '{{WRAPPER}} .element-partners .element-partners__content .title',
+                'label'     =>  esc_html__( 'Thương Hiệu trên một hàng( Tablet )', 'event_conference' ),
+                'type'      =>  Controls_Manager::NUMBER,
+                'default'   =>  3,
+                'min'       =>  1,
+                'max'       =>  100,
+                'step'      =>  1,
+            ]
+        );
+
+        $this->add_control(
+            'item_mobile',
+            [
+                'label'     =>  esc_html__( 'Thương Hiệu trên một hàng( Mobile )', 'event_conference' ),
+                'type'      =>  Controls_Manager::NUMBER,
+                'default'   =>  1,
+                'min'       =>  1,
+                'max'       =>  100,
+                'step'      =>  1,
+            ]
+        );
+
+        $this->add_control(
+            'loop',
+            [
+                'type'          =>  Controls_Manager::SWITCHER,
+                'label'         =>  esc_html__('Vòng lặp ?', 'event_conference'),
+                'label_off'     =>  esc_html__('Không', 'event_conference'),
+                'label_on'      =>  esc_html__('Có', 'event_conference'),
+                'return_value'  =>  'yes',
+                'default'       =>  'yes',
+            ]
+        );
+        $this->add_control(
+            'autoplay',
+            [
+                'label'         => esc_html__('Tự động chạy ?', 'event_conference'),
+                'type'          => Controls_Manager::SWITCHER,
+                'label_off'     => esc_html__('Không', 'event_conference'),
+                'label_on'      => esc_html__('Có', 'event_conference'),
+                'return_value'  => 'yes',
+                'default'       => 'no',
+            ]
+        );
+
+        $this->add_control(
+            'nav',
+            [
+                'label'         => esc_html__('Nav Slider', 'event_conference'),
+                'type'          => Controls_Manager::SWITCHER,
+                'label_on'      => esc_html__('Có', 'event_conference'),
+                'label_off'     => esc_html__('Không', 'event_conference'),
+                'return_value'  => 'yes',
+                'default'       => 'yes',
             ]
         );
 
         $this->end_controls_section();
-
-        $this->start_controls_section(
-            'section_style_sub_title',
-            [
-                'label' => esc_html__( 'Sub Title', 'cosmetics' ),
-                'tab' => Controls_Manager::TAB_STYLE,
-            ]
-        );
-
-        $this->add_control(
-            'sub_title_color',
-            [
-                'label'     =>  __( 'Sub Title Color', 'cosmetics' ),
-                'type'      =>  Controls_Manager::COLOR,
-                'selectors' =>  [
-                    '{{WRAPPER}} .element-partners .element-partners__content .sub-title' => 'color: {{VALUE}}',
-                ],
-            ]
-        );
-
-        $this->add_group_control(
-            Group_Control_Typography::get_type(),
-            [
-                'name' => 'sub_title_typography',
-                'scheme' => Scheme_Typography::TYPOGRAPHY_1,
-                'selector' => '{{WRAPPER}} .element-partners .element-partners__content .sub-title',
-            ]
-        );
-
-        $this->end_controls_section();
-
-        $this->start_controls_section(
-            'section_style_description',
-            [
-                'label' => esc_html__( 'Description', 'cosmetics' ),
-                'tab' => Controls_Manager::TAB_STYLE,
-            ]
-        );
-
-        $this->add_control(
-            'description_color',
-            [
-                'label'     =>  __( 'Description Color', 'cosmetics' ),
-                'type'      =>  Controls_Manager::COLOR,
-                'selectors' =>  [
-                    '{{WRAPPER}} .element-partners .element-partners__content .description' => 'color: {{VALUE}}',
-                ],
-            ]
-        );
-
-        $this->add_group_control(
-            Group_Control_Typography::get_type(),
-            [
-                'name' => 'description_typography',
-                'scheme' => Scheme_Typography::TYPOGRAPHY_1,
-                'selector' => '{{WRAPPER}} .element-partners .element-partners__content .description',
-            ]
-        );
-
-        $this->end_controls_section();
-
-        $this->start_controls_section(
-            'section_style_text_link',
-            [
-                'label' => esc_html__( 'Text Link', 'cosmetics' ),
-                'tab' => Controls_Manager::TAB_STYLE,
-            ]
-        );
-
-        $this->add_control(
-            'text_link_color',
-            [
-                'label'     =>  __( 'Text Link Color', 'cosmetics' ),
-                'type'      =>  Controls_Manager::COLOR,
-                'selectors' =>  [
-                    '{{WRAPPER}} .element-partners .element-partners__content .link-text' => 'color: {{VALUE}}; border-color: {{VALUE}};',
-                ],
-            ]
-        );
-
-        $this->add_control(
-            'text_link_hover_color',
-            [
-                'label'     =>  __( 'Text Link Hover Color', 'cosmetics' ),
-                'type'      =>  Controls_Manager::COLOR,
-                'selectors' =>  [
-                    '{{WRAPPER}} .element-partners .element-partners__content .link-text:hover' => 'color: {{VALUE}};',
-                ],
-            ]
-        );
-
-        $this->add_control(
-            'text_link_hover_background',
-            [
-                'label'     =>  __( 'Text Link Hover Background', 'cosmetics' ),
-                'type'      =>  Controls_Manager::COLOR,
-                'selectors' =>  [
-                    '{{WRAPPER}} .element-partners .element-partners__content .link-text:hover' => 'border-color: {{VALUE}}; background-color: {{VALUE}};',
-                ],
-            ]
-        );
-
-        $this->add_group_control(
-            Group_Control_Typography::get_type(),
-            [
-                'name' => 'text_link_typography',
-                'scheme' => Scheme_Typography::TYPOGRAPHY_1,
-                'selector' => '{{WRAPPER}} .element-partners .element-partners__content .link-text',
-            ]
-        );
-
-        $this->end_controls_section();
+        /* End Section Slides */
 
     }
 
@@ -264,15 +203,18 @@ class cosmetics_widget_partners extends Widget_Base {
 
         $settings_data     =   [
             'margin_item'   =>  15,
-            'number_item'   =>  5,
-            'item_tablet'   =>  3,
-            'item_mobile'   =>  1,
+            'number_item'   =>  $settings['item_desktop'],
+            'item_tablet'   =>  $settings['item_tablet'],
+            'item_mobile'   =>  $settings['item_mobile'],
+            'loop'          =>  ( 'yes' === $settings['loop'] ),
+            'autoplay'      =>  ( 'yes' === $settings['autoplay'] ),
+            'nav'           =>  ( 'yes' === $settings['nav'] ),
         ];
 
     ?>
 
         <div class="element-partners">
-            <h4 class="title">
+            <h4 class="element-heading-global">
                 <span>
                     <?php echo esc_html( $settings['heading'] ); ?>
                 </span>

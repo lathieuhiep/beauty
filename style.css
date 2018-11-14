@@ -25,6 +25,7 @@ Text Domain: cosmetics
   ## Slider
   ## Products Carousel
   ## Partners
+  ## Post Type
 ## Shop Woocommerce
 # Footer
 # Responsive
@@ -1938,7 +1939,7 @@ section.widget.woocommerce .woocommerce-widget-layered-nav-list .woocommerce-wid
 }
 
 /* Partners */
-.element-partners .title {
+.element-heading-global {
   font-size: 16px;
   font-weight: 500;
   color: #555555;
@@ -1947,7 +1948,7 @@ section.widget.woocommerce .woocommerce-widget-layered-nav-list .woocommerce-wid
   letter-spacing: 2px;
 }
 
-.element-partners .title span {
+.element-heading-global span {
   display: inline-block;
   padding-bottom: 10px;
   border-bottom: 1px solid #000000;
@@ -1965,6 +1966,60 @@ section.widget.woocommerce .woocommerce-widget-layered-nav-list .woocommerce-wid
   display: inline-block;
   max-width: 100%;
   width: auto;
+}
+
+.element-partners__logo .owl-nav {
+  margin: 0;
+}
+
+.element-partners__logo .owl-nav .owl-prev,
+.element-partners__logo .owl-nav .owl-next {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.element-partners__logo .owl-nav .owl-prev {
+  left: 0;
+}
+
+.element-partners__logo .owl-nav .owl-next {
+  right: 0;
+}
+
+/* Post Type */
+.element-post-type .element-heading-global {
+  margin-bottom: 35px;
+}
+
+.element-post-carousel .item-post__image {
+  height: 170px;
+  margin-bottom: 15px;
+}
+
+.element-post-carousel .item-post__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.element-post-carousel .item-post__detail .item-post__title {
+  font-size: 15px;
+  line-height: 1.5em;
+  height: 3em;
+  margin-bottom: 5px;
+  overflow: hidden;
+}
+
+.element-post-carousel.owl-carousel .owl-nav {
+  position: absolute;
+  margin: 0;
+  top: -63px;
+  right: 0;
 }
 
 /**
