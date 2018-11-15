@@ -26,6 +26,7 @@ Text Domain: cosmetics
   ## Products Carousel
   ## Partners
   ## Post Type
+  ## Testimonial
 ## Shop Woocommerce
 # Footer
 # Responsive
@@ -323,7 +324,7 @@ pre {
   background-color: #333333;
 }
 
-.owl-carousel .owl-nav button i.fa {
+.owl-carousel .owl-nav button i {
   color: #ffffff;
   font-size: 16px;
   line-height: inherit;
@@ -1968,12 +1969,13 @@ section.widget.woocommerce .woocommerce-widget-layered-nav-list .woocommerce-wid
   width: auto;
 }
 
-.element-partners__logo .owl-nav {
+.owl-nav-middle.owl-carousel .owl-nav {
   margin: 0;
 }
 
-.element-partners__logo .owl-nav .owl-prev,
-.element-partners__logo .owl-nav .owl-next {
+.owl-nav-middle.owl-carousel .owl-nav .owl-prev,
+.owl-nav-middle.owl-carousel .owl-nav .owl-next {
+  margin: 0;
   position: absolute;
   top: 50%;
   -webkit-transform: translateY(-50%);
@@ -1983,11 +1985,11 @@ section.widget.woocommerce .woocommerce-widget-layered-nav-list .woocommerce-wid
   transform: translateY(-50%);
 }
 
-.element-partners__logo .owl-nav .owl-prev {
+.owl-nav-middle.owl-carousel .owl-nav .owl-prev {
   left: 0;
 }
 
-.element-partners__logo .owl-nav .owl-next {
+.owl-nav-middle.owl-carousel .owl-nav .owl-next {
   right: 0;
 }
 
@@ -2020,6 +2022,60 @@ section.widget.woocommerce .woocommerce-widget-layered-nav-list .woocommerce-wid
   margin: 0;
   top: -63px;
   right: 0;
+}
+
+/* Testimonial */
+.element-testimonial .element-heading-global {
+  margin-bottom: 30px;
+}
+
+.element-testimonial .item .item-avatar {
+  display: inline-block;
+  margin-bottom: 10px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.element-testimonial .item .item-avatar img {
+  width: auto;
+}
+
+.element-testimonial .item .item-content {
+  width: 67%;
+  margin: 0 auto 15px;
+}
+
+.element-testimonial .item .item-name {
+  font-size: 14px;
+  color: #199427;
+  margin: 0;
+}
+
+.element-testimonial .owl-carousel .owl-nav button {
+  background-color: transparent;
+}
+
+.element-testimonial .owl-carousel .owl-nav button i {
+  color: #cacaca;
+  font-size: 20px;
+}
+
+.element-testimonial .owl-carousel .owl-nav button.owl-prev {
+  left: 50px;
+}
+
+.element-testimonial .owl-carousel .owl-nav button.owl-next {
+  right: 50px;
+}
+
+.element-testimonial .owl-carousel .owl-nav button.owl-next:hover, .element-testimonial .owl-carousel .owl-nav button.owl-prev:hover {
+  background-color: transparent;
+}
+
+.element-testimonial .owl-carousel .owl-nav button.owl-next:hover i, .element-testimonial .owl-carousel .owl-nav button.owl-prev:hover i {
+  color: #199427;
 }
 
 /**

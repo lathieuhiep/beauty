@@ -1,0 +1,56 @@
+.element-testimonial {
+  .element-heading-global {
+    margin-bottom: 30px;
+  }
+  .item {
+    .item-avatar {
+      display: inline-block;
+      margin-bottom: 10px;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      overflow: hidden;
+
+      img {
+        width: auto;
+      }
+    }
+    .item-content {
+      width: 67%;
+      margin: 0 auto 15px;
+    }
+    .item-name {
+      font-size: 14px;
+      color: $color-hover;
+      margin: 0;
+    }
+  }
+  .owl-carousel  {
+    .owl-nav {
+      button {
+        background-color: transparent;
+
+        i {
+          color: #cacaca;
+          font-size: 20px;
+        }
+        &.owl-prev {
+          left: 50px;
+        }
+        &.owl-next {
+          right: 50px;
+        }
+        &.owl-next,
+        &.owl-prev {
+          &:hover {
+            background-color: transparent;
+
+            i {
+              color: $color-hover;
+            }
+          }
+        }
+      }
+    }
+  }
+}

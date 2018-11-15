@@ -56,6 +56,16 @@
     };
     /* End element post */
 
+    /* Start element testimonial */
+    let ElementTestimonialSlider   =   function( $scope, $ ) {
+
+        let element_testimonial_slider  =   $scope.find('.element-testimonial__slides');
+
+        $( document ).general_owlCarousel_item( element_testimonial_slider );
+
+    };
+    /* End element testimonial */
+
     $( window ).on( 'elementor/frontend/init', function() {
 
         /* Element slider */
@@ -63,6 +73,7 @@
         elementorFrontend.hooks.addAction( 'frontend/element_ready/cosmetics-products-carousel.default', ElementProductlSlider  );
         elementorFrontend.hooks.addAction( 'frontend/element_ready/cosmetics-partners.default', ElementPartners  );
         elementorFrontend.hooks.addAction( 'frontend/element_ready/cosmetics-post-type.default', ElementPostSlider  );
+        elementorFrontend.hooks.addAction( 'frontend/element_ready/cosmetics-testimonial.default', ElementTestimonialSlider  );
 
     } );
 

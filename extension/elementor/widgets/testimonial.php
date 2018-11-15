@@ -4,22 +4,22 @@ namespace Elementor;
 
 if ( ! defined( 'ABSPATH' ) ) exit;
 
-class cosmetics_widget_partners extends Widget_Base {
+class cosmetics_widget_testimonial extends Widget_Base {
 
     public function get_categories() {
         return array( 'cosmetics_widgets' );
     }
 
     public function get_name() {
-        return 'cosmetics-partners';
+        return 'cosmetics-testimonial';
     }
 
     public function get_title() {
-        return esc_html__( 'Thương Hiệu', 'cosmetics' );
+        return esc_html__( 'Ý kiến khách hàng', 'cosmetics' );
     }
 
     public function get_icon() {
-        return 'fa fa-window-restore';
+        return 'fa fa-commenting-o';
     }
 
     public function get_script_depends() {
@@ -40,7 +40,7 @@ class cosmetics_widget_partners extends Widget_Base {
             [
                 'label'         =>  esc_html__( 'Tiêu đề', 'cosmetics' ),
                 'type'          =>  Controls_Manager::TEXT,
-                'default'       =>  esc_html__( 'THƯƠNG HIỆU NỔI BẬT', 'cosmetics' ),
+                'default'       =>  esc_html__( 'Ý KIẾN KHÁCH HÀNG', 'cosmetics' ),
                 'label_block'   =>  true
             ]
         );
@@ -48,27 +48,27 @@ class cosmetics_widget_partners extends Widget_Base {
         $this->end_controls_section();
 
         $this->start_controls_section(
-            'section_logo',
+            'section_testimonial',
             [
-                'label' => esc_html__( 'Thương hiệu', 'cosmetics' ),
+                'label' => esc_html__( 'Nhận xét khách hàng', 'cosmetics' ),
             ]
         );
 
         $repeater = new Repeater();
 
         $repeater->add_control(
-            'list_title_partner', [
-                'label'         =>  esc_html__( 'Tên thương hiệu', 'cosmetics' ),
+            'list_name', [
+                'label'         =>  esc_html__( 'Tên khách hàng', 'cosmetics' ),
                 'type'          =>  Controls_Manager::TEXT,
-                'default'       =>  esc_html__( 'Thương hiệu' , 'cosmetics' ),
+                'default'       =>  esc_html__( 'Khách hàng A' , 'cosmetics' ),
                 'label_block'   =>  true,
             ]
         );
 
         $repeater->add_control(
-            'list_logo',
+            'list_avatar',
             [
-                'label'     =>  esc_html__( 'Logo', 'cosmetics' ),
+                'label'     =>  esc_html__( 'Ảnh khách hàng', 'cosmetics' ),
                 'type'      =>  Controls_Manager::MEDIA,
                 'default'   =>  [
                     'url'   =>  Utils::get_placeholder_image_src(),
@@ -77,15 +77,12 @@ class cosmetics_widget_partners extends Widget_Base {
         );
 
         $repeater->add_control(
-            'list_link_partner',
+            'list_content',
             [
-                'label'         =>  esc_html__( 'Link', 'cosmetics' ),
-                'type'          =>  Controls_Manager::URL,
-                'placeholder'   =>  'https://your-link.com',
-                'show_external' =>  true,
-                'default' => [
-                    'url'           =>  '#',
-                ],
+                'label'     =>  esc_html__( 'Nhận xét của khách', 'cosmetics' ),
+                'type'      =>  Controls_Manager::TEXTAREA,
+                'rows'      => 10,
+                'default'   => '',
             ]
         );
 
@@ -97,15 +94,13 @@ class cosmetics_widget_partners extends Widget_Base {
                 'fields'    =>  $repeater->get_controls(),
                 'default'   =>  [
                     [
-                        'list_title_partner'    =>  esc_html__( 'Thương hiệu 1', 'cosmetics' ),
-                        'list_link'     =>  '#',
+                        'list_name'    =>  esc_html__( 'Thái Phương Thảo', 'cosmetics' ),
                     ],
                     [
-                        'list_title_partner'    =>  esc_html__( 'Thương hiệu 2', 'cosmetics' ),
-                        'list_link'     =>  '#',
+                        'list_name'    =>  esc_html__( 'Hoàng Nhung', 'cosmetics' ),
                     ],
                 ],
-                'title_field' => '{{{ list_title_partner }}}',
+                'title_field' => '{{{ list_name }}}',
             ]
         );
 
@@ -116,42 +111,6 @@ class cosmetics_widget_partners extends Widget_Base {
             'section_slides',
             [
                 'label' =>  esc_html__( 'Cài đặt Slides', 'cosmetics' )
-            ]
-        );
-
-        $this->add_control(
-            'item_desktop',
-            [
-                'label'     =>  esc_html__( 'Thương Hiệu trên một hàng( Desktop )', 'event_conference' ),
-                'type'      =>  Controls_Manager::NUMBER,
-                'default'   =>  5,
-                'min'       =>  1,
-                'max'       =>  100,
-                'step'      =>  1,
-            ]
-        );
-
-        $this->add_control(
-            'item_tablet',
-            [
-                'label'     =>  esc_html__( 'Thương Hiệu trên một hàng( Tablet )', 'event_conference' ),
-                'type'      =>  Controls_Manager::NUMBER,
-                'default'   =>  3,
-                'min'       =>  1,
-                'max'       =>  100,
-                'step'      =>  1,
-            ]
-        );
-
-        $this->add_control(
-            'item_mobile',
-            [
-                'label'     =>  esc_html__( 'Thương Hiệu trên một hàng( Mobile )', 'event_conference' ),
-                'type'      =>  Controls_Manager::NUMBER,
-                'default'   =>  1,
-                'min'       =>  1,
-                'max'       =>  100,
-                'step'      =>  1,
             ]
         );
 
@@ -198,14 +157,8 @@ class cosmetics_widget_partners extends Widget_Base {
     protected function render() {
 
         $settings   =   $this->get_settings();
-//        $target     =   $settings['link']['is_external'] ? ' target="_blank"' : '';
-//        $nofollow   =   $settings['link']['nofollow'] ? ' rel="nofollow"' : '';
 
         $settings_data     =   [
-            'margin_item'   =>  15,
-            'number_item'   =>  $settings['item_desktop'],
-            'item_tablet'   =>  $settings['item_tablet'],
-            'item_mobile'   =>  $settings['item_mobile'],
             'loop'          =>  ( 'yes' === $settings['loop'] ),
             'autoplay'      =>  ( 'yes' === $settings['autoplay'] ),
             'nav'           =>  ( 'yes' === $settings['nav'] ),
@@ -213,7 +166,7 @@ class cosmetics_widget_partners extends Widget_Base {
 
     ?>
 
-        <div class="element-partners">
+        <div class="element-testimonial">
             <h4 class="element-heading-global">
                 <span>
                     <?php echo esc_html( $settings['heading'] ); ?>
@@ -222,13 +175,21 @@ class cosmetics_widget_partners extends Widget_Base {
 
             <?php if ( $settings['list'] ) : ?>
 
-                <div class="element-partners__logo owl-nav-middle owl-carousel owl-theme" data-settings='<?php echo esc_attr( wp_json_encode( $settings_data ) ); ?>'>
+                <div class="element-testimonial__slides text-center owl-nav-middle owl-carousel owl-theme" data-settings='<?php echo esc_attr( wp_json_encode( $settings_data ) ); ?>'>
                     <?php foreach ( $settings['list'] as $item ) : ?>
 
-                        <div class="logo-item">
-                            <a href="<?php echo esc_url( $item['list_link_partner']['url'] ); ?>">
-                                <?php echo wp_get_attachment_image( $item['list_logo']['id'], 'full' ); ?>
-                            </a>
+                        <div class="item">
+                            <div class="item-avatar">
+                                <?php echo wp_get_attachment_image( $item['list_avatar']['id'], array( '60', '60' ) ); ?>
+                            </div>
+
+                            <p class="item-content">
+                                <?php echo wp_kses_post( $item['list_content'] ); ?>
+                            </p>
+
+                            <h5 class="item-name">
+                                <?php echo esc_html( $item['list_name'] ); ?>
+                            </h5>
                         </div>
 
                     <?php endforeach; ?>
@@ -242,4 +203,4 @@ class cosmetics_widget_partners extends Widget_Base {
 
 }
 
-Plugin::instance()->widgets_manager->register_widget_type( new cosmetics_widget_partners );
+Plugin::instance()->widgets_manager->register_widget_type( new cosmetics_widget_testimonial );
