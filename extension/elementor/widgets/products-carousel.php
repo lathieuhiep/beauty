@@ -288,7 +288,7 @@ class cosmetics_widget_products_carousel extends Widget_Base {
 
     ?>
 
-        <div class="element-products-carousel">
+        <div class="element-products-carousel element-product-style">
             <div class="header d-flex justify-content-between align-items-center">
                 <h4 class="title">
                     <?php echo esc_html( $settings['title'] ); ?>
