@@ -41,6 +41,12 @@ class cosmetics_plugin_elementor_widgets {
     }
 
     function cosmetics_elementor_script() {
+
+        $products_filter_admin_url  =   admin_url('admin-ajax.php');
+        $products_filter_get        =   array( 'url' => $products_filter_admin_url );
+        wp_localize_script( 'products_filter', 'cosmetics_products_filter_load', $products_filter_get );
+        wp_register_script( 'products_filter', get_theme_file_uri( '/js/product-filter.js' ), array(), '', true );
+
         wp_register_script( 'cosmetics-elementor-custom', get_theme_file_uri( '/js/elementor-custom.js' ), array(), '1.0.0', true );
     }
 
@@ -71,6 +77,32 @@ function cosmetics_check_get_cat( $type_taxonomy ) {
     endif;
 
     return $cat_check;
+
+}
+/* End get Category check box */
+
+/* Start get tag check box */
+function cosmetics_check_get_tag( $type_taxonomy ) {
+
+    $tag_check  =   array();
+    $tag        =   get_terms(
+        array(
+            'taxonomy'      =>  $type_taxonomy,
+            'hide_empty'    =>  false
+        )
+    );
+
+    if ( isset( $tag ) && !empty( $tag ) ):
+
+        foreach( $tag as $item ) {
+
+            $tag_check[$item->term_id]  =   $item->name;
+
+        }
+
+    endif;
+
+    return $tag_check;
 
 }
 /* End get Category check box */

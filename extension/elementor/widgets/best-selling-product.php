@@ -93,7 +93,7 @@ class cosmetics_widget_products_best_selling extends Widget_Base {
         $this->add_control(
             'list',
             [
-                'label'     =>  esc_html__( 'Nhóm  sản phẩm bán chạy', 'cosmetics' ),
+                'label'     =>  esc_html__( 'Nhóm sản phẩm bán chạy', 'cosmetics' ),
                 'type'      =>  Controls_Manager::REPEATER,
                 'fields'    =>  $repeater->get_controls(),
                 'default'   =>  [

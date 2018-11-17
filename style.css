@@ -25,6 +25,7 @@ Text Domain: cosmetics
   ## Slider
   ## Products Carousel
   ## Best Selling Product
+  ## Product Filter
   ## Partners
   ## Post Type
   ## Testimonial
@@ -1952,6 +1953,7 @@ section.widget.woocommerce .woocommerce-widget-layered-nav-list .woocommerce-wid
 
 /* Best Selling Product */
 .element-product-grid .top-block {
+  background-color: #ffffff;
   border-bottom: 2px solid #199427;
 }
 
@@ -1993,6 +1995,22 @@ section.widget.woocommerce .woocommerce-widget-layered-nav-list .woocommerce-wid
   color: #199427;
 }
 
+.element-product-grid .top-block .top-block__list .list-item .btn-filter-product {
+  padding: 0;
+  color: #333333;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+.element-product-grid .top-block .top-block__list .list-item .btn-filter-product:hover {
+  color: #199427;
+}
+
 .element-product-grid .row {
   margin: 0;
 }
@@ -2021,6 +2039,7 @@ section.widget.woocommerce .woocommerce-widget-layered-nav-list .woocommerce-wid
   height: 100%;
 }
 
+/* Product Filter */
 /* Partners */
 .element-heading-global {
   font-size: 16px;

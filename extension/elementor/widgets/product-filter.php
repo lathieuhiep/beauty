@@ -1,0 +1,323 @@
+<?php
+
+namespace Elementor;
+
+if ( ! defined( 'ABSPATH' ) ) exit;
+
+class cosmetics_widget_products_filter extends Widget_Base {
+
+    public function get_categories() {
+        return array( 'cosmetics_widgets' );
+    }
+
+    public function get_name() {
+        return 'cosmetics-products-filter';
+    }
+
+    public function get_title() {
+        return esc_html__( 'Products Filter', 'cosmetics' );
+    }
+
+    public function get_icon() {
+        return 'fa fa-shopping-basket';
+    }
+
+    public function get_script_depends() {
+        return ['products_filter'];
+    }
+
+    protected function _register_controls() {
+
+        /* Start Section Heading */
+        $this->start_controls_section(
+            'section_heading',
+            [
+                'label' =>  esc_html__( 'Heading', 'cosmetics' )
+            ]
+        );
+
+        $this->add_control(
+            'image_heading',
+            [
+                'label'     =>  esc_html__( 'Icon danh mục', 'cosmetics' ),
+                'type'      =>  Controls_Manager::MEDIA,
+                'default'   =>  [
+                    'url'   =>  Utils::get_placeholder_image_src(),
+                ],
+            ]
+        );
+
+        $this->add_control(
+            'select_cat',
+            [
+                'label'         =>  esc_html__( 'Chọn danh mục sản phẩm', 'cosmetics' ),
+                'type'          =>  Controls_Manager::SELECT,
+                'options'       =>  cosmetics_check_get_cat( 'product_cat' ),
+                'multiple'      =>  true,
+                'label_block'   =>  true,
+            ]
+        );
+
+        $this->end_controls_section();
+        /* End Section Heading */
+
+        /* Start Section Query */
+        $this->start_controls_section(
+            'section_query',
+            [
+                'label' =>  esc_html__( 'Query', 'cosmetics' )
+            ]
+        );
+
+        $repeater = new Repeater();
+
+        $repeater->add_control(
+            'list_tag_name', [
+                'label'         =>  esc_html__( 'Tiêu đề', 'cosmetics' ),
+                'type'          =>  Controls_Manager::TEXT,
+                'default'       =>  esc_html__( 'Từ khóa sản phẩm' , 'cosmetics' ),
+                'label_block'   =>  true,
+            ]
+        );
+
+        $repeater->add_control(
+            'select_tag',
+            [
+                'label'         =>  esc_html__( 'Chọn từ khóa sản phẩm', 'cosmetics' ),
+                'type'          =>  Controls_Manager::SELECT,
+                'options'       =>  cosmetics_check_get_cat( 'product_tag' ),
+                'multiple'      =>  true,
+                'label_block'   =>  true,
+            ]
+        );
+
+        $this->add_control(
+            'list_tag_product',
+            [
+                'label'     =>  esc_html__( 'Danh sách từ khóa', 'cosmetics' ),
+                'type'      =>  Controls_Manager::REPEATER,
+                'fields'    =>  $repeater->get_controls(),
+                'default'   =>  [
+                    [
+                        'list_tag_name'    =>  esc_html__( 'Trang điểm mặt', 'cosmetics' ),
+                    ],
+                ],
+                'title_field' => '{{{ list_tag_name }}}',
+            ]
+        );
+
+        $this->add_control(
+            'limit',
+            [
+                'label'     =>  esc_html__( 'Sản phẩm lấy ra', 'cosmetics' ),
+                'type'      =>  Controls_Manager::NUMBER,
+                'default'   =>  12,
+                'min'       =>  1,
+                'max'       =>  100,
+                'step'      =>  1,
+            ]
+        );
+
+        $this->add_control(
+            'order_by',
+            [
+                'label'     =>  esc_html__( 'Sắp xếp theo', 'cosmetics' ),
+                'type'      =>  Controls_Manager::SELECT,
+                'default'   =>  'id',
+                'options'   =>  [
+                    'id'    =>  esc_html__( 'ID', 'cosmetics' ),
+                    'title' =>  esc_html__( 'Tên sản phẩm', 'cosmetics' ),
+                    'date'  =>  esc_html__( 'Ngày đăng', 'cosmetics' ),
+                    'rand' =>  esc_html__( 'Random', 'cosmetics' ),
+                ],
+            ]
+        );
+
+        $this->add_control(
+            'order',
+            [
+                'label'     =>  esc_html__( 'Sắp xếp', 'cosmetics' ),
+                'type'      =>  Controls_Manager::SELECT,
+                'default'   =>  'ASC',
+                'options'   =>  [
+                    'ASC'   =>  esc_html__( 'Sắp xếp tăng dần', 'cosmetics' ),
+                    'DESC'  =>  esc_html__( 'Sắp xếp giảm dần', 'cosmetics' ),
+                ],
+            ]
+        );
+
+        $this->end_controls_section();
+        /* End Section Query */
+
+        /* Start Section Layout */
+        $this->start_controls_section(
+            'section_layout',
+            [
+                'label' =>  esc_html__( 'Layout', 'cosmetics' )
+            ]
+        );
+
+        $this->add_control(
+            'column_number',
+            [
+                'label'     =>  esc_html__( 'Số cột', 'dlk-addons-elementor' ),
+                'type'      =>  Controls_Manager::SELECT,
+                'default'   =>  6,
+                'options'   =>  [
+                    6   =>  esc_html__( '6 Column', 'dlk-addons-elementor' ),
+                    5   =>  esc_html__( '5 Column', 'dlk-addons-elementor' ),
+                    4   =>  esc_html__( '4 Column', 'dlk-addons-elementor' ),
+                    3   =>  esc_html__( '3 Column', 'dlk-addons-elementor' ),
+                    2   =>  esc_html__( '2 Column', 'dlk-addons-elementor' ),
+                    1   =>  esc_html__( '1 Column', 'dlk-addons-elementor' ),
+                ],
+            ]
+        );
+
+        $this->end_controls_section();
+        /* End Section Layout */
+
+    }
+
+    protected function render() {
+
+        $settings       =   $this->get_settings_for_display();
+        $select_cat     =   $settings['select_cat'];
+        $limit          =   $settings['limit'];
+        $order_by       =   $settings['order_by'];
+        $order          =   $settings['order'];
+
+        $tag_product_ids = array();
+
+        if ( $settings['list_tag_product'] ) :
+
+            foreach ( $settings['list_tag_product'] as $item_tag ) :
+
+                $tag_product_item = get_term( $item_tag['select_tag'], 'product_tag' );
+
+                $tag_product_ids[] .= $tag_product_item->term_id;
+
+            endforeach;
+
+        endif;
+
+        $args = array(
+            'post_type'         =>  'product',
+            'posts_per_page'    =>  $limit,
+            'orderby'           =>  $order_by,
+            'order'             =>  $order,
+            'tax_query'         =>  array(
+                array(
+                    'taxonomy'  =>  'product_tag',
+                    'field'     =>  'id',
+                    'terms'     =>  $tag_product_ids[0],
+                ),
+            ),
+        );
+
+        $query = new \ WP_Query( $args );
+
+        if ( $query->have_posts() ) :
+
+            if ( $settings['column_number'] == 6 ) :
+                $class_column_number = 'column-6 col-lg-2';
+            elseif ( $settings['column_number'] == 5 ) :
+                $class_column_number = 'column-5';
+            elseif ( $settings['column_number'] == 4 ) :
+                $class_column_number = 'column-4 col-lg-3';
+            elseif ( $settings['column_number'] == 3 ) :
+                $class_column_number = 'column-3 col-lg-4';
+            elseif ( $settings['column_number'] == 2 ) :
+                $class_column_number = 'column-2 col-lg-6';
+            else:
+                $class_column_number = 'column-1 col-lg-12';
+            endif;
+
+        ?>
+
+            <div class="element-product-filter element-product-grid element-product-style">
+                <div class="top-block d-flex">
+                    <?php
+                    if ( !empty( $select_cat ) ) :
+                        $term_product   =   get_term( $select_cat, 'product_cat' );
+                    ?>
+
+                        <div class="top-block__heading d-flex align-items-center">
+                            <?php echo wp_get_attachment_image( $settings['image_heading']['id'], 'full' ); ?>
+
+                            <h4 class="heading">
+                                <a href="<?php echo esc_url( get_term_link( $term_product->term_id, 'product_cat' ) ); ?>" title="<?php echo esc_attr( $term_product->name ); ?>">
+                                    <?php echo esc_html( $term_product->name ); ?>
+                                </a>
+                            </h4>
+
+                            <i class="fas fa-chevron-right"></i>
+                        </div>
+
+                    <?php endif; ?>
+
+                    <?php if ( $settings['list_tag_product'] ) : ?>
+
+                        <div class="top-block__list d-flex">
+                            <?php
+                            foreach ( $settings['list_tag_product'] as $item ) :
+                                $tag_product = get_term( $item['select_tag'], 'product_tag' );
+                            ?>
+
+                                <div class="list-item d-flex align-items-center">
+                                    <button class="btn-filter-product" data-id="<?php echo esc_attr( $tag_product->term_id ); ?>">
+                                        <?php echo esc_html( $tag_product->name ); ?>
+                                    </button>
+                                </div>
+
+                            <?php endforeach; ?>
+                        </div>
+
+                    <?php endif; ?>
+                </div>
+
+                <div class="row">
+                    <?php while ( $query->have_posts() ): $query->the_post(); ?>
+
+                        <div class="item-col <?php echo esc_attr( $class_column_number ); ?> col-md-3 col-sm-6 col-12">
+                            <div class="item-product">
+                                <div class="item-thumbnail">
+                                    <?php
+                                    if ( has_post_thumbnail() ) :
+                                        the_post_thumbnail( 'large' );
+                                    else:
+                                    ?>
+                                        <img src="<?php echo esc_url( get_theme_file_uri( '/images/no-image.png' ) ); ?>" alt="<?php the_title(); ?>">
+                                    <?php endif; ?>
+
+                                    <div class="item-add-cart">
+                                        <?php do_action( 'woo_elementor_add_to_cart' ); ?>
+                                    </div>
+                                </div>
+
+                                <div class="item-detail">
+                                    <h2 class="item-title">
+                                        <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+                                            <?php the_title(); ?>
+                                        </a>
+                                    </h2>
+
+                                    <?php woocommerce_template_loop_price(); ?>
+                                </div>
+                            </div>
+                        </div>
+
+                    <?php
+                    endwhile; wp_reset_postdata();
+                    ?>
+                </div>
+            </div>
+
+        <?php
+
+        endif;
+    }
+
+}
+
+Plugin::instance()->widgets_manager->register_widget_type( new cosmetics_widget_products_filter );
