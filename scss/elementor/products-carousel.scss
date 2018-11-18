@@ -6,27 +6,49 @@
   }
 
   .deals-of-countdown-product {
+    margin-bottom: 5px;
+
     .title-countdown {
       display: inline-block;
       margin-right: 10px;
+      text-transform: uppercase;
+      padding-left: 35px;
+      background-image: url("images/icon-deals-of.png");
+      background-position: center left;
+      background-repeat: no-repeat
     }
     .count-down-time-product {
       display: inline-block;
 
       .box-count {
+        position: relative;
         display: inline-block;
+        padding: 0 7px;
         margin-right: 10px;
+        border: 1px solid $color-hover;
 
         &:last-child {
           margin-right: 0;
+
+          &:after {
+            display: none;
+          }
         }
 
         span {
           display: inline-block;
+          text-transform: capitalize;
+          color: $color-hover;
 
           &.number {
             margin-right: 3px;
           }
+        }
+        &:after {
+          position: absolute;
+          content: ":";
+          top: 0;
+          right: -7px;
         }
       }
     }

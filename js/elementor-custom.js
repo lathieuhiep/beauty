@@ -21,10 +21,10 @@
 
             $(this).countdown( finalDate, function(event) {
                 let $this = $(this).html( event.strftime(''
-                    + '<div class="box-count"><span class="number">%D</span><span class="text">days</span></div>'
-                    + '<div class="box-count"><span class="number">%H</span><span class="text">hr</span></div>'
-                    + '<div class="box-count"><span class="number">%M</span><span class="text">min</span></div>'
-                    + '<div class="box-count"><span class="number">%S</span><span class="text">sec</span></div>'
+                    + '<div class="box-count"><span class="number">%D</span><span class="text">Days</span></div>'
+                    + '<div class="box-count"><span class="number">%H</span><span class="text">Hrs</span></div>'
+                    + '<div class="box-count"><span class="number">%M</span><span class="text">Mins</span></div>'
+                    + '<div class="box-count"><span class="number">%S</span><span class="text">Secs</span></div>'
                     )
                 );
             });
@@ -66,6 +66,16 @@
     };
     /* End element testimonial */
 
+    /* Start element store */
+    let ElementStore   =   function( $scope, $ ) {
+
+        let element_store  =   $scope.find('.element-store__slides');
+
+        $( document ).general_multi_owlCarouse( element_store );
+
+    };
+    /* End element store */
+
     $( window ).on( 'elementor/frontend/init', function() {
 
         /* Element slider */
@@ -74,6 +84,7 @@
         elementorFrontend.hooks.addAction( 'frontend/element_ready/cosmetics-partners.default', ElementPartners  );
         elementorFrontend.hooks.addAction( 'frontend/element_ready/cosmetics-post-type.default', ElementPostSlider  );
         elementorFrontend.hooks.addAction( 'frontend/element_ready/cosmetics-testimonial.default', ElementTestimonialSlider  );
+        elementorFrontend.hooks.addAction( 'frontend/element_ready/cosmetics-store.default', ElementStore  );
 
     } );
 

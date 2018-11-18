@@ -29,6 +29,7 @@ Text Domain: cosmetics
   ## Partners
   ## Post Type
   ## Testimonial
+  ## Store
 ## Shop Woocommerce
 # Footer
 # Responsive
@@ -873,7 +874,7 @@ section.widget:last-child {
 
 section.widget .widget-title {
   text-transform: uppercase;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   font-size: 16px;
 }
 
@@ -884,13 +885,8 @@ section.widget ul {
 }
 
 section.widget ul li {
-  border-bottom: 1px solid #eee;
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
-
-section.widget ul li:first-child {
-  padding-top: 0;
+  padding-bottom: 5px;
+  line-height: 1.5em;
 }
 
 section.widget ul li:last-child {
@@ -1776,9 +1772,18 @@ section.widget.woocommerce .woocommerce-widget-layered-nav-list .woocommerce-wid
   border-bottom: 1px solid #e6e6e6;
 }
 
+.element-products-carousel .deals-of-countdown-product {
+  margin-bottom: 5px;
+}
+
 .element-products-carousel .deals-of-countdown-product .title-countdown {
   display: inline-block;
   margin-right: 10px;
+  text-transform: uppercase;
+  padding-left: 35px;
+  background-image: url("images/icon-deals-of.png");
+  background-position: center left;
+  background-repeat: no-repeat;
 }
 
 .element-products-carousel .deals-of-countdown-product .count-down-time-product {
@@ -1786,20 +1791,36 @@ section.widget.woocommerce .woocommerce-widget-layered-nav-list .woocommerce-wid
 }
 
 .element-products-carousel .deals-of-countdown-product .count-down-time-product .box-count {
+  position: relative;
   display: inline-block;
+  padding: 0 7px;
   margin-right: 10px;
+  border: 1px solid #199427;
 }
 
 .element-products-carousel .deals-of-countdown-product .count-down-time-product .box-count:last-child {
   margin-right: 0;
 }
 
+.element-products-carousel .deals-of-countdown-product .count-down-time-product .box-count:last-child:after {
+  display: none;
+}
+
 .element-products-carousel .deals-of-countdown-product .count-down-time-product .box-count span {
   display: inline-block;
+  text-transform: capitalize;
+  color: #199427;
 }
 
 .element-products-carousel .deals-of-countdown-product .count-down-time-product .box-count span.number {
   margin-right: 3px;
+}
+
+.element-products-carousel .deals-of-countdown-product .count-down-time-product .box-count:after {
+  position: absolute;
+  content: ":";
+  top: 0;
+  right: -7px;
 }
 
 .element-products-carousel .title {
@@ -2040,6 +2061,59 @@ section.widget.woocommerce .woocommerce-widget-layered-nav-list .woocommerce-wid
 }
 
 /* Product Filter */
+.element-product-filter .top-block .top-block__list .list-item .btn-filter-product.active {
+  color: #199427;
+}
+
+.element-product-filter .element-product-filter__row {
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+.element-product-filter .filter-opacity {
+  opacity: 0.3;
+}
+
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@-webkit-keyframes fadeInUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.fadeInUp {
+  -webkit-animation-name: fadeInUp;
+  animation-name: fadeInUp;
+}
+
 /* Partners */
 .element-heading-global {
   font-size: 16px;
@@ -2048,6 +2122,7 @@ section.widget.woocommerce .woocommerce-widget-layered-nav-list .woocommerce-wid
   text-align: center;
   border-bottom: 1px solid #eeeeee;
   letter-spacing: 2px;
+  margin-bottom: 35px;
 }
 
 .element-heading-global span {
@@ -2095,10 +2170,6 @@ section.widget.woocommerce .woocommerce-widget-layered-nav-list .woocommerce-wid
 }
 
 /* Post Type */
-.element-post-type .element-heading-global {
-  margin-bottom: 35px;
-}
-
 .element-post-carousel .item-post__image {
   height: 170px;
   margin-bottom: 15px;
@@ -2118,7 +2189,7 @@ section.widget.woocommerce .woocommerce-widget-layered-nav-list .woocommerce-wid
   overflow: hidden;
 }
 
-.element-post-carousel.owl-carousel .owl-nav {
+.owl-nav-top.owl-carousel .owl-nav {
   position: absolute;
   margin: 0;
   top: -63px;
@@ -2177,6 +2248,51 @@ section.widget.woocommerce .woocommerce-widget-layered-nav-list .woocommerce-wid
 
 .element-testimonial .owl-carousel .owl-nav button.owl-next:hover i, .element-testimonial .owl-carousel .owl-nav button.owl-prev:hover i {
   color: #199427;
+}
+
+/* Store */
+.element-store__slides .item-image {
+  position: relative;
+  overflow: hidden;
+}
+
+.element-store__slides .item-address {
+  position: absolute;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 15px;
+  background-color: rgba(255, 255, 255, 0.75);
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+.element-store__slides .item-address i {
+  color: #199427;
+  font-size: 25px;
+}
+
+.element-store__slides .item-address .text-address {
+  font-size: 14px;
+  color: #199427;
+  margin: 10px 0 0;
+  line-height: 1.5em;
+}
+
+.element-store__slides .item-name {
+  margin: 10px 0 0;
+  font-size: 14px;
+}
+
+.element-store__slides .item:hover .item-address {
+  top: 0;
+  opacity: 1;
+  visibility: visible;
 }
 
 /**
@@ -2736,12 +2852,25 @@ section.widget.woocommerce .woocommerce-widget-layered-nav-list .woocommerce-wid
 # Footer
 -----------------------------------------------------------------------------*/
 .site-footer section.widget {
-  margin-bottom: 15px;
+  margin-bottom: 30px;
+}
+
+.site-footer section.widget .widget-title {
+  color: #199427;
+  font-size: 14px;
+  padding-bottom: 10px;
+  border-bottom: 1px dotted #cccccc;
+}
+
+.site-footer section.widget .textwidget p {
+  line-height: 1.5em;
+  margin-bottom: 5px;
 }
 
 .site-footer__multi--column {
   border-top: 1px solid #eeeeee;
-  padding: 30px 0;
+  padding: 30px 0 0;
+  background-color: #e6e6e6;
 }
 
 .site-footer__copyright {

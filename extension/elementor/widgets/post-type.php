@@ -242,7 +242,7 @@ class cosmetics_post_type extends Widget_Base {
                 </span>
             </h4>
 
-            <div class="element-post-carousel owl-carousel owl-theme" data-settings='<?php echo esc_attr( wp_json_encode( $settings_data ) ); ?>'>
+            <div class="element-post-carousel owl-nav-top owl-carousel owl-theme" data-settings='<?php echo esc_attr( wp_json_encode( $settings_data ) ); ?>'>
                 <?php while ( $cosmetics_post_type_query->have_posts() ): $cosmetics_post_type_query->the_post(); ?>
 
                     <div class="item-post">

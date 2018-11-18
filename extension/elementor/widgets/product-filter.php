@@ -233,9 +233,16 @@ class cosmetics_widget_products_filter extends Widget_Base {
                 $class_column_number = 'column-1 col-lg-12';
             endif;
 
+            $product_filter_settings =   [
+                'column'    =>  $class_column_number,
+                'limit'     =>  $limit,
+                'orderby'   =>  $order_by,
+                'order'     =>  $order
+            ];
+
         ?>
 
-            <div class="element-product-filter element-product-grid element-product-style">
+            <div class="element-product-filter element-product-grid element-product-style" data-settings='<?php echo esc_attr( wp_json_encode( $product_filter_settings ) ); ?>'>
                 <div class="top-block d-flex">
                     <?php
                     if ( !empty( $select_cat ) ) :
@@ -265,8 +272,8 @@ class cosmetics_widget_products_filter extends Widget_Base {
                             ?>
 
                                 <div class="list-item d-flex align-items-center">
-                                    <button class="btn-filter-product" data-id="<?php echo esc_attr( $tag_product->term_id ); ?>">
-                                        <?php echo esc_html( $tag_product->name ); ?>
+                                    <button class="btn-filter-product<?php echo ( $tag_product_ids[0] == $tag_product->term_id ? ' active' : '' ); ?>" data-id="<?php echo esc_attr( $tag_product->term_id ); ?>">
+                                        <?php echo esc_html( $item['list_tag_name'] ); ?>
                                     </button>
                                 </div>
 
@@ -276,40 +283,14 @@ class cosmetics_widget_products_filter extends Widget_Base {
                     <?php endif; ?>
                 </div>
 
-                <div class="row">
-                    <?php while ( $query->have_posts() ): $query->the_post(); ?>
-
-                        <div class="item-col <?php echo esc_attr( $class_column_number ); ?> col-md-3 col-sm-6 col-12">
-                            <div class="item-product">
-                                <div class="item-thumbnail">
-                                    <?php
-                                    if ( has_post_thumbnail() ) :
-                                        the_post_thumbnail( 'large' );
-                                    else:
-                                    ?>
-                                        <img src="<?php echo esc_url( get_theme_file_uri( '/images/no-image.png' ) ); ?>" alt="<?php the_title(); ?>">
-                                    <?php endif; ?>
-
-                                    <div class="item-add-cart">
-                                        <?php do_action( 'woo_elementor_add_to_cart' ); ?>
-                                    </div>
-                                </div>
-
-                                <div class="item-detail">
-                                    <h2 class="item-title">
-                                        <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-                                            <?php the_title(); ?>
-                                        </a>
-                                    </h2>
-
-                                    <?php woocommerce_template_loop_price(); ?>
-                                </div>
-                            </div>
-                        </div>
-
+                <div class="element-product-filter__row row">
                     <?php
-                    endwhile; wp_reset_postdata();
-                    ?>
+                    while ( $query->have_posts() ): $query->the_post();
+
+                        cosmetics_content_product_filter( $class_column_number, '' );
+
+                     endwhile; wp_reset_postdata();
+                     ?>
                 </div>
             </div>
 

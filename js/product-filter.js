@@ -8,8 +8,7 @@
 
     "use strict";
 
-    var product_btn_filter  =   $( '.btn-filter-product' ),
-        content_product     =   $( '.element-product-filter .row' );
+    var product_btn_filter  =   $( '.btn-filter-product' );
 
     $( document ).ready( function () {
 
@@ -21,36 +20,54 @@
 
         product_btn_filter.on( 'click', function () {
 
-            var product_tag_id  =   parseInt( $(this).data( 'id' ) );
+            var has_active = $(this).hasClass( 'active' );
 
-            // alert( product_tag_id );
+            if ( has_active === false ) {
 
-            $.ajax({
+                $(this).parents( '.top-block__list' ).find('.btn-filter-product').removeClass( 'active' );
+                $(this).addClass( 'active' );
 
-                url: cosmetics_products_filter_load.url,
-                type: 'POST',
-                data: ({
+                var content_product =   $(this).parents('.element-product-filter').find( '.element-product-filter__row' ),
+                    data_settings   =   $(this).parents('.element-product-filter').data( 'settings' ),
+                    product_tag_id  =   parseInt( $(this).data( 'id' ) ),
+                    data_column     =   data_settings['column'],
+                    data_limit      =   parseInt( data_settings['limit'] ),
+                    data_orderby    =   data_settings['orderby'],
+                    data_order      =   data_settings['order'];
 
-                    action: 'cosmetics_product_filter',
-                    tag_id_product: product_tag_id
+                $.ajax({
 
-                }),
+                    url: cosmetics_products_filter_load.url,
+                    type: 'POST',
+                    data: ({
 
-                beforeSend: function () {
+                        action: 'cosmetics_product_filter',
+                        tag_id_product: product_tag_id,
+                        column: data_column,
+                        limit: data_limit,
+                        orderby: data_orderby,
+                        order: data_order
 
+                    }),
 
+                    beforeSend: function () {
 
-                },
+                        content_product.addClass( 'filter-opacity' );
 
-                success: function( data ) {
+                    },
 
-                    if ( data ) {
-                        content_product.empty().append( data );
+                    success: function( data ) {
+
+                        if ( data ) {
+                            content_product.empty().append( data );
+                            content_product.removeClass( 'filter-opacity' );
+                        }
+
                     }
 
-                }
+                });
 
-            });
+            }
 
         } )
 
