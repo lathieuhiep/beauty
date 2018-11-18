@@ -8,25 +8,37 @@
       button {
         position: absolute;
         top: 50%;
+        border: 1px solid #dfdfdf;
+        background-color: #f5f5f5;
+        opacity: 0;
         @include transform(translateY(-50%));
+        @include transition(all 0.4s ease-in-out);
 
         &.owl-prev,
         &.owl-next {
           background-color: transparent;
+          width: 30px;
+          height: 50px;
+          line-height: 50px;
           margin: 0;
           padding: 0 !important;
+          @include transition(all 0.4s ease-in-out);
         }
         &.owl-prev {
-          left: 15px;
+          left: 30px;
         }
         &.owl-next {
-          right: 15px;
+          right: 30px;
         }
-        i.fa {
-          font-size: 30px;
+        i {
+          font-size: 20px;
+          color: #333333;
+        }
+        &:hover {
+          background-color: $color-hover;
 
-          &:hover {
-            color: $color-hover;
+          i {
+            color: #ffffff;
           }
         }
       }
@@ -45,6 +57,20 @@
         &:hover {
           span {
             background-color: $background-hover;
+          }
+        }
+      }
+    }
+    &:hover {
+      .owl-nav {
+        button {
+          opacity: 1;
+
+          &.owl-prev {
+            left: 15px;
+          }
+          &.owl-next {
+            right: 15px;
           }
         }
       }

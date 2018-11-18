@@ -3,13 +3,17 @@
 
 <footer class="site-footer">
 
-    <?php
+    <div class="site-footer__multi--column">
+        <div class="container">
+            <?php
+            get_template_part( 'template-parts/footer/inc','multi-column' );
 
-    get_template_part( 'template-parts/footer/inc','multi-column' );
+            get_template_part( 'template-parts/footer/inc','multi-column-2' );
+            ?>
+        </div>
+    </div>
 
-    get_template_part( 'template-parts/footer/inc','copyright' );
-
-    ?>
+    <?php get_template_part( 'template-parts/footer/inc','copyright' ); ?>
 
 </footer>
 

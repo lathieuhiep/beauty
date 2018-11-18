@@ -81,6 +81,8 @@ if ( ! function_exists( 'cosmetics_woo_before_main_content' ) ) :
 
         <div class="site-shop">
             <div class="container">
+                <?php do_action( 'cosmetics_woocommerce_breadcrumb' ); ?>
+
                 <div class="row">
 
                 <?php
@@ -271,7 +273,7 @@ if ( ! function_exists( 'cosmetics_woo_before_shop_loop_open' ) ) :
 
     ?>
 
-        <div class="site-shop__result-count-ordering d-flex align-items-center justify-content-between">
+        <div class="site-shop__result-count-ordering d-flex align-items-center">
 
     <?php
     }

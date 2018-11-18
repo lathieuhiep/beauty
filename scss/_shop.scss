@@ -11,6 +11,7 @@
   .woocommerce-result-count {
     float: none;
     margin: 0;
+    flex: 1 0 auto;
   }
   .woocommerce-ordering {
     float: none;
@@ -198,11 +199,26 @@
           width: 50%;
           padding: 0 15px;
           position: relative;
+
+          .woocommerce-product-gallery__wrapper {
+            text-align: center;
+            padding: 30px;
+            border: 1px solid #eee;
+
+            a {
+              display: block;
+            }
+            img {
+              display: inline-block;
+              max-width: 100%;
+              width: auto;
+            }
+          }
         }
         div {
           &.images {
             float: none;
-            width: 100%;
+            width: auto;
             margin: 0;
           }
           &.summary {

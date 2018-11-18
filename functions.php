@@ -149,25 +149,45 @@ function cosmetics_widgets_init() {
             'description'       =>  esc_html__( 'Display sidebar on page shop.', 'cosmetics' )
         ),
 
-        'cosmetics-sidebar-footer-multi-column-1'   =>  array(
-            'name'              =>  esc_html__( 'Sidebar Footer Multi Column 1', 'cosmetics' ),
+        'cosmetics-sidebar-footer-multi-column-1-1'   =>  array(
+            'name'              =>  esc_html__( 'Sidebar Footer Multi Column 1-1', 'cosmetics' ),
             'description'       =>  esc_html__('Display footer column 1 on all page.', 'cosmetics' )
         ),
 
-        'cosmetics-sidebar-footer-multi-column-2'   =>  array(
-            'name'              =>  esc_html__( 'Sidebar Footer Multi Column 2', 'cosmetics' ),
+        'cosmetics-sidebar-footer-multi-column-1-2'   =>  array(
+            'name'              =>  esc_html__( 'Sidebar Footer Multi Column 1-2', 'cosmetics' ),
             'description'       =>  esc_html__('Display footer column 2 on all page.', 'cosmetics' )
         ),
 
-        'cosmetics-sidebar-footer-multi-column-3'   =>  array(
-            'name'              =>  esc_html__( 'Sidebar Footer Multi Column 3', 'cosmetics' ),
+        'cosmetics-sidebar-footer-multi-column-1-3'   =>  array(
+            'name'              =>  esc_html__( 'Sidebar Footer Multi Column 1-3', 'cosmetics' ),
             'description'       =>  esc_html__('Display footer column 3 on all page.', 'cosmetics' )
         ),
 
-        'cosmetics-sidebar-footer-multi-column-4'   =>  array(
-            'name'              =>  esc_html__( 'Sidebar Footer Multi Column 4', 'cosmetics' ),
+        'cosmetics-sidebar-footer-multi-column-1-4'   =>  array(
+            'name'              =>  esc_html__( 'Sidebar Footer Multi Column 1-4', 'cosmetics' ),
             'description'       =>  esc_html__('Display footer column 4 on all page.', 'cosmetics' )
-        )
+        ),
+
+        'cosmetics-sidebar-footer-multi-column-2-1'   =>  array(
+            'name'              =>  esc_html__( 'Sidebar Footer Multi Column 2-1', 'event_conference' ),
+            'description'       =>  esc_html__('Display footer column 1-2 on all page.', 'event_conference' )
+        ),
+
+        'cosmetics-sidebar-footer-multi-column-2-2'   =>  array(
+            'name'              =>  esc_html__( 'Sidebar Footer Multi Column 2-2', 'event_conference' ),
+            'description'       =>  esc_html__('Display footer column 2-2 on all page.', 'event_conference' )
+        ),
+
+        'cosmetics-sidebar-footer-multi-column-2-3'   =>  array(
+            'name'              =>  esc_html__( 'Sidebar Footer Multi Column 2-3', 'event_conference' ),
+            'description'       =>  esc_html__('Display footer column 2-3 on all page.', 'event_conference' )
+        ),
+
+        'cosmetics-sidebar-footer-multi-column-2-4'   =>  array(
+            'name'              =>  esc_html__( 'Sidebar Footer Multi Column 2-4', 'event_conference' ),
+            'description'       =>  esc_html__('Display footer column 2-4 on all page.', 'event_conference' )
+        ),
 
     );
 

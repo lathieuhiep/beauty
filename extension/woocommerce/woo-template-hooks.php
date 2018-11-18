@@ -24,6 +24,8 @@
 
 remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10 );
 
+remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20 );
+
 remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10 );
 
 remove_action( 'woocommerce_before_shop_loop_item', 'woocommerce_template_loop_product_link_open', 10 );
@@ -34,6 +36,8 @@ remove_action( 'woocommerce_shop_loop_item_title', 'woocommerce_template_loop_pr
 remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar', 10 );
 
 add_action( 'woocommerce_before_main_content', 'cosmetics_woo_before_main_content', 10 );
+
+add_action( 'cosmetics_woocommerce_breadcrumb', 'woocommerce_breadcrumb', 10 );
 
 add_action( 'woocommerce_before_shop_loop', 'cosmetics_woo_before_shop_loop_open',  5 );
 add_action( 'woocommerce_before_shop_loop', 'cosmetics_woo_before_shop_loop_close',  35 );
