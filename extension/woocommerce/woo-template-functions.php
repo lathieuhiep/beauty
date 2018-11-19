@@ -81,8 +81,6 @@ if ( ! function_exists( 'cosmetics_woo_before_main_content' ) ) :
 
         <div class="site-shop">
             <div class="container">
-                <?php do_action( 'cosmetics_woocommerce_breadcrumb' ); ?>
-
                 <div class="row">
 
                 <?php
