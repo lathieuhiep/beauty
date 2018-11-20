@@ -425,3 +425,104 @@ if ( ! function_exists( 'cosmetics_woo_before_single_product_summary_close' ) ) 
     }
 
 endif;
+
+if ( ! function_exists( 'cosmetics_related_products' ) ) :
+
+    /**
+     * woocommerce_after_single_product_summary hook.
+     *
+     * @hooked cosmetics_related_products - 30
+     */
+
+    function cosmetics_related_products() {
+
+        $cosmetics_product_cat = get_the_terms( get_the_ID(), 'product_cat' );
+
+        if ( !empty( $cosmetics_product_cat ) ) :
+
+            $cosmetics_product_cat_ids = array();
+
+            foreach( $cosmetics_product_cat as $item_product_cat_id ) $cosmetics_product_cat_ids[] = $item_product_cat_id->term_id;
+
+            $cosmetics_product_related_arg = array(
+                'post_type'         =>  'product',
+                'post__not_in'      =>  array( get_the_ID() ),
+                'orderby'           =>  'rand',
+                'posts_per_page'    =>  6,
+                'tax_query'         =>  array(
+                    array(
+                        'taxonomy'  =>  'product_cat',
+                        'field'     =>  'id',
+                        'terms'     =>  $cosmetics_product_cat_ids
+                    ),
+                )
+            );
+
+            $cosmetics_product_related_query = new WP_Query( $cosmetics_product_related_arg );
+
+            if ( $cosmetics_product_related_query->have_posts() ) :
+
+                $settings_data     =   [
+                    'margin_item'   =>  30,
+                    'number_item'   =>  4,
+                    'item_tablet'   =>  2,
+                    'item_mobile'   =>  1,
+                    'nav'           =>  true,
+                ];
+
+    ?>
+
+            <div class="related products">
+
+                <h2 class="title">
+                    <?php esc_html_e( 'Sản phẩm cùng loại', 'cosmetics' ); ?>
+                </h2>
+
+                <div class="related-product-slider element-product-style owl-carousel owl-theme" data-settings='<?php echo esc_attr( wp_json_encode( $settings_data ) ); ?>'>
+                    <?php
+                    while ( $cosmetics_product_related_query->have_posts() ) :
+                        $cosmetics_product_related_query->the_post();
+                    ?>
+
+                        <div class="item-product">
+                            <div class="item-thumbnail">
+                                <?php
+                                if ( has_post_thumbnail() ) :
+                                    the_post_thumbnail( 'large' );
+                                else:
+                                ?>
+                                    <img src="<?php echo esc_url( get_theme_file_uri( '/images/no-image.png' ) ); ?>" alt="<?php the_title(); ?>">
+                                <?php endif; ?>
+
+                                <div class="item-add-cart">
+                                    <?php do_action( 'woo_elementor_add_to_cart' ); ?>
+                                </div>
+                            </div>
+
+                            <div class="item-detail">
+                                <h2 class="item-title">
+                                    <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+                                        <?php the_title(); ?>
+                                    </a>
+                                </h2>
+
+                                <?php woocommerce_template_loop_price(); ?>
+                            </div>
+                        </div>
+
+                    <?php
+                    endwhile;
+                    wp_reset_postdata();
+                    ?>
+                </div>
+            </div>
+
+    <?php
+
+            endif;
+
+        endif;
+
+    }
+
+endif;

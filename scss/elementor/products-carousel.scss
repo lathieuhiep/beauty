@@ -104,18 +104,15 @@
       @include transition(all 0.4s ease-in-out);
 
       a {
-        position: relative;
         display: inline-block;
         color: #ffffff;
 
         &.add_to_cart_button {
           &:before {
-            position: absolute;
             content: "\f07a";
             font-weight: 900;
-            top: -2px;
-            left: -22px;
             font-family: 'Font Awesome 5 Free';
+            margin-right: 10px;
           }
           &.loading {
             &:after {
@@ -132,12 +129,11 @@
         }
         &.added_to_cart {
           font-size: 0;
+          margin-left: 10px;
+          line-height: normal;
 
           &:before {
-            position: absolute;
             content: "\f061";
-            top: -4px;
-            left: 8px;
             font-weight: 900;
             font-size: 11px;
             font-family: 'Font Awesome 5 Free';

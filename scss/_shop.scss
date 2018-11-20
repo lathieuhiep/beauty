@@ -357,6 +357,50 @@
         }
       }
     }
+    .related.products {
+      .title {
+        font-size: 16px;
+        text-transform: uppercase;
+        line-height: 1.5em;
+      }
+      .item-product  {
+        border: 1px solid #eeeeee;
+        background-color: #ffffff;
+
+        .item-thumbnail {
+          height: 235px;
+          overflow: hidden;
+
+          img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+          }
+        }
+      }
+      .element-product-style {
+        .item-product {
+          .item-add-cart {
+            a {
+              background-color: transparent;
+              padding: 0;
+
+              &:hover {
+                background-color: transparent;
+              }
+            }
+          }
+        }
+      }
+      .owl-carousel {
+        .owl-nav {
+          position: absolute;
+          margin: 0;
+          top: -45px;
+          right: 0;
+        }
+      }
+    }
   }
   div {
     &.product {

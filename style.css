@@ -1913,18 +1913,15 @@ section.widget.woocommerce .woocommerce-widget-layered-nav-list .woocommerce-wid
 }
 
 .element-product-style .item-product .item-add-cart a {
-  position: relative;
   display: inline-block;
   color: #ffffff;
 }
 
 .element-product-style .item-product .item-add-cart a.add_to_cart_button:before {
-  position: absolute;
   content: "\f07a";
   font-weight: 900;
-  top: -2px;
-  left: -22px;
   font-family: 'Font Awesome 5 Free';
+  margin-right: 10px;
 }
 
 .element-product-style .item-product .item-add-cart a.add_to_cart_button.loading:after {
@@ -1940,13 +1937,12 @@ section.widget.woocommerce .woocommerce-widget-layered-nav-list .woocommerce-wid
 
 .element-product-style .item-product .item-add-cart a.added_to_cart {
   font-size: 0;
+  margin-left: 10px;
+  line-height: normal;
 }
 
 .element-product-style .item-product .item-add-cart a.added_to_cart:before {
-  position: absolute;
   content: "\f061";
-  top: -4px;
-  left: 8px;
   font-weight: 900;
   font-size: 11px;
   font-family: 'Font Awesome 5 Free';
@@ -2704,6 +2700,44 @@ section.widget.woocommerce .woocommerce-widget-layered-nav-list .woocommerce-wid
 
 .woocommerce .site-shop-single .variations_form.cart .variations a.reset_variations {
   display: none !important;
+}
+
+.woocommerce .site-shop-single .related.products .title {
+  font-size: 16px;
+  text-transform: uppercase;
+  line-height: 1.5em;
+}
+
+.woocommerce .site-shop-single .related.products .item-product {
+  border: 1px solid #eeeeee;
+  background-color: #ffffff;
+}
+
+.woocommerce .site-shop-single .related.products .item-product .item-thumbnail {
+  height: 235px;
+  overflow: hidden;
+}
+
+.woocommerce .site-shop-single .related.products .item-product .item-thumbnail img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.woocommerce .site-shop-single .related.products .element-product-style .item-product .item-add-cart a {
+  background-color: transparent;
+  padding: 0;
+}
+
+.woocommerce .site-shop-single .related.products .element-product-style .item-product .item-add-cart a:hover {
+  background-color: transparent;
+}
+
+.woocommerce .site-shop-single .related.products .owl-carousel .owl-nav {
+  position: absolute;
+  margin: 0;
+  top: -45px;
+  right: 0;
 }
 
 .woocommerce div.product .woocommerce-tabs ul.tabs {

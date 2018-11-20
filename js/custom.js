@@ -52,6 +52,8 @@
         $( document ).general_owlCarousel_item( '.site-post-slides' );
         /* End Gallery Single */
 
+        $( document ).general_multi_owlCarouse( '.related-product-slider' );
+
     });
 
     $( window ).on( "load", function() {
