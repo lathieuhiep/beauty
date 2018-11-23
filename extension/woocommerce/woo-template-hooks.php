@@ -73,6 +73,8 @@ add_action( 'woocommerce_after_main_content', 'cosmetics_woo_after_main_content'
 
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
 
+remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_upsell_display', 15 );
+
 remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20 );
 
 add_action( 'woocommerce_before_single_product', 'cosmetics_woo_before_single_product', 5 );
@@ -84,6 +86,8 @@ add_action( 'woocommerce_before_single_product_summary', 'cosmetics_woo_before_s
 
 add_action( 'woocommerce_after_single_product_summary', 'cosmetics_woo_after_single_product_summary_close_warp', 5 );
 
+add_action( 'woocommerce_after_single_product_summary', 'cosmetics_upsell_products', 5 );
+
 add_action( 'woocommerce_after_single_product_summary', 'cosmetics_related_products', 20 );
 
 add_action( 'woocommerce_after_single_product', 'cosmetics_woo_after_single_product', 30 );
@@ -91,4 +95,5 @@ add_action( 'woocommerce_after_single_product', 'cosmetics_woo_after_single_prod
 /*
  * Addons Elementor
  * */
+add_action( 'woo_elementor_product_sale_flash', 'woocommerce_show_product_loop_sale_flash' );
 add_action( 'woo_elementor_add_to_cart', 'woocommerce_template_loop_add_to_cart', 5 );

@@ -197,7 +197,7 @@
   }
   .site-shop-single {
     .site-shop-single__warp {
-      margin: 0 -15px 30px;
+      margin: 0 -15px 60px;
       @include flexbox();
       @include flex-flow(row wrap);
 
@@ -357,47 +357,52 @@
         }
       }
     }
-    .related.products {
-      .title {
-        font-size: 16px;
-        text-transform: uppercase;
-        line-height: 1.5em;
-      }
-      .item-product  {
-        border: 1px solid #eeeeee;
-        background-color: #ffffff;
+    .upsells {
+      margin-bottom: 60px;
+    }
+    .related,
+    .upsells {
+      &.products {
+        .title {
+          font-size: 16px;
+          text-transform: uppercase;
+          line-height: 1.5em;
+        }
+        .item-product  {
+          border: 1px solid #eeeeee;
+          background-color: #ffffff;
 
-        .item-thumbnail {
-          height: 235px;
-          overflow: hidden;
+          .item-thumbnail {
+            height: 235px;
 
-          img {
-            height: 100%;
-            width: 100%;
-            object-fit: cover;
+            img {
+              height: 100%;
+              width: 100%;
+              object-fit: cover;
+            }
           }
         }
-      }
-      .element-product-style {
-        .item-product {
-          .item-add-cart {
-            a {
-              background-color: transparent;
-              padding: 0;
-
-              &:hover {
+        .element-product-style {
+          .item-product {
+            .item-add-cart {
+              a {
                 background-color: transparent;
+                padding: 0;
+
+                &:hover {
+                  background-color: transparent;
+                }
               }
             }
           }
         }
-      }
-      .owl-carousel {
-        .owl-nav {
-          position: absolute;
-          margin: 0;
-          top: -45px;
-          right: 0;
+        .owl-carousel {
+          .owl-nav {
+            position: absolute;
+            margin: 0;
+            top: -45px;
+            right: 0;
+          }
         }
       }
     }
@@ -445,6 +450,7 @@
         .panel {
           border: 1px solid #eeeeee;
           padding: 15px;
+          margin: 0 0 60px;
 
           &.woocommerce-Tabs-panel--description {
             p {

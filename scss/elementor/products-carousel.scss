@@ -88,6 +88,16 @@
       position: relative;
       overflow: hidden;
 
+      .onsale {
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: auto;
+        padding: 5px 10px;
+        color: #ffffff;
+        background-color: $color-hover;
+        z-index: 10;
+      }
       img {
         @include transition(all 0.4s ease-in-out);
       }

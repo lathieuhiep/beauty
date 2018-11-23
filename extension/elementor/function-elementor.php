@@ -7,6 +7,8 @@ function cosmetics_content_product_filter( $class_column_number, $class_animate 
         <div class="item-product">
             <div class="item-thumbnail">
                 <?php
+                do_action( 'woo_elementor_product_sale_flash' );
+
                 if ( has_post_thumbnail() ) :
                     the_post_thumbnail( 'large' );
                 else:
