@@ -88,9 +88,17 @@ add_action( 'woocommerce_after_single_product_summary', 'cosmetics_woo_after_sin
 
 add_action( 'woocommerce_after_single_product_summary', 'cosmetics_upsell_products', 5 );
 
+add_action( 'woocommerce_after_single_product_summary', 'cosmetics_crosssell_products', 18 );
+
 add_action( 'woocommerce_after_single_product_summary', 'cosmetics_related_products', 20 );
 
 add_action( 'woocommerce_after_single_product', 'cosmetics_woo_after_single_product', 30 );
+
+/*
+ * Cart Page
+ * */
+
+remove_action( 'woocommerce_cart_collaterals', 'woocommerce_cross_sell_display' );
 
 /*
  * Addons Elementor

@@ -2713,48 +2713,56 @@ section.widget.woocommerce .woocommerce-widget-layered-nav-list .woocommerce-wid
   display: none !important;
 }
 
-.woocommerce .site-shop-single .upsells {
+.woocommerce .site-shop-single .upsells,
+.woocommerce .site-shop-single .cross-sells {
   margin-bottom: 60px;
 }
 
 .woocommerce .site-shop-single .related.products .title,
-.woocommerce .site-shop-single .upsells.products .title {
+.woocommerce .site-shop-single .upsells.products .title,
+.woocommerce .site-shop-single .collaterals.products .title {
   font-size: 16px;
   text-transform: uppercase;
   line-height: 1.5em;
 }
 
 .woocommerce .site-shop-single .related.products .item-product,
-.woocommerce .site-shop-single .upsells.products .item-product {
+.woocommerce .site-shop-single .upsells.products .item-product,
+.woocommerce .site-shop-single .collaterals.products .item-product {
   border: 1px solid #eeeeee;
   background-color: #ffffff;
 }
 
 .woocommerce .site-shop-single .related.products .item-product .item-thumbnail,
-.woocommerce .site-shop-single .upsells.products .item-product .item-thumbnail {
+.woocommerce .site-shop-single .upsells.products .item-product .item-thumbnail,
+.woocommerce .site-shop-single .collaterals.products .item-product .item-thumbnail {
   height: 235px;
 }
 
 .woocommerce .site-shop-single .related.products .item-product .item-thumbnail img,
-.woocommerce .site-shop-single .upsells.products .item-product .item-thumbnail img {
+.woocommerce .site-shop-single .upsells.products .item-product .item-thumbnail img,
+.woocommerce .site-shop-single .collaterals.products .item-product .item-thumbnail img {
   height: 100%;
   width: 100%;
   object-fit: cover;
 }
 
 .woocommerce .site-shop-single .related.products .element-product-style .item-product .item-add-cart a,
-.woocommerce .site-shop-single .upsells.products .element-product-style .item-product .item-add-cart a {
+.woocommerce .site-shop-single .upsells.products .element-product-style .item-product .item-add-cart a,
+.woocommerce .site-shop-single .collaterals.products .element-product-style .item-product .item-add-cart a {
   background-color: transparent;
   padding: 0;
 }
 
 .woocommerce .site-shop-single .related.products .element-product-style .item-product .item-add-cart a:hover,
-.woocommerce .site-shop-single .upsells.products .element-product-style .item-product .item-add-cart a:hover {
+.woocommerce .site-shop-single .upsells.products .element-product-style .item-product .item-add-cart a:hover,
+.woocommerce .site-shop-single .collaterals.products .element-product-style .item-product .item-add-cart a:hover {
   background-color: transparent;
 }
 
 .woocommerce .site-shop-single .related.products .owl-carousel .owl-nav,
-.woocommerce .site-shop-single .upsells.products .owl-carousel .owl-nav {
+.woocommerce .site-shop-single .upsells.products .owl-carousel .owl-nav,
+.woocommerce .site-shop-single .collaterals.products .owl-carousel .owl-nav {
   position: absolute;
   margin: 0;
   top: -45px;

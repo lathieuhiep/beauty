@@ -490,6 +490,67 @@ if ( ! function_exists( 'cosmetics_upsell_products' ) ) :
 
 endif;
 
+if ( ! function_exists( 'cosmetics_crosssell_products' ) ) :
+
+    /**
+     * woocommerce_after_single_product_summary hook.
+     *
+     * @hooked cosmetics_crosssell_products - 18
+     */
+
+    function cosmetics_crosssell_products() {
+
+        $cosmetics_product_crosssell_ids = get_post_meta( get_the_ID(), '_crosssell_ids', true );
+
+        if ( !empty( $cosmetics_product_crosssell_ids ) ) :
+
+            $cosmetics_product_crosssell_arg = array(
+                'post_type'         =>  'product',
+                'post__in'          =>  $cosmetics_product_crosssell_ids,
+                'post__not_in'      =>  array( get_the_ID() ),
+                'posts_per_page'    =>  -1,
+                'orderby'           =>  'ID',
+                'order'             =>  'DESC',
+            );
+
+            $cosmetics_product_crosssell_query = new WP_Query( $cosmetics_product_crosssell_arg );
+
+            $settings_data     =   [
+                'margin_item'   =>  30,
+                'number_item'   =>  4,
+                'item_tablet'   =>  2,
+                'item_mobile'   =>  1,
+                'nav'           =>  true,
+            ];
+
+    ?>
+
+            <div class="cross-sells products">
+                <h2 class="title">
+                    <?php esc_html_e( 'Sản phẩm mua cùng', 'cosmetics' ); ?>
+                </h2>
+
+                <div class="related-product-slider element-product-style owl-carousel owl-theme" data-settings='<?php echo esc_attr( wp_json_encode( $settings_data ) ); ?>'>
+                    <?php
+                    while ( $cosmetics_product_crosssell_query->have_posts() ) :
+                        $cosmetics_product_crosssell_query->the_post();
+
+                        cosmetics_product_slides();
+
+                    endwhile;
+                    wp_reset_postdata();
+                    ?>
+                </div>
+            </div>
+
+    <?php
+
+        endif;
+
+    }
+
+endif;
+
 if ( ! function_exists( 'cosmetics_related_products' ) ) :
 
     /**

@@ -357,11 +357,13 @@
         }
       }
     }
-    .upsells {
+    .upsells,
+    .cross-sells {
       margin-bottom: 60px;
     }
     .related,
-    .upsells {
+    .upsells,
+    .collaterals {
       &.products {
         .title {
           font-size: 16px;
