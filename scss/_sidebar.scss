@@ -194,6 +194,31 @@ section {
         }
       }
     }
+    &.cosmetics_cam_ket_widget {
+      .cam-ket-widget {
+        .list {
+          margin-bottom: 10px;
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+          .item-image {
+            @include flex( 0 0 auto );
+            width: 75px;
+            margin-right: 5px;
+          }
+          .item-name {
+            font-size: 11px;
+            color: $color-hover;
+            margin-bottom: 5px;
+          }
+          .item-description {
+            font-size: 11px;
+            line-height: 1.8em;
+          }
+        }
+      }
+    }
 
     /* Widgets woocommerce */
     .woocommerce-product-search {

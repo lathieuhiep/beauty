@@ -444,7 +444,40 @@ if ( ! function_exists( 'cosmetics_woo_before_single_product_summary_close' ) ) 
 
 endif;
 
+if ( !  function_exists( 'cosmetics_brand_product' ) ) :
 
+    /**
+     * woocommerce_single_product_summary hook.
+     *
+     * @hooked cosmetics_brand_product - 15
+     */
+
+    function cosmetics_brand_product() {
+
+        $cosmetics_product_brand = get_the_terms( get_the_ID(), 'brand_cat' );
+
+        if ( !empty( $cosmetics_product_brand ) ) :
+    ?>
+
+        <div class="product-brand d-flex">
+            <span class="product-brand__name">
+                <?php esc_html_e( 'Thương hiệu:' ); ?>
+            </span>
+
+            <div class="product-brand__list">
+                <?php foreach ( $cosmetics_product_brand as $item ) : ?>
+                    <a href="<?php echo esc_url( get_term_link( $item->term_id, 'brand_cat' ) ); ?>">
+                        <?php echo esc_html(  $item->name ); ?>
+                    </a>
+                <?php endforeach; ?>
+            </div>
+        </div>
+
+    <?php
+        endif;
+    }
+
+endif;
 
 if ( ! function_exists( 'cosmetics_upsell_products' ) ) :
 
@@ -656,7 +689,6 @@ function cosmetics_product_slides() {
             do_action( 'woo_elementor_product_sale_flash' );
 
             if ( has_post_thumbnail() ) :
-
                 the_post_thumbnail( 'large' );
             else:
             ?>

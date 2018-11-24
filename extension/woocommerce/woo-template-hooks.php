@@ -81,6 +81,8 @@ add_action( 'woocommerce_before_single_product', 'cosmetics_woo_before_single_pr
 
 add_action( 'woocommerce_before_single_product_summary', 'cosmetics_woo_before_single_product_summary_open_warp',  1 );
 
+add_action( 'woocommerce_single_product_summary', 'cosmetics_brand_product', 15 );
+
 add_action( 'woocommerce_before_single_product_summary', 'cosmetics_woo_before_single_product_summary_open', 5 );
 add_action( 'woocommerce_before_single_product_summary', 'cosmetics_woo_before_single_product_summary_close', 30 );
 

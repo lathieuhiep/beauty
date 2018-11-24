@@ -1048,6 +1048,33 @@ section.widget .post_widget_warp .post_widget__item .item-meta i.fa {
   margin-right: 5px;
 }
 
+section.widget.cosmetics_cam_ket_widget .cam-ket-widget .list {
+  margin-bottom: 10px;
+}
+
+section.widget.cosmetics_cam_ket_widget .cam-ket-widget .list:last-child {
+  margin-bottom: 0;
+}
+
+section.widget.cosmetics_cam_ket_widget .cam-ket-widget .list .item-image {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 75px;
+  margin-right: 5px;
+}
+
+section.widget.cosmetics_cam_ket_widget .cam-ket-widget .list .item-name {
+  font-size: 11px;
+  color: #199427;
+  margin-bottom: 5px;
+}
+
+section.widget.cosmetics_cam_ket_widget .cam-ket-widget .list .item-description {
+  font-size: 11px;
+  line-height: 1.8em;
+}
+
 section.widget .woocommerce-product-search {
   display: -webkit-box;
   display: -moz-box;
@@ -2701,6 +2728,14 @@ aside.site-sidebar section.widget.widget_product_categories ul li:hover ul.child
   left: 15px;
 }
 
+.woocommerce .site-shop-single .site-shop-single__warp .product-brand {
+  margin-bottom: 10px;
+}
+
+.woocommerce .site-shop-single .site-shop-single__warp .product-brand .product-brand__name {
+  margin-right: 5px;
+}
+
 .woocommerce .site-shop-single div.product .site-shop-single__gallery-box {
   width: 50%;
   padding: 0 15px;
@@ -2713,6 +2748,12 @@ aside.site-sidebar section.widget.widget_product_categories ul li:hover ul.child
   border: 1px solid #eee;
 }
 
+.woocommerce .site-shop-single div.product .site-shop-single__gallery-box .woocommerce-product-gallery__wrapper:after {
+  display: table;
+  content: "";
+  clear: both;
+}
+
 .woocommerce .site-shop-single div.product .site-shop-single__gallery-box .woocommerce-product-gallery__wrapper a {
   display: block;
 }
@@ -2723,10 +2764,25 @@ aside.site-sidebar section.widget.widget_product_categories ul li:hover ul.child
   width: auto;
 }
 
+.woocommerce .site-shop-single div.product .site-shop-single__gallery-box .flex-viewport {
+  height: auto !important;
+  padding: 30px;
+  border: 1px solid #eee;
+}
+
+.woocommerce .site-shop-single div.product .site-shop-single__gallery-box .flex-viewport .woocommerce-product-gallery__wrapper {
+  padding: 0;
+  border: none;
+}
+
 .woocommerce .site-shop-single div.product div.images {
   float: none;
   width: auto;
   margin: 0;
+}
+
+.woocommerce .site-shop-single div.product div.images .flex-control-thumbs {
+  margin-top: 15px;
 }
 
 .woocommerce .site-shop-single div.product div.summary {

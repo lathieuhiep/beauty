@@ -508,7 +508,7 @@ Redux::setSection( $cosmetics_opt_name, array(
             'type'      =>  'select',
             'title'     =>  esc_html__( 'Position Sidebar Page Shop', 'cosmetics' ),
             'desc'          =>  esc_html__( 'Position Sidebar Page Shop', 'cosmetics' ),
-            'default'   =>  'right',
+            'default'   =>  'left',
             'options'   =>  array(
                 'left'  =>  'Left',
                 'right' =>  'Right',
@@ -528,6 +528,26 @@ Redux::setSection( $cosmetics_opt_name, array(
                 'hide'  =>  'Hide',
             )
         ),
+
+    )
+));
+
+Redux::setSection( $cosmetics_opt_name, array(
+    'title'         =>  esc_html__( 'Cam kết', 'cosmetics' ),
+    'id'            =>  'cosmetics_cam_ket',
+    'desc'          =>  esc_html__( '', 'cosmetics' ),
+    'subsection'    =>  true,
+    'fields'        =>  array(
+
+        array(
+            'id'          => 'cosmetics_cam_ket_list',
+            'type'        => 'slides',
+            'title'       => __('Cam kết của chúng tôi', 'redux-framework-demo'),
+            'placeholder' => array(
+                'title'           => __('This is a title', 'redux-framework-demo'),
+                'description'     => __('Description Here', 'redux-framework-demo'),
+            ),
+        )
 
     )
 ));
