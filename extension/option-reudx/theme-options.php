@@ -506,15 +506,29 @@ Redux::setSection( $cosmetics_opt_name, array(
         array(
             'id'        =>  'cosmetics_sidebar_woo',
             'type'      =>  'select',
-            'title'     =>  esc_html__( 'Position Sidebar Woocommerce', 'cosmetics' ),
-            'desc'          =>  esc_html__( 'Position Sidebar Woocommerce', 'cosmetics' ),
-            'default'   =>  'left',
+            'title'     =>  esc_html__( 'Position Sidebar Page Shop', 'cosmetics' ),
+            'desc'          =>  esc_html__( 'Position Sidebar Page Shop', 'cosmetics' ),
+            'default'   =>  'right',
             'options'   =>  array(
                 'left'  =>  'Left',
                 'right' =>  'Right',
                 'hide'  =>  'Hide',
             )
         ),
+
+        array(
+            'id'        =>  'cosmetics_sidebar_single_product',
+            'type'      =>  'select',
+            'title'     =>  esc_html__( 'Position Sidebar Single Product', 'cosmetics' ),
+            'desc'          =>  esc_html__( 'Position Sidebar single product', 'cosmetics' ),
+            'default'   =>  'right',
+            'options'   =>  array(
+                'left'  =>  'Left',
+                'right' =>  'Right',
+                'hide'  =>  'Hide',
+            )
+        ),
+
     )
 ));
 /* End Shop */

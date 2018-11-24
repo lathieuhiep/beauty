@@ -149,6 +149,11 @@ function cosmetics_widgets_init() {
             'description'       =>  esc_html__( 'Display sidebar on page shop.', 'cosmetics' )
         ),
 
+        'cosmetics-sidebar-single-wc' =>  array(
+            'name'              =>  esc_html__( 'Sidebar Single Woocommerce', 'cosmetics' ),
+            'description'       =>  esc_html__( 'Display sidebar on page shop single.', 'cosmetics' )
+        ),
+
         'cosmetics-sidebar-footer-multi-column-1-1'   =>  array(
             'name'              =>  esc_html__( 'Sidebar Footer Multi Column 1-1', 'cosmetics' ),
             'description'       =>  esc_html__('Display footer column 1 on all page.', 'cosmetics' )

@@ -50,11 +50,17 @@ if ( ! function_exists( 'cosmetics_woo_get_sidebar' ) ) :
 
     function cosmetics_woo_get_sidebar() {
 
-        if( is_active_sidebar( 'cosmetics-sidebar-wc' ) ):
+        if ( !is_product() ) :
+            $cosmetics_sidebar_shop = 'cosmetics-sidebar-wc';
+        else:
+            $cosmetics_sidebar_shop = 'cosmetics-sidebar-single-wc';
+        endif;
+
+        if( is_active_sidebar( $cosmetics_sidebar_shop ) ):
     ?>
 
-            <aside class="col-md-3">
-                <?php dynamic_sidebar( 'cosmetics-sidebar-wc' ); ?>
+            <aside class="col-md-3 site-sidebar">
+                <?php dynamic_sidebar( $cosmetics_sidebar_shop); ?>
             </aside>
 
     <?php
@@ -75,7 +81,12 @@ if ( ! function_exists( 'cosmetics_woo_before_main_content' ) ) :
      */
     function cosmetics_woo_before_main_content() {
         global $cosmetics_options;
-        $cosmetics_sidebar_woo_position = $cosmetics_options['cosmetics_sidebar_woo'];
+
+        if ( !is_product() ) :
+            $cosmetics_sidebar_woo_position = $cosmetics_options['cosmetics_sidebar_woo'];
+        else:
+            $cosmetics_sidebar_woo_position = $cosmetics_options['cosmetics_sidebar_single_product'];
+        endif;
 
     ?>
 
@@ -89,7 +100,7 @@ if ( ! function_exists( 'cosmetics_woo_before_main_content' ) ) :
                  *
                  * @hooked cosmetics_woo_sidebar - 10
                  */
-        
+
                 if ( $cosmetics_sidebar_woo_position == 'left' ) :
                     do_action( 'cosmetics_woo_sidebar' );
                 endif;
@@ -110,8 +121,15 @@ if ( ! function_exists( 'cosmetics_woo_after_main_content' ) ) :
      */
     function cosmetics_woo_after_main_content() {
         global $cosmetics_options;
-        $cosmetics_sidebar_woo_position = $cosmetics_options['cosmetics_sidebar_woo'];
+
+        if ( !is_product() ) :
+            $cosmetics_sidebar_woo_position = $cosmetics_options['cosmetics_sidebar_woo'];
+        else:
+            $cosmetics_sidebar_woo_position = $cosmetics_options['cosmetics_sidebar_single_product'];
+        endif;
+
     ?>
+
 
                     </div><!-- .col-md-9 -->
 

@@ -26,8 +26,8 @@ section {
     }
     .widget-title {
       text-transform: uppercase;
-      margin-bottom: 10px;
-      font-size: 16px;
+      margin-bottom: 15px;
+      font-size: 14px;
     }
     ul {
       list-style: none;
@@ -285,6 +285,146 @@ section {
 
           &:last-child {
             padding-bottom: 0;
+          }
+        }
+      }
+    }
+    &.cosmetics_recent_product_widget {
+      .item {
+        border-bottom: 1px dotted #eee;
+        margin-bottom: 10px;
+        padding-bottom: 10px;
+
+        &:last-child {
+          border-bottom: 0;
+          margin-bottom: 0;
+          padding-bottom: 0;
+        }
+        .item-image {
+          position: relative;
+          width: 80px;
+          height: 80px;
+          margin-right: 10px;
+          @include flex(0 0 auto);
+
+          a {
+            display: block;
+          }
+          img {
+            @include transition(all 0.4s ease-in-out);
+          }
+          .onsale {
+            position: absolute;
+            top: 0;
+            left: 0;
+            font-size: 11px;
+            padding: 0 5px;
+            min-width: auto;
+            min-height: auto;
+            z-index: 5;
+          }
+        }
+        .item-content {
+          .item-title {
+            font-size: 14px;
+            font-weight: 400;
+            margin-bottom: 5px;
+            display: -webkit-box;
+            line-height: 1.5em;
+            height: 3em;
+            overflow: hidden;
+          }
+          .price {
+            font-weight: 700;
+
+            del {
+              font-size: 12px;
+              font-weight: 400;
+            }
+            ins {
+              text-decoration: none;
+            }
+          }
+        }
+        &:hover {
+          .item-image {
+            img {
+              @include transform( scale(1.15) );
+            }
+          }
+        }
+      }
+    }
+  }
+}
+aside {
+  &.site-sidebar {
+    section {
+      &.widget {
+        border: 1px solid #f1f1f1;
+        padding: 15px;
+
+        &.widget_media_image {
+          border: none;
+          padding: 0;
+        }
+        .widget-title {
+          color: $color-hover;
+          margin-left: -15px;
+          margin-right: -15px;
+          padding: 0 15px 15px;
+          border-bottom: 1px solid #f1f1f1;
+        }
+        &.widget_product_categories {
+          ul {
+            li {
+              position: relative;
+              padding-bottom: 0;
+
+              &:before {
+                position: relative;
+                top: -1px;
+                content: "\f054";
+                font-family: 'Font Awesome 5 Free';
+                font-weight: 900;
+                font-size: 10px;
+                color: #ccc;
+                margin-right: 10px;
+              }
+              a {
+                text-transform: capitalize;
+              }
+
+              ul {
+                &.children {
+                  display: none;
+                  padding: 5px 0 0 15px;
+                  @include transition( all 0.4s ease-in-out );
+                }
+                li {
+                  padding-bottom: 5px;
+                  margin-bottom: 5px;
+                  border-bottom: 1px dotted #eee;
+
+                  &:before {
+                    content: "\f0da";
+                    font-size: 12px;
+                  }
+                  &:last-child {
+                    padding-bottom: 0;
+                    margin-bottom: 0;
+                    border-bottom: none;
+                  }
+                }
+              }
+              &:hover {
+                ul {
+                  &.children {
+                    display: block;
+                  }
+                }
+              }
+            }
           }
         }
       }

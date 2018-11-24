@@ -874,8 +874,8 @@ section.widget:last-child {
 
 section.widget .widget-title {
   text-transform: uppercase;
-  margin-bottom: 10px;
-  font-size: 16px;
+  margin-bottom: 15px;
+  font-size: 14px;
 }
 
 section.widget ul {
@@ -1150,6 +1150,149 @@ section.widget.woocommerce .woocommerce-widget-layered-nav-list .woocommerce-wid
 
 section.widget.woocommerce .woocommerce-widget-layered-nav-list .woocommerce-widget-layered-nav-list__item:last-child {
   padding-bottom: 0;
+}
+
+section.widget.cosmetics_recent_product_widget .item {
+  border-bottom: 1px dotted #eee;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+}
+
+section.widget.cosmetics_recent_product_widget .item:last-child {
+  border-bottom: 0;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+section.widget.cosmetics_recent_product_widget .item .item-image {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  margin-right: 10px;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+section.widget.cosmetics_recent_product_widget .item .item-image a {
+  display: block;
+}
+
+section.widget.cosmetics_recent_product_widget .item .item-image img {
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+section.widget.cosmetics_recent_product_widget .item .item-image .onsale {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 11px;
+  padding: 0 5px;
+  min-width: auto;
+  min-height: auto;
+  z-index: 5;
+}
+
+section.widget.cosmetics_recent_product_widget .item .item-content .item-title {
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: 5px;
+  display: -webkit-box;
+  line-height: 1.5em;
+  height: 3em;
+  overflow: hidden;
+}
+
+section.widget.cosmetics_recent_product_widget .item .item-content .price {
+  font-weight: 700;
+}
+
+section.widget.cosmetics_recent_product_widget .item .item-content .price del {
+  font-size: 12px;
+  font-weight: 400;
+}
+
+section.widget.cosmetics_recent_product_widget .item .item-content .price ins {
+  text-decoration: none;
+}
+
+section.widget.cosmetics_recent_product_widget .item:hover .item-image img {
+  -webkit-transform: scale(1.15);
+  -moz-transform: scale(1.15);
+  -o-transform: scale(1.15);
+  -ms-transform: scale(1.15);
+  transform: scale(1.15);
+}
+
+aside.site-sidebar section.widget {
+  border: 1px solid #f1f1f1;
+  padding: 15px;
+}
+
+aside.site-sidebar section.widget.widget_media_image {
+  border: none;
+  padding: 0;
+}
+
+aside.site-sidebar section.widget .widget-title {
+  color: #199427;
+  margin-left: -15px;
+  margin-right: -15px;
+  padding: 0 15px 15px;
+  border-bottom: 1px solid #f1f1f1;
+}
+
+aside.site-sidebar section.widget.widget_product_categories ul li {
+  position: relative;
+  padding-bottom: 0;
+}
+
+aside.site-sidebar section.widget.widget_product_categories ul li:before {
+  position: relative;
+  top: -1px;
+  content: "\f054";
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  font-size: 10px;
+  color: #ccc;
+  margin-right: 10px;
+}
+
+aside.site-sidebar section.widget.widget_product_categories ul li a {
+  text-transform: capitalize;
+}
+
+aside.site-sidebar section.widget.widget_product_categories ul li ul.children {
+  display: none;
+  padding: 5px 0 0 15px;
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+aside.site-sidebar section.widget.widget_product_categories ul li ul li {
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+  border-bottom: 1px dotted #eee;
+}
+
+aside.site-sidebar section.widget.widget_product_categories ul li ul li:before {
+  content: "\f0da";
+  font-size: 12px;
+}
+
+aside.site-sidebar section.widget.widget_product_categories ul li ul li:last-child {
+  padding-bottom: 0;
+  margin-bottom: 0;
+  border-bottom: none;
+}
+
+aside.site-sidebar section.widget.widget_product_categories ul li:hover ul.children {
+  display: block;
 }
 
 /**
@@ -2720,7 +2863,7 @@ section.widget.woocommerce .woocommerce-widget-layered-nav-list .woocommerce-wid
 
 .woocommerce .site-shop-single .related.products .title,
 .woocommerce .site-shop-single .upsells.products .title,
-.woocommerce .site-shop-single .collaterals.products .title {
+.woocommerce .site-shop-single .cross-sells.products .title {
   font-size: 16px;
   text-transform: uppercase;
   line-height: 1.5em;
@@ -2728,20 +2871,20 @@ section.widget.woocommerce .woocommerce-widget-layered-nav-list .woocommerce-wid
 
 .woocommerce .site-shop-single .related.products .item-product,
 .woocommerce .site-shop-single .upsells.products .item-product,
-.woocommerce .site-shop-single .collaterals.products .item-product {
+.woocommerce .site-shop-single .cross-sells.products .item-product {
   border: 1px solid #eeeeee;
   background-color: #ffffff;
 }
 
 .woocommerce .site-shop-single .related.products .item-product .item-thumbnail,
 .woocommerce .site-shop-single .upsells.products .item-product .item-thumbnail,
-.woocommerce .site-shop-single .collaterals.products .item-product .item-thumbnail {
+.woocommerce .site-shop-single .cross-sells.products .item-product .item-thumbnail {
   height: 235px;
 }
 
 .woocommerce .site-shop-single .related.products .item-product .item-thumbnail img,
 .woocommerce .site-shop-single .upsells.products .item-product .item-thumbnail img,
-.woocommerce .site-shop-single .collaterals.products .item-product .item-thumbnail img {
+.woocommerce .site-shop-single .cross-sells.products .item-product .item-thumbnail img {
   height: 100%;
   width: 100%;
   object-fit: cover;
@@ -2749,20 +2892,20 @@ section.widget.woocommerce .woocommerce-widget-layered-nav-list .woocommerce-wid
 
 .woocommerce .site-shop-single .related.products .element-product-style .item-product .item-add-cart a,
 .woocommerce .site-shop-single .upsells.products .element-product-style .item-product .item-add-cart a,
-.woocommerce .site-shop-single .collaterals.products .element-product-style .item-product .item-add-cart a {
+.woocommerce .site-shop-single .cross-sells.products .element-product-style .item-product .item-add-cart a {
   background-color: transparent;
   padding: 0;
 }
 
 .woocommerce .site-shop-single .related.products .element-product-style .item-product .item-add-cart a:hover,
 .woocommerce .site-shop-single .upsells.products .element-product-style .item-product .item-add-cart a:hover,
-.woocommerce .site-shop-single .collaterals.products .element-product-style .item-product .item-add-cart a:hover {
+.woocommerce .site-shop-single .cross-sells.products .element-product-style .item-product .item-add-cart a:hover {
   background-color: transparent;
 }
 
 .woocommerce .site-shop-single .related.products .owl-carousel .owl-nav,
 .woocommerce .site-shop-single .upsells.products .owl-carousel .owl-nav,
-.woocommerce .site-shop-single .collaterals.products .owl-carousel .owl-nav {
+.woocommerce .site-shop-single .cross-sells.products .owl-carousel .owl-nav {
   position: absolute;
   margin: 0;
   top: -45px;
@@ -3045,8 +3188,7 @@ section.widget.woocommerce .woocommerce-widget-layered-nav-list .woocommerce-wid
 
 .site-footer section.widget .widget-title {
   color: #199427;
-  font-size: 14px;
-  padding-bottom: 10px;
+  padding-bottom: 15px;
   border-bottom: 1px dotted #cccccc;
 }
 
