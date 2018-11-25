@@ -45,6 +45,12 @@ function cosmetics_loop_columns_product() {
 }
 /* End Change number or products per row */
 
+//add_filter('woocommerce_sale_flash', 'woocommerce_custom_sale_text', 10, 3);
+//function woocommerce_custom_sale_text()
+//{
+//    return '<span class="onsale">Sale</span>';
+//}
+
 /* Start Sidebar Shop */
 if ( ! function_exists( 'cosmetics_woo_get_sidebar' ) ) :
 
@@ -92,6 +98,8 @@ if ( ! function_exists( 'cosmetics_woo_before_main_content' ) ) :
 
         <div class="site-shop">
             <div class="container">
+                <?php do_action( 'cosmetics_woo_breadcrumb' ); ?>
+
                 <div class="row">
 
                 <?php
@@ -218,31 +226,18 @@ if ( ! function_exists( 'cosmetics_woo_after_shop_loop_item_title' ) ) :
     }
 endif;
 
-if ( ! function_exists( 'cosmetics_woo_loop_add_to_cart_open' ) ) :
+if ( ! function_exists( 'cosmetics_woo_loop_add_to_cart' ) ) :
     /**
      * Hook: woocommerce_after_shop_loop_item.
      *
-     * @hooked cosmetics_woo_loop_add_to_cart_open - 4
+     * @hooked cosmetics_woo_loop_add_to_cart - 4
      */
 
-    function cosmetics_woo_loop_add_to_cart_open() {
+    function cosmetics_woo_loop_add_to_cart() {
     ?>
         <div class="site-shop__product-add-to-cart">
-    <?php
-    }
-
-endif;
-
-if ( ! function_exists( 'cosmetics_woo_loop_add_to_cart_close' ) ) :
-    /**
-     * Hook: woocommerce_after_shop_loop_item.
-     *
-     * @hooked cosmetics_woo_loop_add_to_cart_close - 12
-     */
-
-    function cosmetics_woo_loop_add_to_cart_close() {
-    ?>
-        </div><!-- .site-shop__product-add-to-cart -->
+            <?php woocommerce_template_loop_add_to_cart(); ?>
+        </div>
     <?php
     }
 

@@ -36,6 +36,29 @@
   .site-menu {
     ul {
       li {
+        &.menu-item-has-children {
+          > a {
+            &:after {
+              content: "\f078";
+              font-family: 'Font Awesome 5 Free';
+              font-style: normal;
+              font-weight: 900;
+              margin-left: 10px;
+              font-size: 10px;
+            }
+          }
+          .sub-menu {
+            li {
+              &.menu-item-has-children {
+                a {
+                  &:after {
+                    display: none;
+                  }
+                }
+              }
+            }
+          }
+        }
         .sub-menu {
           display: block !important;
         }

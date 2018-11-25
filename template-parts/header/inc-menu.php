@@ -1,67 +1,31 @@
-<?php
-    global $cosmetics_options;
+<div class="header-bottom">
+    <div class="container">
+        <div class="site-menu collapse navbar-collapse">
 
-    $cosmetics_logo_image_id    =   $cosmetics_options['cosmetics_logo_image']['id'];
-    $cosmetics_information_show_hide = $cosmetics_options['cosmetics_information_show_hide'] == '' ? 1 : $cosmetics_options['cosmetics_information_show_hide'];
-?>
+            <?php
 
-<header id="home" class="header">
-    <nav id="navigation" class="navbar-expand-lg">
+            if ( has_nav_menu('primary') ) :
 
-        <?php
-        if ( $cosmetics_information_show_hide == 1 ) :
-            get_template_part( 'template-parts/header/inc', 'information' );
-        endif;
-        ?>
+                wp_nav_menu( array(
+                    'theme_location' => 'primary',
+                    'menu_class'     => 'navbar-nav',
+                    'container'      => false,
+                ) ) ;
 
-        <div class="header-bottom">
-            <div class="container">
-                <div class="header-bottom_warp d-lg-flex align-items-center justify-content-lg-end">
-                    <div class="site-logo">
-                        <a href="<?php echo esc_url( get_home_url( '/' ) ); ?>" title="<?php bloginfo( 'name' ); ?>">
-                            <?php
-                                if ( !empty( $cosmetics_logo_image_id ) ) :
-                                    echo wp_get_attachment_image( $cosmetics_logo_image_id, 'full' );
-                                else :
-                                    echo'<img class="logo-default" src="'.esc_url( get_theme_file_uri( '/images/logo.png' ) ).'" alt="'.get_bloginfo('title').'" />';
-                                endif;
-                            ?>
+            else:
+
+                ?>
+
+                <ul class="main-menu">
+                    <li>
+                        <a href="<?php echo get_admin_url().'/nav-menus.php'; ?>">
+                            <?php esc_html_e( 'ADD TO MENU','cosmetics' ); ?>
                         </a>
+                    </li>
+                </ul>
 
-                        <button class="navbar-toggler" data-toggle="collapse" data-target=".site-menu">
-                            <i class="fa fa-bars" aria-hidden="true"></i>
-                        </button>
-                    </div>
+            <?php endif; ?>
 
-                    <div class="site-menu collapse navbar-collapse d-lg-flex justify-content-lg-end">
-
-                        <?php
-
-                        if ( has_nav_menu('primary') ) :
-
-                            wp_nav_menu( array(
-                                'theme_location' => 'primary',
-                                'menu_class'     => 'navbar-nav',
-                                'container'      => false,
-                            ) ) ;
-
-                        else:
-
-                        ?>
-
-                            <ul class="main-menu">
-                                <li>
-                                    <a href="<?php echo get_admin_url().'/nav-menus.php'; ?>">
-                                        <?php esc_html_e( 'ADD TO MENU','cosmetics' ); ?>
-                                    </a>
-                                </li>
-                            </ul>
-
-                        <?php endif; ?>
-
-                    </div>
-                </div>
-            </div>
         </div>
-    </nav>
-</header>
+    </div>
+</div>

@@ -689,15 +689,18 @@ form.post-password-form p input[type='submit'] {
   text-align: center;
 }
 
+/* Logo */
+.header-logo {
+  padding: 20px 0;
+}
+
 /* Menu */
 .header .navbar {
   margin: 0;
 }
 
 .header-bottom {
-  -webkit-box-shadow: 0 3px 3px -3px rgba(0, 0, 0, 0.3);
-  -moz-box-shadow: 0 3px 3px -3px rgba(0, 0, 0, 0.3);
-  box-shadow: 0 3px 3px -3px rgba(0, 0, 0, 0.3);
+  background-color: #1f601f;
 }
 
 .header-bottom button.navbar-toggler {
@@ -737,11 +740,12 @@ form.post-password-form p input[type='submit'] {
   padding: 0 15px;
   text-shadow: none;
   display: block;
+  color: #ffffff;
 }
 
 .site-menu ul li a:hover {
   background-color: transparent;
-  color: #199427;
+  color: #000000;
 }
 
 .site-menu ul li:last-child a {
@@ -750,8 +754,8 @@ form.post-password-form p input[type='submit'] {
 
 .site-menu ul li .sub-menu {
   min-width: 160px;
-  border-top: 1px solid #199427;
-  background-color: #eeeeee;
+  box-shadow: 0 1px 11px 0px rgba(0, 0, 0, 0.2);
+  background-color: #ffffff;
   position: absolute;
   top: 120%;
   left: 0;
@@ -770,12 +774,13 @@ form.post-password-form p input[type='submit'] {
 }
 
 .site-menu ul li .sub-menu li a {
+  color: #000000;
   white-space: nowrap;
 }
 
 .site-menu ul li .sub-menu li .sub-menu {
   left: 90%;
-  top: -1px;
+  top: 0;
 }
 
 .site-menu ul li .sub-menu li:hover > .sub-menu {
@@ -2510,12 +2515,27 @@ aside.site-sidebar section.widget.widget_product_categories ul li:hover ul.child
   padding: 50px 0;
 }
 
+.site-shop .woocommerce-products-header {
+  border-bottom: 1px solid #eee;
+  margin-bottom: 20px;
+}
+
+.site-shop .woocommerce-products-header .woocommerce-products-header__title {
+  display: inline-block;
+  font-size: 18px;
+  line-height: 1.5em;
+  margin: 0;
+  padding: 0 12px;
+  border-bottom: 3px solid #199427;
+}
+
 .site-shop__result-count-ordering {
   margin-bottom: 30px;
 }
 
 .woocommerce .woocommerce-breadcrumb {
   font-size: 14px;
+  margin-bottom: 30px;
 }
 
 .woocommerce .site-post-item {
@@ -2613,6 +2633,8 @@ aside.site-sidebar section.widget.widget_product_categories ul li:hover ul.child
 .woocommerce ul.products li.product .woocommerce-loop-product__title {
   padding: 0;
   margin: 0 0 10px;
+  font-size: 14px;
+  font-weight: 400;
   line-height: 1.5em;
   height: 3em;
   overflow: hidden;
@@ -2624,13 +2646,14 @@ aside.site-sidebar section.widget.widget_product_categories ul li:hover ul.child
 
 .woocommerce ul.products li.product .price {
   color: #199427;
-  font-size: 14px;
+  font-size: 18px;
   font-weight: 700;
 }
 
 .woocommerce ul.products li.product .price del {
   display: inline-block;
   font-size: 12px;
+  color: #666666;
 }
 
 .woocommerce ul.products li.product .price ins {
@@ -2640,13 +2663,12 @@ aside.site-sidebar section.widget.widget_product_categories ul li:hover ul.child
 
 .woocommerce ul.products li.product .button {
   display: inline-block;
-  padding: 7px 15px;
+  padding: 0;
   line-height: inherit;
   border: none;
   color: #ffffff;
   font-size: 12px;
   font-weight: 400;
-  background-color: #1f601f;
 }
 
 .woocommerce ul.products li.product .button.add_to_cart_button {
@@ -2654,17 +2676,24 @@ aside.site-sidebar section.widget.widget_product_categories ul li:hover ul.child
 }
 
 .woocommerce ul.products li.product .button:hover {
-  background-color: #199427;
+  background-color: transparent;
 }
 
 .woocommerce ul.products li.product a.added_to_cart {
   padding: 0;
-  font-size: 12px;
-  color: #000000;
+  font-size: 0;
+  color: #ffffff;
 }
 
 .woocommerce ul.products li.product a.added_to_cart:hover {
-  color: #199427;
+  color: #ffffff;
+}
+
+.woocommerce ul.products li.product a.added_to_cart:before {
+  content: "\f061";
+  font-weight: 900;
+  font-size: 11px;
+  font-family: 'Font Awesome 5 Free';
 }
 
 .woocommerce ul.products li.product .star-rating {
@@ -3042,8 +3071,7 @@ aside.site-sidebar section.widget.widget_product_categories ul li:hover ul.child
 
 .site-shop__product--item {
   position: relative;
-  border: 1px solid #eeeeee;
-  text-align: center;
+  border: 1px solid transparent;
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
@@ -3052,10 +3080,62 @@ aside.site-sidebar section.widget.widget_product_categories ul li:hover ul.child
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
 }
 
 .site-shop__product--item a.woocommerce-loop-product__link {
   display: block;
+}
+
+.site-shop__product--item:hover {
+  border-color: #199427;
+}
+
+.site-shop__product--item:hover .site-shop__product-add-to-cart {
+  opacity: 1;
+  visibility: visible;
+  bottom: 0;
+}
+
+.site-shop__product--item .site-shop__product--item-image {
+  position: relative;
+  overflow: hidden;
+}
+
+.site-shop__product--item .site-shop__product-add-to-cart {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: -50px;
+  padding: 5px;
+  text-align: center;
+  opacity: 0;
+  visibility: hidden;
+  background-color: rgba(51, 51, 51, 0.5);
+  z-index: 2;
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+.site-shop__product--item .site-shop__product-add-to-cart:hover {
+  background-color: #199427;
+}
+
+.site-shop__product--item .site-shop__product-add-to-cart .add_to_cart_button {
+  padding: 0;
+  background-color: transparent;
+}
+
+.site-shop__product--item .site-shop__product-add-to-cart .add_to_cart_button:before {
+  content: "\f07a";
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  margin-right: 10px;
 }
 
 .site-shop__product--item-content {
@@ -3071,10 +3151,6 @@ aside.site-sidebar section.widget.widget_product_categories ul li:hover ul.child
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-}
-
-.site-shop__product-add-to-cart {
-  padding-bottom: 10px;
 }
 
 .pswp__bg {
@@ -3325,6 +3401,17 @@ aside.site-sidebar section.widget.widget_product_categories ul li:hover ul.child
 }
 
 @media (min-width: 992px) {
+  .site-menu ul li.menu-item-has-children > a:after {
+    content: "\f078";
+    font-family: 'Font Awesome 5 Free';
+    font-style: normal;
+    font-weight: 900;
+    margin-left: 10px;
+    font-size: 10px;
+  }
+  .site-menu ul li.menu-item-has-children .sub-menu li.menu-item-has-children a:after {
+    display: none;
+  }
   .site-menu ul li .sub-menu {
     display: block !important;
   }
