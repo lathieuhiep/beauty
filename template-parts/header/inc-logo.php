@@ -7,11 +7,11 @@ $cosmetics_logo_image_id    =   $cosmetics_options['cosmetics_logo_image']['id']
 <div class="header-logo">
     <div class="container">
         <div class="header-logo__warp d-flex align-items-center">
-            <div class="search-warp">
+            <div class="search-warp item">
                 <?php get_search_form(); ?>
             </div>
 
-            <div class="site-logo">
+            <div class="site-logo text-center item">
                 <a href="<?php echo esc_url( get_home_url( '/' ) ); ?>" title="<?php bloginfo( 'name' ); ?>">
                     <?php
                     if ( !empty( $cosmetics_logo_image_id ) ) :
@@ -27,7 +27,25 @@ $cosmetics_logo_image_id    =   $cosmetics_options['cosmetics_logo_image']['id']
                 </button>
             </div>
 
-            <div class="site-shop-cart"></div>
+            <?php if ( class_exists('Woocommerce') ) : ?>
+
+                <div class="site-shop-cart item">
+                    <div class="cart-view d-flex justify-content-end">
+                        <?php
+                        /**
+                         * maniva_meetup_get_cart_item hook.
+                         *
+                         * @hooked maniva_meetup_get_cart - 10
+                         */
+                        do_action( 'cosmetics_get_cart_item' );
+
+                        the_widget( 'WC_Widget_Cart', '' );
+
+                        ?>
+                    </div>
+                </div>
+
+            <?php endif; ?>
         </div>
     </div>
 </div>

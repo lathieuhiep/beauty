@@ -45,6 +45,48 @@ function cosmetics_loop_columns_product() {
 }
 /* End Change number or products per row */
 
+/* Start get cart */
+if ( ! function_exists( 'cosmetics_get_cart' ) ):
+
+    function cosmetics_get_cart(){
+
+    ?>
+        
+        <a class="tz-shop-cart cart-customlocation" href="<?php echo esc_url( wc_get_cart_url() ); ?>" title="<?php esc_html_e('View your shopping cart', 'cosmetics'); ?>">
+            <i class="fas fa-shopping-cart"></i>
+
+            <?php esc_html_e( 'Giỏ hàng', 'cosmetics' ); ?>
+
+            <span>
+                <?php echo sprintf ( _n( '%d', '%d', WC()->cart->get_cart_contents_count() ), WC()->cart->get_cart_contents_count() ); ?>
+            </span>
+        </a>
+
+    <?php
+    }
+
+endif;
+
+/* To ajaxify your cart viewer */
+add_filter( 'woocommerce_add_to_cart_fragments', 'cosmetics_add_to_cart_fragment' );
+
+if ( ! function_exists( 'cosmetics_add_to_cart_fragment' ) ) :
+
+    function cosmetics_add_to_cart_fragment( $cosmetics_fragments ) {
+
+        ob_start();
+
+        do_action( 'cosmetics_get_cart_item' );
+
+        $cosmetics_fragments['a.cart-customlocation'] = ob_get_clean();
+
+        return $cosmetics_fragments;
+
+    }
+
+endif;
+/* End get cart */
+
 //add_filter('woocommerce_sale_flash', 'woocommerce_custom_sale_text', 10, 3);
 //function woocommerce_custom_sale_text()
 //{

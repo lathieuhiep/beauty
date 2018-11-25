@@ -38,6 +38,8 @@ remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_l
 
 remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar', 10 );
 
+add_action( 'cosmetics_get_cart_item', 'cosmetics_get_cart', 5 );
+
 add_action( 'cosmetics_woo_breadcrumb', 'woocommerce_breadcrumb', 5 );
 
 add_action( 'woocommerce_before_main_content', 'cosmetics_woo_before_main_content', 10 );
