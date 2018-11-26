@@ -51,8 +51,8 @@ if ( ! function_exists( 'cosmetics_get_cart' ) ):
     function cosmetics_get_cart(){
 
     ?>
-        
-        <a class="tz-shop-cart cart-customlocation" href="<?php echo esc_url( wc_get_cart_url() ); ?>" title="<?php esc_html_e('View your shopping cart', 'cosmetics'); ?>">
+
+        <p class="cart-customlocation" title="<?php esc_html_e('View your shopping cart', 'cosmetics'); ?>">
             <i class="fas fa-shopping-cart"></i>
 
             <?php esc_html_e( 'Giỏ hàng', 'cosmetics' ); ?>
@@ -60,7 +60,7 @@ if ( ! function_exists( 'cosmetics_get_cart' ) ):
             <span>
                 <?php echo sprintf ( _n( '%d', '%d', WC()->cart->get_cart_contents_count() ), WC()->cart->get_cart_contents_count() ); ?>
             </span>
-        </a>
+        </p>
 
     <?php
     }
@@ -78,7 +78,7 @@ if ( ! function_exists( 'cosmetics_add_to_cart_fragment' ) ) :
 
         do_action( 'cosmetics_get_cart_item' );
 
-        $cosmetics_fragments['a.cart-customlocation'] = ob_get_clean();
+        $cosmetics_fragments['p.cart-customlocation'] = ob_get_clean();
 
         return $cosmetics_fragments;
 

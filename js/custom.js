@@ -48,6 +48,20 @@
         }
         /* btn mobile End */
 
+        /* Start Click Cart */
+        let tz_shop_cart = $( '.tz-shop-cart' );
+
+        if ( tz_shop_cart.length ) {
+
+            tz_shop_cart.on( 'click', function () {
+
+                $( this ).parents( '.site-shop-cart' ).find( '.cart-widget-side' ).toggleClass( 'active' );
+
+            } )
+
+        }
+        /* End Click Cart */
+
         /* Start Gallery Single */
         $( document ).general_owlCarousel_item( '.site-post-slides' );
         /* End Gallery Single */

@@ -714,11 +714,20 @@ form.post-password-form p input[type='submit'] {
   flex: 1;
 }
 
+.header-logo .site-shop-cart .cart-view {
+  position: relative;
+}
+
 .header-logo .site-shop-cart .tz-shop-cart {
+  display: inline-block;
   color: #ffffff;
   padding: 5px 15px;
   background-color: #199427;
   border-radius: 5px;
+  cursor: pointer;
+}
+
+.header-logo .site-shop-cart .tz-shop-cart .cart-customlocation {
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
@@ -746,8 +755,139 @@ form.post-password-form p input[type='submit'] {
   border-radius: 50%;
 }
 
-.header-logo .widget_shopping_cart {
-  display: none;
+.header-logo .cart-widget-side {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 340px;
+  box-shadow: 0 1px 11px 0 rgba(0, 0, 0, 0.2);
+  background-color: #ffffff;
+  z-index: 15;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transform: translateX(340px);
+  -moz-transform: translateX(340px);
+  -o-transform: translateX(340px);
+  -ms-transform: translateX(340px);
+  transform: translateX(340px);
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+.header-logo .cart-widget-side.active {
+  opacity: 1;
+  visibility: visible;
+  -webkit-transform: translateX(0);
+  -moz-transform: translateX(0);
+  -o-transform: translateX(0);
+  -ms-transform: translateX(0);
+  transform: translateX(0);
+}
+
+.header-logo .cart-widget-side .widget-heading {
+  padding: 20px 15px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.header-logo .cart-widget-side .widget-heading .widget-title {
+  font-size: 20px;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.header-logo .cart-widget-side .widget_shopping_cart .cart_list li {
+  padding: 15px 30px 15px 15px;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.header-logo .cart-widget-side .widget_shopping_cart .cart_list li:last-child {
+  border-bottom: 0;
+}
+
+.header-logo .cart-widget-side .widget_shopping_cart .cart_list li a {
+  font-weight: 500;
+  line-height: 1.5em;
+}
+
+.header-logo .cart-widget-side .widget_shopping_cart .cart_list li a.remove_from_cart_button {
+  position: absolute;
+  right: 10px;
+  top: 15px;
+  left: auto;
+  font-weight: 400;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  text-align: center;
+}
+
+.header-logo .cart-widget-side .widget_shopping_cart .cart_list li a img {
+  width: 65px;
+  float: left;
+  margin: 0 10px 0 0;
+}
+
+.header-logo .cart-widget-side .widget_shopping_cart_content .woocommerce-mini-cart__empty-message {
+  padding: 0 15px;
+}
+
+.header-logo .cart-widget-side .widget_shopping_cart_content .woocommerce-mini-cart__total {
+  padding: 15px;
+  margin: 0;
+  border-top: 1px dotted #eeeeee;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+}
+
+.header-logo .cart-widget-side .widget_shopping_cart_content .woocommerce-mini-cart__total strong {
+  font-weight: 500;
+}
+
+.header-logo .cart-widget-side .widget_shopping_cart_content .woocommerce-mini-cart__total .woocommerce-Price-amount {
+  color: #199427;
+  font-weight: 500;
+}
+
+.header-logo .cart-widget-side .widget_shopping_cart_content .woocommerce-mini-cart__buttons {
+  padding: 15px;
+}
+
+.header-logo .cart-widget-side .widget_shopping_cart_content .woocommerce-mini-cart__buttons a {
+  display: block;
+  padding: 12px 20px;
+  margin-bottom: 15px;
+  text-align: center;
+  text-transform: uppercase;
+  border: 1px solid #1f601f;
+  background-color: transparent;
+  border-radius: 0;
+}
+
+.header-logo .cart-widget-side .widget_shopping_cart_content .woocommerce-mini-cart__buttons a:last-child {
+  margin-bottom: 0;
+}
+
+.header-logo .cart-widget-side .widget_shopping_cart_content .woocommerce-mini-cart__buttons a.checkout {
+  color: #ffffff;
+  background-color: #1f601f;
+}
+
+.header-logo .cart-widget-side .widget_shopping_cart_content .woocommerce-mini-cart__buttons a.checkout:hover {
+  border-color: #199427;
+  background-color: #199427;
+}
+
+.header-logo .cart-widget-side .widget_shopping_cart_content .woocommerce-mini-cart__buttons a:hover {
+  background-color: #454545;
 }
 
 /* Menu */
