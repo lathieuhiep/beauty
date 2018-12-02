@@ -12,6 +12,84 @@
       border: 0;
     }
   }
+  .tz-shop-cart {
+    position: relative;
+    color: #ffffff;
+    padding-right: 10px;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+
+    i {
+      font-size: 16px;
+    }
+    .text-cart {
+      display: none;
+    }
+    .number-cart-product {
+      position: absolute;
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 400;
+      top: -5px;
+      right: 0;
+      width: 15px;
+      height: 15px;
+      line-height: 15px;
+      color: #e5101d;
+      text-align: center;
+      border-radius: 50%;
+      background-color: #ffffff;
+    }
+  }
+  &.menu-sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 12;
+    -webkit-animation: fadeInDown 900ms ease-in-out;
+    -moz-animation: fadeInDown 900ms ease-in-out;
+    -ms-animation: fadeInDown 900ms ease-in-out;
+    animation: fadeInDown 900ms ease-in-out;
+
+    .tz-shop-cart {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}
+@-webkit-keyframes fadeInDown {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.fadeInDown {
+  -webkit-animation-name: fadeInDown;
+  animation-name: fadeInDown;
 }
 .site-logo {
   @include flex(0 0 auto);

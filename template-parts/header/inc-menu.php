@@ -1,5 +1,5 @@
 <div class="header-bottom">
-    <div class="container">
+    <div class="container d-flex align-items-center">
         <div class="site-menu collapse navbar-collapse">
 
             <?php
@@ -26,6 +26,18 @@
 
             <?php endif; ?>
 
+        </div>
+
+        <div class="tz-shop-cart">
+            <?php
+            /**
+             * maniva_meetup_get_cart_item hook.
+             *
+             * @hooked maniva_meetup_get_cart - 10
+             */
+            do_action( 'cosmetics_get_cart_item' );
+
+            ?>
         </div>
     </div>
 </div>

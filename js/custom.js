@@ -55,7 +55,7 @@
 
             tz_shop_cart.on( 'click', function () {
 
-                $( this ).parents( '.site-shop-cart' ).find( '.cart-widget-side' ).toggleClass( 'active' );
+                $( this ).parents( '.header-nav' ).find( '.cart-widget-side' ).toggleClass( 'active' );
 
             } )
 
@@ -77,14 +77,15 @@
     });
 
     $( window ).scroll( function() {
+        let $scrollTop      =   $(this).scrollTop(),
+            $height         =   $('.header-nav').height(),
+            $header_bottom  =   $('.header-bottom');
 
         if ( timer_clear ) clearTimeout(timer_clear);
 
         timer_clear = setTimeout( function() {
 
             /* Start scroll back top */
-            let $scrollTop = $(this).scrollTop();
-
             if ( $scrollTop > 200 ) {
                 $('#back-top').addClass('active_top');
             }else {
@@ -93,6 +94,12 @@
             /* End scroll back top */
 
         }, 100 );
+
+        if ( $scrollTop > $height ) {
+            $header_bottom.addClass('menu-sticky');
+        } else {
+            $header_bottom.removeClass('menu-sticky');
+        }
 
     });
 

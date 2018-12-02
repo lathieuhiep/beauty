@@ -4,7 +4,7 @@ global $cosmetics_options;
 $cosmetics_information_show_hide = $cosmetics_options['cosmetics_information_show_hide'] == '' ? 1 : $cosmetics_options['cosmetics_information_show_hide'];
 ?>
 
-<header id="home" class="header">
+<header id="home" class="header header-nav">
     <nav id="navigation" class="navbar-expand-lg">
 
         <?php

@@ -55,9 +55,11 @@ if ( ! function_exists( 'cosmetics_get_cart' ) ):
         <p class="cart-customlocation" title="<?php esc_html_e('View your shopping cart', 'cosmetics'); ?>">
             <i class="fas fa-shopping-cart"></i>
 
-            <?php esc_html_e( 'Giỏ hàng', 'cosmetics' ); ?>
+            <span class="text-cart">
+                <?php esc_html_e( 'Giỏ hàng', 'cosmetics' ); ?>
+            </span>
 
-            <span>
+            <span class="number-cart-product">
                 <?php echo sprintf ( _n( '%d', '%d', WC()->cart->get_cart_contents_count() ), WC()->cart->get_cart_contents_count() ); ?>
             </span>
         </p>
