@@ -169,9 +169,13 @@ section {
     .post_widget_warp {
       .post_widget__item {
         margin-bottom: 15px;
+        padding-bottom: 15px;
+        border-bottom: 1px solid #eaeaea;
 
         &:last-child {
           margin-bottom: 0;
+          padding-bottom: 0;
+          border-bottom: 0;
         }
         .item-image {
           width: 110px;
@@ -182,11 +186,15 @@ section {
         }
         .item-title {
           font-size: 14px;
-          margin-bottom: 10px;
+          font-weight: 400;
+          line-height: 1.5em;
+          height: 3em;
+          margin-bottom: 5px;
           overflow: hidden;
         }
         .item-meta {
           font-size: 12px;
+          line-height: 1.5em;
 
           i.fa {
             margin-right: 5px;

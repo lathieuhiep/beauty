@@ -22,7 +22,7 @@ if ( !empty( $cosmetics_term_cat_post ) ):
 
     <div class="site-single-post-related">
         <h3 class="title">
-            <?php esc_html_e( 'Related Post', 'cosmetics' ); ?>
+            <?php esc_html_e( 'Tin khác', 'cosmetics' ); ?>
         </h3>
 
         <div class="row">
@@ -35,18 +35,6 @@ if ( !empty( $cosmetics_term_cat_post ) ):
                     <div class="related-post-item">
                         <figure class="post-image">
                             <?php the_post_thumbnail( 'medium' ); ?>
-
-                            <figcaption class="d-flex align-items-end">
-                                <p>
-                                    <?php
-                                    if( has_excerpt() ) :
-                                        echo wp_trim_words( get_the_excerpt(), 15, '...' );
-                                    else:
-                                        echo wp_trim_words( get_the_content(), 15, '...' );
-                                    endif;
-                                    ?>
-                                </p>
-                            </figcaption>
                         </figure>
 
                         <h4 class="title-post">

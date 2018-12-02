@@ -84,10 +84,9 @@ $cosmetics_on_off_share_single = $cosmetics_options['cosmetics_on_off_share_sing
 </div>
 
 <?php
-cosmetics_comment_form();
-
 get_template_part( 'template-parts/post/inc','related-post' );
-?>
+
+cosmetics_comment_form();
 
 
 
