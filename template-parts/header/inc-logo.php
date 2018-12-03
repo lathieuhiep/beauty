@@ -44,10 +44,14 @@ $cosmetics_logo_image_id    =   $cosmetics_options['cosmetics_logo_image']['id']
                         </div>
 
                         <div class="cart-widget-side">
-                            <div class="widget-heading">
+                            <div class="widget-heading d-flex justify-content-between">
                                 <h3 class="widget-title">
                                     <?php esc_html_e( 'Giỏ hàng', 'cosmetics' ); ?>
                                 </h3>
+
+                                <a class="close-side-widget" href="#">
+                                    <i class="fas fa-times"></i>
+                                </a>
                             </div>
 
                             <?php the_widget( 'WC_Widget_Cart', '' ); ?>
