@@ -4,10 +4,10 @@
     <label for="<?php echo $cosmetics_unique_id; ?>">
         <span class="screen-reader-text"><?php echo _x( 'Search for:', 'label', 'cosmetics' ); ?></span>
     </label>
-    <input type="search" id="<?php echo $cosmetics_unique_id; ?>" class="search-field" placeholder="<?php echo esc_attr_x( 'Search &hellip;', 'placeholder', 'cosmetics' ); ?>" value="<?php echo get_search_query(); ?>" name="s" />
+    <input type="search" id="<?php echo $cosmetics_unique_id; ?>" class="search-field" placeholder="<?php echo esc_attr_x( 'Tìm kiếm sản phẩm &hellip;', 'placeholder', 'cosmetics' ); ?>" value="<?php echo get_search_query(); ?>" name="s" />
     <button type="submit" class="search-submit">
         <span class="search-reader-text">
-            <?php echo _x( 'Search', 'submit button', 'cosmetics' ); ?>
+            <i class="fa fa-search"></i>
         </span>
     </button>
 </form>

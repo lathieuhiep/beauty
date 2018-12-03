@@ -1,3 +1,8 @@
+.element-post-type {
+  .element-heading-global {
+    margin-bottom: 35px;
+  }
+}
 .element-post-carousel {
   .item-post__image {
     height: 170px;
@@ -18,8 +23,6 @@
       overflow: hidden;
     }
   }
-}
-.owl-nav-top {
   &.owl-carousel {
     .owl-nav {
       position: absolute;

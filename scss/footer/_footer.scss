@@ -1,25 +1,13 @@
 .site-footer {
   section {
     &.widget {
-      margin-bottom: 30px;
-
-      .widget-title {
-        color: $color-hover;
-        padding-bottom: 15px;
-        border-bottom: 1px dotted #cccccc;
-      }
-      .textwidget {
-        p {
-          line-height: 1.5em;
-          margin-bottom: 5px;
-        }
-      }
+      margin-bottom: 15px;
     }
   }
 }
 .site-footer__multi--column {
-  padding-top: 30px;
-  background-color: #e6e6e6;
+  border-top: 1px solid $border-color;
+  padding: 30px 0;
 }
 .site-footer__copyright {
   border-top: 1px solid $border-color;

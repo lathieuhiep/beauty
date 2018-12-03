@@ -8,7 +8,18 @@ $cosmetics_blog_sidebar_single = !empty( $cosmetics_options['cosmetics_blog_side
 $cosmetics_class_col_content = cosmetics_col_use_sidebar( $cosmetics_blog_sidebar_single, 'cosmetics-sidebar-main' );
 
 ?>
-
+<div class="site-breadcrumb">
+    <div class="container">
+        <div class="row">
+            <div class="breadcrumbs col-md-12" typeof="BreadcrumbList" vocab="http://schema.org/">
+                <?php if(function_exists('bcn_display'))
+                {
+                    bcn_display();
+                }?>
+            </div>
+        </div>
+    </div>
+</div>
 <div class="site-container site-single">
     <div class="container">
         <div class="row">

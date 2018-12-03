@@ -4,7 +4,7 @@
   }
 }
 .header-bottom {
-  background-color: $background-primary;
+  @include box-shadow(0 3px 3px -3px rgba(0, 0, 0, 0.3));
 
   button {
     &.navbar-toggler {
@@ -12,84 +12,6 @@
       border: 0;
     }
   }
-  .tz-shop-cart {
-    position: relative;
-    color: #ffffff;
-    padding-right: 10px;
-    cursor: pointer;
-    opacity: 0;
-    visibility: hidden;
-
-    i {
-      font-size: 16px;
-    }
-    .text-cart {
-      display: none;
-    }
-    .number-cart-product {
-      position: absolute;
-      display: inline-block;
-      font-size: 11px;
-      font-weight: 400;
-      top: -5px;
-      right: 0;
-      width: 15px;
-      height: 15px;
-      line-height: 15px;
-      color: #e5101d;
-      text-align: center;
-      border-radius: 50%;
-      background-color: #ffffff;
-    }
-  }
-  &.menu-sticky {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 12;
-    -webkit-animation: fadeInDown 900ms ease-in-out;
-    -moz-animation: fadeInDown 900ms ease-in-out;
-    -ms-animation: fadeInDown 900ms ease-in-out;
-    animation: fadeInDown 900ms ease-in-out;
-
-    .tz-shop-cart {
-      opacity: 1;
-      visibility: visible;
-    }
-  }
-}
-@-webkit-keyframes fadeInDown {
-  from {
-    opacity: 0;
-    -webkit-transform: translate3d(0, -100%, 0);
-    transform: translate3d(0, -100%, 0);
-  }
-
-  to {
-    opacity: 1;
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-  }
-}
-
-@keyframes fadeInDown {
-  from {
-    opacity: 0;
-    -webkit-transform: translate3d(0, -100%, 0);
-    transform: translate3d(0, -100%, 0);
-  }
-
-  to {
-    opacity: 1;
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-  }
-}
-
-.fadeInDown {
-  -webkit-animation-name: fadeInDown;
-  animation-name: fadeInDown;
 }
 .site-logo {
   @include flex(0 0 auto);
@@ -116,11 +38,9 @@
         padding: 0 15px;
         text-shadow: none;
         display: block;
-        color: #ffffff;
-
         &:hover {
           background-color: transparent;
-          color: #000000;
+          color: $color-hover;
         }
       }
       &:last-child {
@@ -130,8 +50,8 @@
       }
       .sub-menu {
         min-width: 160px;
-        box-shadow: 0 1px 11px 0px rgba(0,0,0,0.2);
-        background-color: #ffffff;
+        border-top: 1px solid $color-hover;
+        background-color: $border-color;
         position: absolute;
         top: 120%;
         left: 0;
@@ -145,12 +65,11 @@
           display: block;
 
           a {
-            color: #000000;
             white-space: nowrap;
           }
           .sub-menu {
             left: 90%;
-            top: 0;
+            top: -1px;
           }
           &:hover {
             > .sub-menu {
