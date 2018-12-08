@@ -254,13 +254,11 @@ function cosmetics_register_front_end() {
     wp_enqueue_style( 'cosmetics-library', get_theme_file_uri( '/css/library.min.css' ), array(), '' );
     /* End main Css */
 
+    wp_enqueue_style( 'hungkv', get_theme_file_uri( '/css/hungkv.css' ), array(), '' );
+
     /*  Start Style Css   */
     wp_enqueue_style( 'cosmetics-style', get_stylesheet_uri() );
     /*  Start Style Css   */
-
-    /* Start main Css */
-    wp_enqueue_style( 'hungkv', get_theme_file_uri( '/css/hungkv.css' ), array(), '' );
-    /* End main Css */
 
     /*
     * End Get Css Front End

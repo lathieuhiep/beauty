@@ -58,7 +58,7 @@ $cosmetics_on_off_share_single = $cosmetics_options['cosmetics_on_off_share_sing
     <?php if ( $cosmetics_on_off_share_single == 1 || $cosmetics_on_off_share_single == null ) : ?>
         <div class="site-post-share">
             <span>
-                <?php  esc_html_e('Chia sẻ bài viết này:', 'cosmetics') ; ?>
+                <?php  esc_html_e('Share this post:', 'cosmetics') ; ?>
             </span>
 
             <!-- Facebook Button -->

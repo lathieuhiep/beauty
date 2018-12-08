@@ -18,9 +18,9 @@ $cosmetics_logo_image_id    =   $cosmetics_options['cosmetics_logo_image']['id']
                     ?>
                 </a>
 
-<!--                <button class="navbar-toggler" data-toggle="collapse" data-target=".site-menu">-->
-<!--                    <i class="fa fa-bars" aria-hidden="true"></i>-->
-<!--                </button>-->
+                <button class="navbar-toggler" data-toggle="collapse" data-target=".site-menu">
+                    <i class="fa fa-bars" aria-hidden="true"></i>
+                </button>
             </div>
 
             <div class="search-warp item">

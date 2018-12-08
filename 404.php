@@ -30,7 +30,7 @@ $cosmetics_background = $cosmetics_options['cosmetics_404_background']['id'];
                     if ( $cosmetics_title != '' ):
                         echo esc_html( $cosmetics_title );
                     else:
-                        esc_html_e( 'Awww...Có gì đó không đúng!', 'cosmetics' );
+                        esc_html_e( 'Awww...Do Not Cry', 'cosmetics' );
                     endif;
                     ?>
                 </h1>
@@ -42,17 +42,18 @@ $cosmetics_background = $cosmetics_options['cosmetics_404_background']['id'];
                     else:
                     ?>
                         <p>
-                            <?php esc_html_e( 'Rất tiếc!', 'cosmetics' ); ?>
+                            <?php esc_html_e( 'It is just a 404 Error!', 'cosmetics' ); ?>
                             <br />
-                            <?php esc_html_e( 'Nội dung này không có sẵn trên website', 'cosmetics' ); ?>
-
+                            <?php esc_html_e( 'What you are looking for may have been misplaced', 'cosmetics' ); ?>
+                            <br />
+                            <?php esc_html_e( 'in Long Term Memory.', 'cosmetics' ); ?>
                         </p>
                     <?php endif; ?>
                 </div>
 
                 <div id="site-error-back-home">
                     <a href="<?php echo esc_url( get_home_url('/') ); ?>" title="<?php echo esc_html__('Go to the Home Page', 'cosmetics'); ?>">
-                        <?php esc_html_e('Trở về trang chủ', 'cosmetics'); ?>
+                        <?php esc_html_e('Go to the Home Page', 'cosmetics'); ?>
                     </a>
                 </div>
             </div>

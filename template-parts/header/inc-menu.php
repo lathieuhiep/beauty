@@ -1,6 +1,6 @@
 <div class="header-bottom">
     <div class="container d-flex align-items-center">
-        <div class="site-menu">
+        <div class="site-menu collapse navbar-collapse">
 
             <?php
 

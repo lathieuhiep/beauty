@@ -14,6 +14,7 @@
     <?php
     cosmetics_post_formats();
 
+    cosmetics_post_meta();
     ?>
 
     <div class="site-post-excerpt">
@@ -28,7 +29,7 @@
         </p>
 
         <a href="<?php the_permalink();?>" class="text-read-more">
-            <?php echo esc_html__('Đọc thêm','cosmetics');?>
+            <?php echo esc_html__('Read more','cosmetics');?>
         </a>
 
         <?php cosmetics_link_page(); ?>

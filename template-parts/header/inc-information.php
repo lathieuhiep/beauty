@@ -9,7 +9,7 @@ $cosmetics_information_phone     =   $cosmetics_options['cosmetics_information_p
 <div class="information">
     <div class="container">
         <div class="row">
-            <div class="col-12 col-md-12 col-lg-7 left">
+            <div class="col-12 col-md-12 col-lg-7">
                 <?php if ( $cosmetics_information_address != '' ) : ?>
 
                     <span>
@@ -42,7 +42,7 @@ $cosmetics_information_phone     =   $cosmetics_options['cosmetics_information_p
                 <?php endif; ?>
             </div>
 
-            <div class="col-12 col-md-12 col-lg-5 d-none d-lg-block right">
+            <div class="col-12 col-md-12 col-lg-5 d-none d-lg-block">
                 <div class="information__social-network social-network-toTopFromBottom d-lg-flex justify-content-lg-end">
                     <?php cosmetics_get_social_url(); ?>
                 </div>
