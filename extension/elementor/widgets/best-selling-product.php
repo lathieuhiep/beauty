@@ -256,13 +256,12 @@ class cosmetics_widget_products_best_selling extends Widget_Base {
            </div>
 
            <div class="row">
-               <?php
-               while ( $query->have_posts() ): $query->the_post();
-                   $count = get_post_meta(get_the_ID(),'total_sales', true);
-               ?>
+               <?php while ( $query->have_posts() ): $query->the_post(); ?>
 
                    <div class="item-col <?php echo esc_attr( $class_column_number ); ?> col-md-3 col-sm-6 col-12">
                        <div class="item-product">
+                           <a class="item-link-product" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">&nbsp;</a>
+
                            <div class="item-thumbnail">
                                <?php
                                do_action( 'woo_elementor_product_sale_flash' );
@@ -281,9 +280,7 @@ class cosmetics_widget_products_best_selling extends Widget_Base {
 
                            <div class="item-detail">
                                <h2 class="item-title">
-                                   <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-                                       <?php the_title(); ?>
-                                   </a>
+                                   <?php the_title(); ?>
                                </h2>
 
                                <?php woocommerce_template_loop_price(); ?>

@@ -259,7 +259,7 @@ class cosmetics_post_type extends Widget_Base {
                         </div>
 
                         <div class="item-post__detail">
-                            <h4 class="item-post__title">
+                            <h4 class="item-post__title text-center">
                                 <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
                                     <?php the_title(); ?>
                                 </a>

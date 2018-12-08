@@ -3,12 +3,14 @@
   border: 1px solid #eeeeee;
   overflow: hidden;
   line-height: 40px;
+  @include flexbox();
   @include border-radius(5px);
 }
 .search-field {
   border: transparent;
   height: auto;
   padding: 0 10px;
+  @include flex(1);
 }
 .search-submit {
   background-color: transparent;
@@ -21,6 +23,7 @@
   cursor: pointer;
   @include border-radius(0);
   @include transition(all 0.4s ease-in-out);
+  @include flex(0 0 auto);
 }
 section {
   &.widget {

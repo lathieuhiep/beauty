@@ -51,7 +51,7 @@ body {
   line-height: 1.8em;
   overflow-x: hidden;
   font-size: 14px;
-  color: #666666;
+  color: #333333;
   font-family: "Roboto", sans-serif;
   font-weight: 400;
   display: -webkit-box;
@@ -99,7 +99,7 @@ h6 {
 }
 
 a {
-  color: #666666;
+  color: #333333;
   -webkit-transition: all 0.4s ease-in-out;
   -moz-transition: all 0.4s ease-in-out;
   -o-transition: all 0.4s ease-in-out;
@@ -932,10 +932,48 @@ form.post-password-form p input[type='submit'] {
   border-right: 0;
 }
 
+.header-bottom .site-menu__search {
+  position: relative;
+}
+
 .header-bottom .site-menu__search .btn-search-menu {
   display: block;
   color: #ffffff;
   cursor: pointer;
+}
+
+.header-bottom .site-menu__search .site-menu-form__search {
+  position: absolute;
+  top: 120%;
+  right: 0;
+  padding: 15px;
+  min-width: 300px;
+  background-color: #ffffff;
+  z-index: 10;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.09);
+  -moz-box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.09);
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.09);
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+.header-bottom .site-menu__search .site-menu-form__search .search-form .search-submit {
+  color: #ffffff;
+  background-color: #ed2d24;
+}
+
+.header-bottom .site-menu__search .site-menu-form__search .search-form .search-submit:hover {
+  background-color: #891c17;
+}
+
+.header-bottom .site-menu__search:hover .site-menu-form__search {
+  top: 100%;
+  opacity: 1;
+  visibility: visible;
 }
 
 .header-bottom .tz-shop-cart {
@@ -1159,6 +1197,11 @@ form.post-password-form p input[type='submit'] {
   border: 1px solid #eeeeee;
   overflow: hidden;
   line-height: 40px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
@@ -1168,6 +1211,9 @@ form.post-password-form p input[type='submit'] {
   border: transparent;
   height: auto;
   padding: 0 10px;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
 }
 
 .search-submit {
@@ -1186,6 +1232,9 @@ form.post-password-form p input[type='submit'] {
   -moz-transition: all 0.4s ease-in-out;
   -o-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
 }
 
 section.widget {
@@ -1726,7 +1775,7 @@ aside.site-sidebar section.widget.widget_product_categories ul li:hover ul.child
 }
 
 .site-post-meta span a:hover {
-  color: #666666;
+  color: #333333;
 }
 
 .site-post-excerpt ul li {
@@ -2394,7 +2443,17 @@ aside.site-sidebar section.widget.widget_product_categories ul li:hover ul.child
 }
 
 .element-product-style .item-product {
+  position: relative;
   background-color: #ffffff;
+}
+
+.element-product-style .item-product .item-link-product {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
 }
 
 .element-product-style .item-product .item-thumbnail {
@@ -2477,14 +2536,14 @@ aside.site-sidebar section.widget.widget_product_categories ul li:hover ul.child
 
 .element-product-style .item-product .item-detail {
   padding: 10px 5px;
+  text-align: center;
 }
 
 .element-product-style .item-product .item-title {
   font-size: 14px;
-  font-weight: 400;
-  color: #666666;
   line-height: 1.5em;
   height: 3em;
+  font-weight: 500;
   overflow: hidden;
 }
 

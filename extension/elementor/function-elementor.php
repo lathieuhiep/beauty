@@ -5,6 +5,8 @@ function cosmetics_content_product_filter( $class_column_number, $class_animate 
 
     <div class="item-col <?php echo esc_attr( $class_animate . $class_column_number ); ?> col-md-3 col-sm-6 col-12">
         <div class="item-product">
+            <a class="item-link-product" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">&nbsp;</a>
+
             <div class="item-thumbnail">
                 <?php
                 do_action( 'woo_elementor_product_sale_flash' );
@@ -23,9 +25,7 @@ function cosmetics_content_product_filter( $class_column_number, $class_animate 
 
             <div class="item-detail">
                 <h2 class="item-title">
-                    <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-                        <?php the_title(); ?>
-                    </a>
+                    <?php the_title(); ?>
                 </h2>
 
                 <?php woocommerce_template_loop_price(); ?>

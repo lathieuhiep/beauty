@@ -309,6 +309,8 @@ class cosmetics_widget_products_carousel extends Widget_Base {
                 <?php while ( $query->have_posts() ): $query->the_post(); ?>
 
                     <div class="item-product">
+                        <a class="item-link-product" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">&nbsp;</a>
+
                         <div class="item-thumbnail">
                             <?php
                             do_action( 'woo_elementor_product_sale_flash' );
@@ -327,9 +329,7 @@ class cosmetics_widget_products_carousel extends Widget_Base {
 
                         <div class="item-detail">
                             <h2 class="item-title">
-                                <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-                                    <?php the_title(); ?>
-                                </a>
+                                <?php the_title(); ?>
                             </h2>
 
                             <?php woocommerce_template_loop_price(); ?>

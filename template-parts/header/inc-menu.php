@@ -33,6 +33,10 @@
                 <span class="btn-search-menu">
                     <i class="icon-search fas fa-search"></i>
                 </span>
+
+                <div class="site-menu-form__search">
+                    <?php get_search_form(); ?>
+                </div>
             </div>
 
             <div class="tz-shop-cart item d-flex align-items-center">

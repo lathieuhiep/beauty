@@ -82,8 +82,17 @@
 }
 .element-product-style {
   .item-product {
+    position: relative;
     background-color: #ffffff;
 
+    .item-link-product {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
     .item-thumbnail {
       position: relative;
       overflow: hidden;
@@ -156,13 +165,13 @@
     }
     .item-detail {
       padding: 10px 5px ;
+      text-align: center;
     }
     .item-title {
       font-size: 14px;
-      font-weight: 400;
-      color: $color-primary;
       line-height: 1.5em;
       height: 3em;
+      font-weight: 500;
       overflow: hidden;
     }
     .price {

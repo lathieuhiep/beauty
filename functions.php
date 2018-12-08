@@ -249,6 +249,7 @@ function cosmetics_register_front_end() {
     /*
     * Start Get Css Front End
     * */
+    wp_enqueue_style( 'cosmetics-fonts', cosmetics_fonts_url(), array(), null );
 
     /* Start main Css */
     wp_enqueue_style( 'cosmetics-library', get_theme_file_uri( '/css/library.min.css' ), array(), '' );
@@ -329,7 +330,7 @@ if ( ! function_exists( 'cosmetics_mce_text_sizes' ) ) :
 endif;
 // End Customize mce editor font sizes
 
-/* callback comment list */
+/* Start callback comment list */
 function cosmetics_comments( $cosmetics_comment, $cosmetics_comment_args, $cosmetics_comment_depth ) {
 
     if ( 'div' === $cosmetics_comment_args['style'] ) :
@@ -389,8 +390,9 @@ function cosmetics_comments( $cosmetics_comment, $cosmetics_comment_args, $cosme
 
 <?php
 }
-/* callback comment list */
+/* End callback comment list */
 
+/* Font Google */
 if ( ! function_exists( 'cosmetics_fonts_url' ) ) :
 
     function cosmetics_fonts_url() {
