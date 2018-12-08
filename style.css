@@ -834,6 +834,12 @@ form.post-password-form p input[type='submit'] {
   margin: 0 10px 0 0;
 }
 
+.header-logo .cart-widget-side .close-side-widget {
+  font-size: 20px;
+  display: block;
+  cursor: pointer;
+}
+
 .header-logo .cart-widget-side .widget_shopping_cart_content .woocommerce-mini-cart__empty-message {
   padding: 0 15px;
 }
@@ -899,7 +905,7 @@ form.post-password-form p input[type='submit'] {
 }
 
 .header-bottom {
-  background-color: #ed2d24;
+  background-color: #891c17;
 }
 
 .header-bottom button.navbar-toggler {
@@ -1095,6 +1101,11 @@ form.post-password-form p input[type='submit'] {
 
 .icon_menu_item_mobile.icon_menu_item_mobile_active:after {
   content: "\f077";
+}
+
+/* Megamenu */
+#mega-menu-wrap-primary {
+  width: 100%;
 }
 
 /**

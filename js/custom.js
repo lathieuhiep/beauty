@@ -49,7 +49,7 @@
         /* btn mobile End */
 
         /* Start Click Cart */
-        let tz_shop_cart = $( '.tz-shop-cart' );
+        let tz_shop_cart = $( '.tz-shop-cart, .close-side-widget' );
 
         if ( tz_shop_cart.length ) {
 

@@ -4,7 +4,7 @@
   }
 }
 .header-bottom {
-  background-color: $background-primary;
+  background-color: $background-second;
 
   button {
     &.navbar-toggler {
@@ -192,4 +192,9 @@
       content: "\f077";
     }
   }
+}
+
+/* Megamenu */
+#mega-menu-wrap-primary {
+  width: 100%;
 }
