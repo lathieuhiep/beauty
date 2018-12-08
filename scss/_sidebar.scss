@@ -1,20 +1,25 @@
 .search-form {
   font-size: 12px;
+  border: 1px solid #eeeeee;
+  overflow: hidden;
+  line-height: 40px;
+  @include border-radius(5px);
 }
 .search-field {
-  border: 1px solid $border-color;
+  border: transparent;
   height: auto;
-  padding: 9px 10px;
-  @include border-radius(3px);
-  @include box-shadow(none);
+  padding: 0 10px;
 }
 .search-submit {
-  background-color: $color-hover;
-  color: #fff;
-  padding: 9px 10px;
-  border: none;
+  background-color: transparent;
+  color: $color-hover;
+  padding: 0;
+  width: 50px;
+  border-width: 0 0 0 1px;
+  border-style: solid;
+  border-color: #eeeeee;
   cursor: pointer;
-  @include border-radius(3px);
+  @include border-radius(0);
   @include transition(all 0.4s ease-in-out);
 }
 section {

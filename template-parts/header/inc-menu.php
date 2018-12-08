@@ -1,5 +1,5 @@
 <div class="header-bottom">
-    <div class="container d-flex align-items-center">
+    <div class="container d-flex">
         <div class="site-menu collapse navbar-collapse">
 
             <?php
@@ -28,16 +28,24 @@
 
         </div>
 
-        <div class="tz-shop-cart">
-            <?php
-            /**
-             * maniva_meetup_get_cart_item hook.
-             *
-             * @hooked maniva_meetup_get_cart - 10
-             */
-            do_action( 'cosmetics_get_cart_item' );
+        <div class="site-menu__right d-flex">
+            <div class="site-menu__search item d-flex align-items-center">
+                <span class="btn-search-menu">
+                    <i class="icon-search fas fa-search"></i>
+                </span>
+            </div>
 
-            ?>
+            <div class="tz-shop-cart item d-flex align-items-center">
+                <?php
+                /**
+                 * maniva_meetup_get_cart_item hook.
+                 *
+                 * @hooked maniva_meetup_get_cart - 10
+                 */
+                do_action( 'cosmetics_get_cart_item' );
+
+                ?>
+            </div>
         </div>
     </div>
 </div>
