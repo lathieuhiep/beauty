@@ -1,0 +1,23 @@
+.information .left span {
+  font-size: 14px;
+  color: #ed2d24;
+  font-weight: 700;
+}
+.information .left span i {
+  margin-right: 5px;
+}
+.single-post .site-container {
+  padding: 15px 0;
+}
+.single-post .site-post-title {
+  border-bottom: 1px solid #eaeaea;
+}
+.single-post .site-post-meta {
+  display: none;
+}
+.single-post .site-post-image img {
+  width: 100%;
+}
+.single-post .breadcrumbs {
+  margin-top: 15px;
+}
