@@ -2358,6 +2358,14 @@ aside.site-sidebar section.widget.widget_product_categories ul li:hover ul.child
 }
 
 /* Products Carousel */
+.element-products-carousel .owl-carousel .owl-stage {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
 .element-products-carousel .header {
   padding-right: 80px;
   margin-bottom: 20px;
@@ -2425,6 +2433,11 @@ aside.site-sidebar section.widget.widget_product_categories ul li:hover ul.child
 
 .element-products-carousel .owl-item {
   padding-left: 1px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
 }
 
 .element-products-carousel .item-box-products {
@@ -2439,7 +2452,21 @@ aside.site-sidebar section.widget.widget_product_categories ul li:hover ul.child
 }
 
 .element-products-carousel .item-product {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   border: 1px solid #eeeeee;
+}
+
+.element-products-carousel .item-product .item-thumbnail {
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
 }
 
 .element-product-style .item-product {
@@ -2463,13 +2490,21 @@ aside.site-sidebar section.widget.widget_product_categories ul li:hover ul.child
 
 .element-product-style .item-product .item-thumbnail .onsale {
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 10px;
+  right: 10px;
   left: auto;
-  padding: 5px 10px;
+  padding: 0;
+  width: 35px;
+  height: 35px;
+  line-height: 35px;
+  text-align: center;
   color: #ffffff;
+  font-size: 12px;
   background-color: #ed2d24;
   z-index: 10;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
 }
 
 .element-product-style .item-product .item-thumbnail img {
@@ -2556,7 +2591,7 @@ aside.site-sidebar section.widget.widget_product_categories ul li:hover ul.child
 .element-product-style .item-product .price del {
   font-size: 14px;
   color: #666;
-  font-weight: 400;
+  font-weight: 500;
 }
 
 .element-product-style .item-product .price ins {
@@ -3769,6 +3804,7 @@ aside.site-sidebar section.widget.widget_product_categories ul li:hover ul.child
 
 .site-footer section.widget .widget-title {
   color: #ed2d24;
+  font-weight: 700;
   padding-bottom: 15px;
   border-bottom: 1px dotted #cccccc;
 }

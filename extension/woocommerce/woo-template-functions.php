@@ -754,3 +754,14 @@ function cosmetics_product_slides() {
 
 }
 /* End Product Slides */
+
+add_filter('woocommerce_sale_flash', 'my_custom_sale_flash');
+function my_custom_sale_flash() {
+
+    $regular_price_product  =   get_post_meta( get_the_ID(), '_regular_price', true );
+    $sale_price_product     =   get_post_meta( get_the_ID(), '_sale_price', true );
+
+    $percentage = round( ( ( $regular_price_product - $sale_price_product ) / $regular_price_product ) * 100 );
+
+    return '<span class="onsale">-'.$percentage.'%</span>';
+}
