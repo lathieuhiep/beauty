@@ -271,7 +271,7 @@ class cosmetics_widget_products_filter extends Widget_Base {
                                 $tag_product = get_term( $item['select_tag'], 'product_tag' );
                             ?>
 
-                                <div class="list-item d-flex align-items-center">
+                                <div class="list-item d-flex">
                                     <button class="btn-filter-product<?php echo ( $tag_product_ids[0] == $tag_product->term_id ? ' active' : '' ); ?>" data-id="<?php echo esc_attr( $tag_product->term_id ); ?>">
                                         <?php echo esc_html( $item['list_tag_name'] ); ?>
                                     </button>
