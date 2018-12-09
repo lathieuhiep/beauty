@@ -11,11 +11,7 @@
         </a>
     </h2>
 
-    <?php
-    cosmetics_post_formats();
-
-    cosmetics_post_meta();
-    ?>
+    <?php cosmetics_post_formats(); ?>
 
     <div class="site-post-excerpt">
         <p>
@@ -23,13 +19,13 @@
             if ( has_excerpt() ) :
                 echo esc_html( get_the_excerpt() );
             else:
-                echo wp_trim_words( get_the_content(), 30, '...' );
+                echo wp_trim_words( get_the_content(), 15, '...' );
             endif;
             ?>
         </p>
 
         <a href="<?php the_permalink();?>" class="text-read-more">
-            <?php echo esc_html__('Read more','cosmetics');?>
+            <?php echo esc_html__('Đọc thêm','cosmetics');?>
         </a>
 
         <?php cosmetics_link_page(); ?>

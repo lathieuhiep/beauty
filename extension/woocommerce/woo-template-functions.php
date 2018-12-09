@@ -554,9 +554,9 @@ if ( ! function_exists( 'cosmetics_upsell_products' ) ) :
     ?>
 
         <div class="up-sells upsells products">
-            <h2 class="title">
+            <p class="title">
                 <?php esc_html_e( 'Sản phẩm cùng xem', 'cosmetics' ); ?>
-            </h2>
+            </p>
 
             <div class="related-product-slider element-product-style owl-carousel owl-theme" data-settings='<?php echo esc_attr( wp_json_encode( $settings_data ) ); ?>'>
                 <?php
@@ -616,9 +616,9 @@ if ( ! function_exists( 'cosmetics_crosssell_products' ) ) :
     ?>
 
             <div class="cross-sells products">
-                <h2 class="title">
+                <p class="title">
                     <?php esc_html_e( 'Sản phẩm mua cùng', 'cosmetics' ); ?>
-                </h2>
+                </p>
 
                 <div class="related-product-slider element-product-style owl-carousel owl-theme" data-settings='<?php echo esc_attr( wp_json_encode( $settings_data ) ); ?>'>
                     <?php
@@ -689,9 +689,9 @@ if ( ! function_exists( 'cosmetics_related_products' ) ) :
 
             <div class="related products">
 
-                <h2 class="title">
+                <p class="title">
                     <?php esc_html_e( 'Sản phẩm cùng loại', 'cosmetics' ); ?>
-                </h2>
+                </p>
 
                 <div class="related-product-slider element-product-style owl-carousel owl-theme" data-settings='<?php echo esc_attr( wp_json_encode( $settings_data ) ); ?>'>
                     <?php
