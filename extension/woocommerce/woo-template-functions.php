@@ -755,8 +755,9 @@ function cosmetics_product_slides() {
 }
 /* End Product Slides */
 
-add_filter('woocommerce_sale_flash', 'my_custom_sale_flash');
-function my_custom_sale_flash() {
+/* Start Sale percentage */
+add_filter('woocommerce_sale_flash', 'cosmetics_custom_sale_flash');
+function cosmetics_custom_sale_flash() {
 
     $regular_price_product  =   get_post_meta( get_the_ID(), '_regular_price', true );
     $sale_price_product     =   get_post_meta( get_the_ID(), '_sale_price', true );
@@ -765,3 +766,50 @@ function my_custom_sale_flash() {
 
     return '<span class="onsale">-'.$percentage.'%</span>';
 }
+/* End Sale percentage */
+
+/**
+ * Change title tab
+ */
+add_filter( 'woocommerce_product_description_heading', 'cosmetics_change_text_product_description_heading' );
+add_filter( 'woocommerce_product_additional_information_heading', 'cosmetics_change_text_product_description_heading' );
+function cosmetics_change_text_product_description_heading() {
+    return '';
+}
+
+/**
+ * Rename product data tabs
+ */
+add_filter( 'woocommerce_product_tabs', 'woo_rename_tabs', 98 );
+function woo_rename_tabs( $tabs ) {
+
+    $tabs['description']['title'] = esc_html__( 'Chi tiết sản phẩm' );		// Rename the description tab
+
+    return $tabs;
+
+}
+
+function cosmetics_comment_facebook_product() {
+?>
+
+    <div class="fb-comments" data-href="<?php the_permalink(); ?>" data-numposts="10" data-width="100%"></div>
+
+<?php
+}
+
+/* Comment facebook jdk */
+function cosmetics_sdk_facebook() {
+    if ( is_product() ) :
+?>
+        <div id="fb-root"></div>
+        <script>(function(d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) return;
+                js = d.createElement(s); js.id = id;
+                js.src = 'https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v3.2';
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));</script>
+<?php
+    endif;
+}
+add_action( 'wp_footer', 'cosmetics_sdk_facebook' );

@@ -3510,6 +3510,10 @@ aside.site-sidebar section.widget.widget_product_categories ul li:hover ul.child
   right: 0;
 }
 
+.woocommerce .site-shop-single .fb-comments {
+  margin-bottom: 50px;
+}
+
 .woocommerce div.product .woocommerce-tabs ul.tabs {
   margin: 0;
   padding: 0;
