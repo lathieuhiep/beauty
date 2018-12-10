@@ -532,22 +532,15 @@ function cosmetics_register_required_plugins() {
 
         // This is an example of how to include a plugin from the WordPress Plugin Repository
         array(
+            'name'      =>  'Megamenu',
+            'slug'      =>  'megamenu',
+            'required'  =>  true,
+        ),
+
+        // This is an example of how to include a plugin from the WordPress Plugin Repository
+        array(
             'name'      =>  'Redux Framework',
             'slug'      =>  'redux-framework',
-            'required'  =>  true,
-        ),
-
-        // This is an example of how to include a plugin from the WordPress Plugin Repository
-        array(
-            'name'      =>  'Meta Box',
-            'slug'      =>  'meta-box',
-            'required'  =>  true,
-        ),
-
-        // This is an example of how to include a plugin from the WordPress Plugin Repository
-        array(
-            'name'      =>  'CMB2',
-            'slug'      =>  'cmb2',
             'required'  =>  true,
         ),
 
@@ -562,6 +555,27 @@ function cosmetics_register_required_plugins() {
         array(
             'name'      =>  'Woocommerce',
             'slug'      =>  'woocommerce',
+            'required'  =>  true,
+        ),
+
+        // This is an example of how to include a plugin from the WordPress Plugin Repository
+        array(
+            'name'      =>  'Woo Variation Swatches',
+            'slug'      =>  'woo-variation-swatches',
+            'required'  =>  true,
+        ),
+
+        // This is an example of how to include a plugin from the WordPress Plugin Repository
+        array(
+            'name'      =>  'Contact Form 7',
+            'slug'      =>  'contact-form-7',
+            'required'  =>  true,
+        ),
+
+        // This is an example of how to include a plugin from the WordPress Plugin Repository
+        array(
+            'name'      =>  'Breadcrumb Navxt',
+            'slug'      =>  'breadcrumb-navxt',
             'required'  =>  true,
         ),
 

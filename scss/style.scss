@@ -16,6 +16,7 @@ Text Domain: cosmetics
 *
 # General
 # Header
+# Breadcrumb
 # Page
 # Sidebar
 # Blog
@@ -31,6 +32,7 @@ Text Domain: cosmetics
   ## Post Type
   ## Testimonial
   ## Store
+  ## Contact Us
 ## Shop Woocommerce
 ## Contact Form 7
 # Footer
@@ -53,6 +55,11 @@ Text Domain: cosmetics
 # Header
 -----------------------------------------------------------------------------*/
 @import "header/header";
+
+/**
+# Header
+-----------------------------------------------------------------------------*/
+@import "breadcrumb";
 
 /**
 # Page

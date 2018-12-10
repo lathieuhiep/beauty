@@ -337,6 +337,53 @@ Redux::setSection( $cosmetics_opt_name, array(
 
 /* End Header Options */
 
+/* Start Page Option */
+
+/* End Page Option */
+Redux::setSection( $cosmetics_opt_name, array(
+    'title'             =>  esc_html__( 'Page Default Options', 'cosmetics' ),
+    'id'                =>  'cosmetics_page_default_option',
+    'customizer_width'  =>  '400px',
+    'icon'              =>  'el el-file-alt',
+    'fields'            =>  array(
+
+        array(
+            'id'        =>  'cosmetics_page_default_show_breadcrumb',
+            'type'      =>  'select',
+            'title'     =>  esc_html__( 'Show Or Hide Breadcrumb', 'cosmetics' ),
+            'default'   =>  1,
+            'options'   =>  array(
+                1   =>  esc_html__( 'Show', 'cosmetics' ),
+                0   =>  esc_html__( 'Hide', 'cosmetics' )
+            )
+        ),
+
+        array(
+            'id'        =>  'cosmetics_page_default_sidebar',
+            'type'      =>  'image_select',
+            'title'     =>  esc_html__( 'Sidebar Page', 'cosmetics' ),
+            'default'   =>  'right',
+            'options'   =>  array(
+                'hide' =>  array(
+                    'alt'   =>  'None Sidebar',
+                    'img'   =>  ReduxFramework::$_url . 'assets/img/1col.png'
+                ),
+
+                'left' =>  array(
+                    'alt'   =>  'Sidebar Left',
+                    'img'   =>  ReduxFramework::$_url . 'assets/img/2cl.png'
+                ),
+
+                'right' =>  array(
+                    'alt'   =>  'Sidebar Right',
+                    'img'   =>  ReduxFramework::$_url . 'assets/img/2cr.png'
+                ),
+
+            ),
+        ),
+
+    )
+));
 /* Start Blog Option */
 Redux::setSection( $cosmetics_opt_name, array(
     'title'             =>  esc_html__( 'Blog Options', 'cosmetics' ),

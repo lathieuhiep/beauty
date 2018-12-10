@@ -1,0 +1,22 @@
+.site-breadcrumb {
+  margin-bottom: 25px;
+}
+.site-breadcrumb-wrapper{
+  .breadcrumb-wrapper-content {
+    position: relative;
+    line-height: 1em;
+    font-size: 15px;
+
+    > span {
+      display: inline-block;
+      margin: 0 5px;
+      color: #777;
+
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+  }
+}
+
+

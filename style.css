@@ -15,6 +15,7 @@ Text Domain: cosmetics
 *
 # General
 # Header
+# Breadcrumb
 # Page
 # Sidebar
 # Blog
@@ -30,6 +31,7 @@ Text Domain: cosmetics
   ## Post Type
   ## Testimonial
   ## Store
+  ## Contact Us
 ## Shop Woocommerce
 ## Contact Form 7
 # Footer
@@ -52,7 +54,7 @@ body {
   line-height: 1.8em;
   overflow-x: hidden;
   font-size: 14px;
-  color: #333333;
+  color: #000000;
   font-family: "Roboto", sans-serif;
   font-weight: 400;
   display: -webkit-box;
@@ -72,7 +74,7 @@ body {
 h1, h2, h3, h4, h5, h6 {
   margin: 0 0 20px;
   font-weight: 700;
-  color: #333333;
+  color: #000000;
 }
 
 h1 {
@@ -100,7 +102,7 @@ h6 {
 }
 
 a {
-  color: #333333;
+  color: #000000;
   -webkit-transition: all 0.4s ease-in-out;
   -moz-transition: all 0.4s ease-in-out;
   -o-transition: all 0.4s ease-in-out;
@@ -1265,10 +1267,33 @@ form.post-password-form p input[type='submit'] {
 }
 
 /**
+# Header
+-----------------------------------------------------------------------------*/
+.site-breadcrumb {
+  margin-bottom: 25px;
+}
+
+.site-breadcrumb-wrapper .breadcrumb-wrapper-content {
+  position: relative;
+  line-height: 1em;
+  font-size: 15px;
+}
+
+.site-breadcrumb-wrapper .breadcrumb-wrapper-content > span {
+  display: inline-block;
+  margin: 0 5px;
+  color: #777;
+}
+
+.site-breadcrumb-wrapper .breadcrumb-wrapper-content > span:first-child {
+  margin-left: 0;
+}
+
+/**
 # Page
 -----------------------------------------------------------------------------*/
 .site-container {
-  padding: 50px 0;
+  padding: 30px 0 50px;
 }
 
 .site-container.site-container-elementor {
@@ -1876,7 +1901,7 @@ aside.site-sidebar section.widget.widget_product_categories ul li:hover ul.child
 }
 
 .site-post-meta span a:hover {
-  color: #333333;
+  color: #000000;
 }
 
 .site-post-excerpt ul li {
@@ -3096,6 +3121,22 @@ aside.site-sidebar section.widget.widget_product_categories ul li:hover ul.child
   visibility: visible;
 }
 
+/* Contact Us */
+.element-contact-us .title {
+  margin: 0 0 25px;
+}
+
+.element-contact-us .list-item .item {
+  line-height: 1.5em;
+  margin-bottom: 12px;
+}
+
+.element-contact-us .list-item .item i {
+  font-size: 16px;
+  width: 25px;
+  margin-right: 5px;
+}
+
 /**
 # Shop Woocommerce
 -----------------------------------------------------------------------------*/
@@ -3323,7 +3364,7 @@ aside.site-sidebar section.widget.widget_product_categories ul li:hover ul.child
 
 .woocommerce nav.woocommerce-pagination ul li a:focus {
   background-color: transparent;
-  color: #333333;
+  color: #000000;
 }
 
 .woocommerce nav.woocommerce-pagination ul li span.current,
@@ -4257,4 +4298,4 @@ form.wpcf7-form .wpcf7-submit {
   }
 }
 
-/*# sourceMappingURL=maps/style.css.map */
+/*# sourceMappingURL=style.css.map */
