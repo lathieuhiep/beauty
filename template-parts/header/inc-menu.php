@@ -1,5 +1,25 @@
 <div class="header-bottom">
     <div class="container d-flex">
+        <?php if ( has_nav_menu('menu-icon') ) : ?>
+
+            <div class="stile-menu-icon d-flex align-items-center">
+                <span class="btn-menu-icon">
+                    <i class="fas fa-bars"></i>
+                </span>
+
+                <div class="stile-nav-icon">
+                    <?php
+                    wp_nav_menu( array(
+                        'theme_location' => 'menu-icon',
+                        'menu_class'     => 'nav-menu-icon',
+                        'container'      => false,
+                    ) ) ;
+                    ?>
+                </div>
+            </div>
+
+        <?php endif; ?>
+
         <div class="site-menu collapse navbar-collapse">
 
             <?php

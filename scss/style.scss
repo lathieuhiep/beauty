@@ -32,6 +32,7 @@ Text Domain: cosmetics
   ## Testimonial
   ## Store
 ## Shop Woocommerce
+## Contact Form 7
 # Footer
 # Responsive
 * -----------------------------------------------------------------------------
@@ -77,6 +78,11 @@ Text Domain: cosmetics
 # Shop Woocommerce
 -----------------------------------------------------------------------------*/
 @import "shop";
+
+/**
+# Contact Form 7
+-----------------------------------------------------------------------------*/
+@import "cf7";
 
 /**
 # 404

@@ -44,6 +44,7 @@ if( !function_exists('cosmetics_setup') ):
         register_nav_menus(
             array(
                 'primary'       =>  esc_html__( 'Primary Menu', 'cosmetics' ),
+                'menu-icon'     =>  esc_html__( 'Menu Icon', 'cosmetics' ),
                 'footer-menu'   =>  esc_html__( 'Footer Menu', 'cosmetics' ),
             )
         );

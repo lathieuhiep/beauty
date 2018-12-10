@@ -48,6 +48,18 @@
         }
         /* btn mobile End */
 
+        /* Start click menu icon */
+        let btn_menu_icon = $( '.btn-menu-icon' );
+
+        if ( btn_menu_icon.length ) {
+            btn_menu_icon.on( 'click', function () {
+
+                $(this).parent().find( '.stile-nav-icon' ).slideToggle();
+
+            } )
+        }
+        /* End click menu icon */
+
         /* Start Click Cart */
         let tz_shop_cart = $( '.tz-shop-cart, .close-side-widget' );
 
