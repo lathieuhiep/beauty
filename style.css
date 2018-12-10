@@ -1850,6 +1850,11 @@ aside.site-sidebar section.widget.widget_product_categories ul li:hover ul.child
   margin-bottom: 15px;
 }
 
+.site-post-single-item .site-post-content {
+  border-bottom: 1px solid #eeeeee;
+  margin-bottom: 15px;
+}
+
 .site-post-slides {
   position: relative;
   margin-bottom: 30px;
@@ -1892,11 +1897,6 @@ aside.site-sidebar section.widget.widget_product_categories ul li:hover ul.child
 
 .site-post-slides.owl-carousel .owl-dots .owl-dot.active span, .site-post-slides.owl-carousel .owl-dots .owl-dot:hover span {
   background-color: #ff5555;
-}
-
-.site-post-content {
-  border-bottom: 1px solid #eeeeee;
-  margin-bottom: 15px;
 }
 
 .site-post-excerpt {
@@ -3529,17 +3529,21 @@ aside.site-sidebar section.widget.widget_product_categories ul li:hover ul.child
   padding: 10px 15px;
   border-radius: 0;
   background-color: #323232;
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
 }
 
 .woocommerce div.product .woocommerce-tabs ul.tabs li::before, .woocommerce div.product .woocommerce-tabs ul.tabs li::after {
   display: none;
 }
 
-.woocommerce div.product .woocommerce-tabs ul.tabs li.active {
+.woocommerce div.product .woocommerce-tabs ul.tabs li:hover, .woocommerce div.product .woocommerce-tabs ul.tabs li.active {
   background-color: #ff5555;
 }
 
-.woocommerce div.product .woocommerce-tabs ul.tabs li.active a {
+.woocommerce div.product .woocommerce-tabs ul.tabs li:hover a, .woocommerce div.product .woocommerce-tabs ul.tabs li.active a {
   color: #ffffff;
 }
 
@@ -4104,4 +4108,4 @@ aside.site-sidebar section.widget.widget_product_categories ul li:hover ul.child
   }
 }
 
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=maps/style.css.map */

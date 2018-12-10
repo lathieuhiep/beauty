@@ -14,36 +14,21 @@ $cosmetics_copyright = $cosmetics_options ['cosmetics_footer_copyright_editor'] 
                 <?php echo wp_kses_post( $cosmetics_copyright ); ?>
             </div>
 
-            <div class="site-footer__menu">
-                <nav>
+            <?php if ( has_nav_menu( 'footer-menu' ) ) : ?>
 
-                    <?php
+                <div class="site-footer__menu">
+                    <nav>
+                        <?php
+                            wp_nav_menu( array(
+                                'theme_location'    => 'footer-menu',
+                                'menu_class'        => 'menu-footer',
+                                'container'         =>  false,
+                            ));
+                         ?>
+                    </nav>
+                </div>
 
-                    if ( has_nav_menu( 'footer-menu' ) ) :
-
-                        wp_nav_menu( array(
-                            'theme_location'    => 'footer-menu',
-                            'menu_class'        => 'menu-footer',
-                            'container'         =>  false,
-                        ));
-
-                    else:
-
-                    ?>
-
-                        <ul class="main-menu">
-                            <li>
-                                <a href="<?php echo get_admin_url().'/nav-menus.php'; ?>">
-                                    <?php esc_html_e( 'ADD TO MENU','cosmetics' ); ?>
-                                </a>
-                            </li>
-                        </ul>
-
-                    <?php endif;?>
-
-                </nav>
-            </div>
-
+            <?php endif; ?>
         </div>
     </div>
 </div>

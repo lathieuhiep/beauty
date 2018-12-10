@@ -497,13 +497,14 @@
               padding: 10px 15px;
               border-radius: 0;
               background-color: #323232;
+              @include transition(all 0.4s ease-in-out);
 
               &::before,
               &::after {
                 display: none;
               }
+              &:hover,
               &.active {
-                //border-bottom-color: #eeeeee;
                 background-color: #ff5555;
 
                 a {

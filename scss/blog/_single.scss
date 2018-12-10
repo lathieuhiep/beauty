@@ -17,6 +17,10 @@
   .site-post-meta {
     margin-bottom: 15px;
   }
+  .site-post-content {
+    border-bottom: 1px solid #eeeeee;
+    margin-bottom: 15px;
+  }
 }
 .site-post-slides {
   position: relative;
@@ -59,10 +63,6 @@
       }
     }
   }
-}
-.site-post-content {
-  border-bottom: 1px solid #eeeeee;
-  margin-bottom: 15px;
 }
 .site-post-excerpt {
   margin-bottom: 15px;
