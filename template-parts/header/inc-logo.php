@@ -6,7 +6,7 @@ $cosmetics_logo_image_id    =   $cosmetics_options['cosmetics_logo_image']['id']
 
 <div class="header-logo">
     <div class="container">
-        <div class="header-logo__warp d-flex align-items-center">
+        <div class="header-logo__warp d-lg-flex align-items-lg-center">
             <div class="site-logo item">
                 <a href="<?php echo esc_url( get_home_url( '/' ) ); ?>" title="<?php bloginfo( 'name' ); ?>">
                     <?php

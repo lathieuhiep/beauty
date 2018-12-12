@@ -701,12 +701,6 @@ form.post-password-form p input[type='submit'] {
   padding: 20px 0;
 }
 
-.header-logo .header-logo__warp .item {
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-}
-
 .header-logo .search-warp .search-form {
   display: -webkit-box;
   display: -moz-box;
@@ -4114,6 +4108,11 @@ form.wpcf7-form .wpcf7-submit {
 }
 
 @media (min-width: 992px) {
+  .header-logo .header-logo__warp .item {
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+  }
   .site-menu ul li.menu-item-has-children > a:after {
     content: "\f078";
     font-family: 'Font Awesome 5 Free';
@@ -4137,6 +4136,9 @@ form.wpcf7-form .wpcf7-submit {
 }
 
 @media (max-width: 991px) {
+  .header-logo__warp .site-shop-cart {
+    display: none;
+  }
   .header-bottom_warp {
     display: block;
   }
@@ -4149,14 +4151,12 @@ form.wpcf7-form .wpcf7-submit {
   .header-bottom .container {
     max-width: none;
   }
+  .header-logo {
+    padding: 15px 0;
+  }
   .site-logo {
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-justify-content: space-between;
-    justify-content: space-between;
+    text-align: center;
+    margin-bottom: 20px;
   }
   .navbar-toggle {
     float: none;

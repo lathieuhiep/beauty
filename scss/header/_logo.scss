@@ -1,11 +1,6 @@
 .header-logo {
   padding: 20px 0;
 
-  .header-logo__warp {
-    .item {
-      @include flex(1);
-    }
-  }
   .search-warp {
     .search-form {
       @include flexbox();
