@@ -20,7 +20,7 @@
 
         <?php endif; ?>
 
-        <div class="site-menu collapse navbar-collapse">
+        <div class="site-menu collapse navbar-collapse show">
 
             <?php
 
