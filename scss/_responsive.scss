@@ -33,6 +33,13 @@
 
 @media ( min-width: 992px ) {
 
+  .header-logo {
+    .header-logo__warp {
+      .item {
+        @include flex(1);
+      }
+    }
+  }
   .site-menu {
     ul {
       li {
@@ -84,6 +91,11 @@
 
 @media ( max-width: 991px ) {
 
+  .header-logo__warp {
+    .site-shop-cart {
+      display: none;
+    }
+  }
   .header-bottom_warp {
     display: block;
   }
@@ -99,9 +111,12 @@
       max-width: none;
     }
   }
+  .header-logo {
+    padding: 15px 0;
+  }
   .site-logo {
-    @include flexbox();
-    @include justify-content(space-between);
+    text-align: center;
+    margin-bottom: 20px;
   }
   .navbar-toggle {
     float: none;
