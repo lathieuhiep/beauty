@@ -4248,6 +4248,16 @@ form.wpcf7-form .wpcf7-submit {
   .site-sidebar {
     padding-top: 50px;
   }
+  .element-products-carousel .header {
+    padding-right: 0;
+  }
+  .element-products-carousel .title,
+  .element-products-carousel .deals-of-countdown-product {
+    margin-bottom: 20px;
+  }
+  .element-products-carousel .item-box-products.owl-carousel .owl-nav {
+    top: -70px;
+  }
   /* woocommerce */
   .woocommerce .col2-set .col-1,
   .woocommerce .col2-set .col-2,
@@ -4277,6 +4287,12 @@ form.wpcf7-form .wpcf7-submit {
   .comment-form .form-comment-item {
     margin-bottom: 15px;
   }
+  .element-products-carousel .deals-of-countdown-product .title-countdown {
+    margin-bottom: 15px;
+  }
+  .element-products-carousel .deals-of-countdown-product .count-down-time-product {
+    display: block;
+  }
 }
 
 @media (max-width: 480px) {
@@ -4298,4 +4314,4 @@ form.wpcf7-form .wpcf7-submit {
   }
 }
 
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=maps/style.css.map */

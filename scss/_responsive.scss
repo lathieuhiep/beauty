@@ -202,6 +202,22 @@
   .site-sidebar {
     padding-top: 50px;
   }
+  .element-products-carousel {
+    .header {
+      padding-right: 0;
+    }
+    .title,
+    .deals-of-countdown-product {
+      margin-bottom: 20px;
+    }
+    .item-box-products {
+      &.owl-carousel {
+        .owl-nav {
+          top: -70px;
+        }
+      }
+    }
+  }
   /* woocommerce */
   .woocommerce,
   .woocommerce-page {
@@ -246,6 +262,16 @@
     }
     .form-comment-item {
       margin-bottom: 15px;
+    }
+  }
+  .element-products-carousel {
+    .deals-of-countdown-product {
+      .title-countdown {
+        margin-bottom: 15px;
+      }
+      .count-down-time-product {
+        display: block;
+      }
     }
   }
 
