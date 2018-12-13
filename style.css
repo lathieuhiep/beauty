@@ -2555,7 +2555,7 @@ aside.site-sidebar section.widget.widget_product_categories ul li:hover ul.child
 }
 
 .element-products-carousel .owl-item {
-  padding-left: 1px;
+  padding: 2px;
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
@@ -2575,6 +2575,9 @@ aside.site-sidebar section.widget.widget_product_categories ul li:hover ul.child
 }
 
 .element-products-carousel .item-product {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;

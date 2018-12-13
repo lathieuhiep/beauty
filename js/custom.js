@@ -211,7 +211,7 @@
                     navSpeed: 800,
                     dotsSpeed: 800,
                     smartSpeed: 600,
-                    autoHeight:true,
+                    autoHeight:false,
                     responsive:{
                         0:{
                             items: $item_mobile,
