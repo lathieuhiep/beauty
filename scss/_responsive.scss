@@ -220,6 +220,7 @@
   .element-products-carousel {
     .header {
       padding-right: 0;
+      border-bottom: 0;
     }
     .title,
     .deals-of-countdown-product {
@@ -228,7 +229,7 @@
     .item-box-products {
       &.owl-carousel {
         .owl-nav {
-          top: -70px;
+          top: -50px;
         }
       }
     }
@@ -269,6 +270,22 @@
 
 }
 
+@media ( min-width: 576px ) and ( max-width: 767px ) {
+
+  .element-products-carousel {
+    &.product-sale-countdown {
+      .item-box-products {
+        &.owl-carousel {
+          .owl-nav {
+            top: -100px;
+          }
+        }
+      }
+    }
+  }
+
+}
+
 @media ( max-width: 575px ) {
 
   .comment-form {
@@ -288,6 +305,24 @@
         display: block;
       }
     }
+    &.product-sale-countdown {
+      .item-box-products {
+        &.owl-carousel {
+          .owl-nav {
+            top: -140px;
+          }
+        }
+      }
+    }
+  }
+
+}
+
+@media ( min-width: 481px ) and ( max-width: 575px ) {
+
+  .element-product-grid .item-col {
+    @include flex(0 0 50%);
+    max-width: 50%;
   }
 
 }

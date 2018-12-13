@@ -302,7 +302,7 @@ function cosmetics_register_front_end() {
     /*  Start Style Css   */
 
     /* hungkv css */
-        wp_enqueue_style( 'hungkv', get_theme_file_uri( '/css/hungkv.css' ), array(), '' );
+//        wp_enqueue_style( 'hungkv', get_theme_file_uri( '/css/hungkv.css' ), array(), '' );
 
     /*
     * End Get Css Front End

@@ -288,7 +288,7 @@ class cosmetics_widget_products_carousel extends Widget_Base {
 
     ?>
 
-        <div class="element-products-carousel element-product-style">
+        <div class="element-products-carousel element-product-style<?php echo ( $settings['select_get_product'] == 'product_on_sale' ? ' product-sale-countdown' : '' ); ?>">
             <div class="header d-md-flex justify-content-md-between align-items-md-center">
                 <h4 class="title">
                     <?php echo esc_html( $settings['title'] ); ?>

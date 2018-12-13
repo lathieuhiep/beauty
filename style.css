@@ -2828,6 +2828,7 @@ aside.site-sidebar section.widget.widget_product_categories ul li:hover ul.child
 
 .element-product-grid .item-product {
   height: 100%;
+  text-align: center;
 }
 
 /* Product Filter */
@@ -4253,13 +4254,14 @@ form.wpcf7-form .wpcf7-submit {
   }
   .element-products-carousel .header {
     padding-right: 0;
+    border-bottom: 0;
   }
   .element-products-carousel .title,
   .element-products-carousel .deals-of-countdown-product {
     margin-bottom: 20px;
   }
   .element-products-carousel .item-box-products.owl-carousel .owl-nav {
-    top: -70px;
+    top: -50px;
   }
   /* woocommerce */
   .woocommerce .col2-set .col-1,
@@ -4283,6 +4285,12 @@ form.wpcf7-form .wpcf7-submit {
   }
 }
 
+@media (min-width: 576px) and (max-width: 767px) {
+  .element-products-carousel.product-sale-countdown .item-box-products.owl-carousel .owl-nav {
+    top: -100px;
+  }
+}
+
 @media (max-width: 575px) {
   .comment-form .comment-fields-row {
     margin-bottom: 0;
@@ -4295,6 +4303,18 @@ form.wpcf7-form .wpcf7-submit {
   }
   .element-products-carousel .deals-of-countdown-product .count-down-time-product {
     display: block;
+  }
+  .element-products-carousel.product-sale-countdown .item-box-products.owl-carousel .owl-nav {
+    top: -140px;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 575px) {
+  .element-product-grid .item-col {
+    -webkit-flex: 0 0 50%;
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    max-width: 50%;
   }
 }
 

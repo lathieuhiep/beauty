@@ -217,11 +217,14 @@
                             items: $item_mobile,
                             margin: $margin_item_mobile
                         },
-                        576:{
+                        480:{
                             items:2
                         },
                         768:{
-                            items: $item_tablet
+                            items: 3
+                        },
+                        992:{
+                            items:4
                         },
                         1200:{
                             items:$item_number

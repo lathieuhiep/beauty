@@ -205,17 +205,17 @@ class cosmetics_widget_products_best_selling extends Widget_Base {
         if ( $query->have_posts() ) :
 
             if ( $settings['column_number'] == 6 ) :
-                $class_column_number = 'column-6 col-lg-2';
+                $class_column_number = 'column-6 col-xl-2';
             elseif ( $settings['column_number'] == 5 ) :
                 $class_column_number = 'column-5';
             elseif ( $settings['column_number'] == 4 ) :
-                $class_column_number = 'column-4 col-lg-3';
+                $class_column_number = 'column-4 col-xl-3';
             elseif ( $settings['column_number'] == 3 ) :
-                $class_column_number = 'column-3 col-lg-4';
+                $class_column_number = 'column-3 col-xl-4';
             elseif ( $settings['column_number'] == 2 ) :
-                $class_column_number = 'column-2 col-lg-6';
+                $class_column_number = 'column-2 col-xl-6';
             else:
-                $class_column_number = 'column-1 col-lg-12';
+                $class_column_number = 'column-1 col-xl-12';
             endif;
 
     ?>
@@ -258,7 +258,7 @@ class cosmetics_widget_products_best_selling extends Widget_Base {
            <div class="row">
                <?php while ( $query->have_posts() ): $query->the_post(); ?>
 
-                   <div class="item-col <?php echo esc_attr( $class_column_number ); ?> col-md-3 col-sm-6 col-12">
+                   <div class="item-col <?php echo esc_attr( $class_column_number ); ?> col-lg-3 col-md-4 col-sm-6 col-12">
                        <div class="item-product">
                            <a class="item-link-product" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">&nbsp;</a>
 
