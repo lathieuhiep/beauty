@@ -59,6 +59,7 @@
     z-index: 15;
     opacity: 0;
     visibility: hidden;
+    overflow: auto;
     @include transform(translateX(340px));
     @include transition(all 0.4s ease-in-out);
 

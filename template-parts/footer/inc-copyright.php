@@ -8,7 +8,7 @@ $cosmetics_copyright = $cosmetics_options ['cosmetics_footer_copyright_editor'] 
 
 <div class="site-footer__copyright">
     <div class="container">
-        <div class="site-copyright-menu d-flex align-items-center">
+        <div class="site-copyright-menu d-lg-flex align-items-lg-center">
 
             <div class="site-copyright">
                 <?php echo wp_kses_post( $cosmetics_copyright ); ?>

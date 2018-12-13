@@ -41,6 +41,8 @@
     }
   }
   .site-menu {
+    @include flex(1);
+
     ul {
       li {
         &.menu-item-has-children {
@@ -93,7 +95,9 @@
 
   .header-logo__warp {
     .site-shop-cart {
-      display: none;
+      .tz-shop-cart {
+        display: none;
+      }
     }
   }
   .header-bottom_warp {
@@ -125,15 +129,11 @@
     display: block;
   }
   .site-menu {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background-color: #eeeeee;
-    z-index: 99;
-
-    .collapse {
-      display: none !important;
+    &.collapse {
+      flex-basis:0;
+      flex-grow: 0;
+      -ms-flex-order: 2;
+      order: 2;
 
       &.in {
         display: block !important;
@@ -190,6 +190,48 @@
   .icon_menu_item_mobile {
     display: block;
   }
+  .header-bottom {
+    .container {
+      @include justify-content(space-between);
+    }
+    .stile-menu-icon {
+      display: none;
+    }
+    .site-menu__right {
+      opacity: 1;
+      visibility: visible;
+      -ms-flex-order: 1;
+      order: 1;
+    }
+    .site-menu__search {
+      .site-menu-form__search {
+        right: auto;
+        left: 0;
+      }
+    }
+  }
+  #mega-menu-wrap-primary {
+    position: static;
+
+    #mega-menu-primary  {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      width: 100%;
+      z-index: 10;
+    }
+  }
+  .site-footer__menu {
+    text-align: inherit;
+
+    ul {
+      li {
+        &:first-child {
+          padding-left: 0;
+        }
+      }
+    }
+  }
 
 }
 
@@ -242,6 +284,15 @@
       .col-2 {
         @include flex(0 0 100%);
         max-width: 100%;
+      }
+    }
+  }
+  .cosmetics_facebook_widget {
+    .fb_iframe_widget {
+      display: block;
+      span {
+        display: block;
+        width: 100% !important;
       }
     }
   }
@@ -315,6 +366,13 @@
       }
     }
   }
+  .element-product-grid {
+    .top-block {
+      .heading {
+        font-size: 15px;
+      }
+    }
+  }
 
 }
 
@@ -329,6 +387,11 @@
 
 @media ( max-width: 480px ) {
 
+  .header-logo {
+    .cart-widget-side {
+      width: 100%;
+    }
+  }
   .comments-area {
     .comment-list {
       li {

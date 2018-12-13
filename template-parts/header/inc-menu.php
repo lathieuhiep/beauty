@@ -2,7 +2,7 @@
     <div class="container d-flex">
         <?php if ( has_nav_menu('menu-icon') ) : ?>
 
-            <div class="stile-menu-icon d-flex align-items-center">
+            <div class="stile-menu-icon d-lg-flex align-items-center">
                 <span class="btn-menu-icon">
                     <i class="fas fa-bars"></i>
                 </span>

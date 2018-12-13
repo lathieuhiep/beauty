@@ -240,9 +240,6 @@
   }
 }
 .site-menu {
-  @include flex(1);
-}
-.site-menu {
   ul {
     padding: 0;
     margin: 0;
@@ -337,4 +334,8 @@
 /* Megamenu */
 #mega-menu-wrap-primary {
   width: 100%;
+
+  .mega-menu-toggle {
+    border-radius: 0;
+  }
 }
