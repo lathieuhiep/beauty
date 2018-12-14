@@ -265,7 +265,11 @@ class cosmetics_widget_products_filter extends Widget_Base {
 
                     <?php if ( $settings['list_tag_product'] ) : ?>
 
-                        <div class="top-block__list d-flex">
+                        <div class="btn-icon-list-item-mobile d-lg-none">
+                            <i class="fas fa-bars"></i>
+                        </div>
+
+                        <div class="top-block__list d-lg-flex">
                             <?php
                             foreach ( $settings['list_tag_product'] as $item ) :
                                 $tag_product = get_term( $item['select_tag'], 'product_tag' );

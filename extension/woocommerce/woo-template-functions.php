@@ -89,12 +89,6 @@ if ( ! function_exists( 'cosmetics_add_to_cart_fragment' ) ) :
 endif;
 /* End get cart */
 
-//add_filter('woocommerce_sale_flash', 'woocommerce_custom_sale_text', 10, 3);
-//function woocommerce_custom_sale_text()
-//{
-//    return '<span class="onsale">Sale</span>';
-//}
-
 /* Start Sidebar Shop */
 if ( ! function_exists( 'cosmetics_woo_get_sidebar' ) ) :
 
@@ -109,7 +103,7 @@ if ( ! function_exists( 'cosmetics_woo_get_sidebar' ) ) :
         if( is_active_sidebar( $cosmetics_sidebar_shop ) ):
     ?>
 
-            <aside class="col-md-3 site-sidebar">
+            <aside class="<?php echo esc_attr( cosmetics_col_sidebar() ); ?> site-sidebar">
                 <?php dynamic_sidebar( $cosmetics_sidebar_shop); ?>
             </aside>
 
@@ -158,7 +152,7 @@ if ( ! function_exists( 'cosmetics_woo_before_main_content' ) ) :
                 endif;
                 ?>
 
-                    <div class="<?php echo is_active_sidebar( 'cosmetics-sidebar-wc' ) && $cosmetics_sidebar_woo_position != 'hide' ? 'col-md-9' : 'col-md-12'; ?>">
+                    <div class="<?php echo is_active_sidebar( 'cosmetics-sidebar-wc' ) && $cosmetics_sidebar_woo_position != 'hide' ? 'col-12 col-md-8 col-lg-9' : 'col-md-12'; ?>">
 
     <?php
 
@@ -546,6 +540,7 @@ if ( ! function_exists( 'cosmetics_upsell_products' ) ) :
             $settings_data     =   [
                 'margin_item'   =>  30,
                 'number_item'   =>  4,
+                'item_tablet_2' =>  3,
                 'item_tablet'   =>  2,
                 'item_mobile'   =>  1,
                 'nav'           =>  true,
@@ -608,6 +603,7 @@ if ( ! function_exists( 'cosmetics_crosssell_products' ) ) :
             $settings_data     =   [
                 'margin_item'   =>  30,
                 'number_item'   =>  4,
+                'item_tablet_2' =>  3,
                 'item_tablet'   =>  2,
                 'item_mobile'   =>  1,
                 'nav'           =>  true,
@@ -680,6 +676,7 @@ if ( ! function_exists( 'cosmetics_related_products' ) ) :
                 $settings_data     =   [
                     'margin_item'   =>  30,
                     'number_item'   =>  4,
+                    'item_tablet_2' =>  3,
                     'item_tablet'   =>  2,
                     'item_mobile'   =>  1,
                     'nav'           =>  true,

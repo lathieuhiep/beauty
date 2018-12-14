@@ -1,5 +1,6 @@
 .element-product-grid {
   .top-block {
+    position: relative;
     background-color: #ffffff;
     border-bottom: 2px solid $color-hover;
 
@@ -24,6 +25,11 @@
       a {
         color: #ffffff;
       }
+    }
+    .btn-icon-list-item-mobile {
+      margin-right: 15px;
+      font-size: 20px;
+      line-height: normal;
     }
     .top-block__list {
       .list-item {

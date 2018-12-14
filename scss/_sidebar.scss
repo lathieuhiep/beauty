@@ -472,3 +472,12 @@ aside {
     }
   }
 }
+.cosmetics_facebook_widget {
+  .fb_iframe_widget {
+    display: block;
+    span {
+      display: block;
+      width: 100% !important;
+    }
+  }
+}
