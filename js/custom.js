@@ -74,6 +74,18 @@
         }
         /* End Click Cart */
 
+        /* Start click mobile list item */
+        let btn_icon_list_item_mobile = $( '.btn-icon-list-item-mobile' );
+        
+        if ( btn_icon_list_item_mobile.length ) {
+
+            btn_icon_list_item_mobile.on( 'click', function () {
+                $(this).parents( '.top-block' ).find( '.top-block__list' ).slideToggle();
+            } )
+            
+        }
+        /* End click mobile list item */
+
         /* Start Gallery Single */
         $( document ).general_owlCarousel_item( '.site-post-slides' );
         /* End Gallery Single */
@@ -182,7 +194,8 @@
                     $active_nav         =   false,
                     $item_mobile        =   1,
                     $margin_item_mobile =   0,
-                    $item_tablet        =   3;
+                    $item_tablet        =   3,
+                    $item_tablet_2      =   4;
 
                 if ( $settings_slider !== undefined ) {
 
@@ -195,6 +208,7 @@
                     $item_mobile        =   typeof ( $settings_slider['item_mobile'] ) !== "undefined" ? parseInt( $settings_slider['item_mobile'] ) : 1;
                     $margin_item_mobile =   typeof ( $settings_slider['margin_item_mobile'] ) !== "undefined" ? parseInt( $settings_slider['margin_item_mobile'] ) : 0;
                     $item_tablet        =   typeof ( $settings_slider['item_tablet'] ) !== "undefined" ? parseInt( $settings_slider['item_tablet'] ) : 3;
+                    $item_tablet_2      =   typeof ( $settings_slider['item_tablet_2'] ) !== "undefined" ? parseInt( $settings_slider['item_tablet_2'] ) : 4;
 
                 }
 
@@ -221,10 +235,10 @@
                             items:2
                         },
                         768:{
-                            items: 3
+                            items: $item_tablet
                         },
                         992:{
-                            items:4
+                            items:$item_tablet_2
                         },
                         1200:{
                             items:$item_number

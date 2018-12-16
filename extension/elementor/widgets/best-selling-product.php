@@ -236,7 +236,11 @@ class cosmetics_widget_products_best_selling extends Widget_Base {
 
                 <?php if ( $settings['list'] ) : ?>
 
-                   <div class="top-block__list d-flex">
+                    <div class="btn-icon-list-item-mobile d-lg-none">
+                        <i class="fas fa-bars"></i>
+                    </div>
+
+                   <div class="top-block__list d-lg-flex">
                        <?php
                        foreach ( $settings['list'] as $item ) :
                            $item_target     =   $item['list_link_top']['is_external'] ? ' target="_blank"' : '';
