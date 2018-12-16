@@ -275,14 +275,3 @@ pre {
     }
   }
 }
-.elementor-column-gap-default {
-  > .elementor-row {
-    > .elementor-column {
-      > .elementor-element-populated {
-        &.elementor-column-wrap  {
-          padding: 15px;
-        }
-      }
-    }
-  }
-}

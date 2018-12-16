@@ -376,10 +376,6 @@ pre {
   background-color: #ff5555;
 }
 
-.elementor-column-gap-default > .elementor-row > .elementor-column > .elementor-element-populated.elementor-column-wrap {
-  padding: 15px;
-}
-
 /* =WordPress Core
 -------------------------------------------------------------- */
 .alignnone {
@@ -678,7 +674,6 @@ form.post-password-form p input[type='submit'] {
 
 .information span {
   display: inline-block;
-  padding-left: 7px;
   padding-right: 12px;
   color: #ed2d24;
   font-weight: 700;
