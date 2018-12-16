@@ -4355,13 +4355,6 @@ form.wpcf7-form .wpcf7-submit {
 }
 
 @media (min-width: 576px) {
-  .woocommerce .site-shop-single div.product .site-shop-single__gallery-box,
-  .woocommerce .site-shop-single div.product div.summary {
-    width: 100%;
-  }
-  .woocommerce .site-shop-single div.product .product_title {
-    margin-top: 10px;
-  }
   .woocommerce .site-shop-single .related.products .item-produc .item-thumbnail,
   .woocommerce .site-shop-single .upsells.products .item-produc .item-thumbnail,
   .woocommerce .site-shop-single .cross-sells.products .item-produc .item-thumbnail {
@@ -4476,4 +4469,4 @@ form.wpcf7-form .wpcf7-submit {
   }
 }
 
-/*# sourceMappingURL=maps/style.css.map */
+/*# sourceMappingURL=style.css.map */

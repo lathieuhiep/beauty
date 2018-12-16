@@ -369,17 +369,6 @@
 
   .woocommerce {
     .site-shop-single {
-      div {
-        &.product {
-          .site-shop-single__gallery-box,
-          div.summary {
-            width: 100%;
-          }
-          .product_title {
-            margin-top: 10px;
-          }
-        }
-      }
       .related,
       .upsells,
       .cross-sells {
