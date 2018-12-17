@@ -1246,11 +1246,11 @@ form.post-password-form p input[type='submit'] {
 }
 
 /* Megamenu */
-#mega-menu-wrap-primary {
+body #mega-menu-wrap-primary {
   width: 100%;
 }
 
-#mega-menu-wrap-primary .mega-menu-toggle {
+body #mega-menu-wrap-primary .mega-menu-toggle {
   border-radius: 0;
 }
 
@@ -4245,10 +4245,10 @@ form.wpcf7-form .wpcf7-submit {
     right: auto;
     left: 0;
   }
-  #mega-menu-wrap-primary {
+  body #mega-menu-wrap-primary {
     position: static;
   }
-  #mega-menu-wrap-primary #mega-menu-primary {
+  body #mega-menu-wrap-primary #mega-menu-primary {
     position: absolute;
     top: 100%;
     right: 0;
@@ -4469,4 +4469,4 @@ form.wpcf7-form .wpcf7-submit {
   }
 }
 
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=maps/style.css.map */

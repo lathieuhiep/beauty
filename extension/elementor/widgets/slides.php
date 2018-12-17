@@ -336,6 +336,12 @@ class cosmetics_widget_slides extends Widget_Base {
                 'default' => [
                     'size' => 450,
                 ],
+                'tablet_default' => [
+                    'size' => 350,
+                ],
+                'mobile_default' => [
+                    'size' => 250,
+                ],
                 'size_units' => [ 'px', 'vh', 'em' ],
                 'selectors' => [
                     '{{WRAPPER}} .element-slides__item' => 'height: {{SIZE}}{{UNIT}};',

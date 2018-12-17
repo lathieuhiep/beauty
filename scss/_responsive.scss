@@ -217,17 +217,20 @@
       }
     }
   }
-  #mega-menu-wrap-primary {
-    position: static;
+  body {
+    #mega-menu-wrap-primary {
+      position: static;
 
-    #mega-menu-primary  {
-      position: absolute;
-      top: 100%;
-      right: 0;
-      width: 100%;
-      z-index: 10;
+      #mega-menu-primary  {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 100%;
+        z-index: 10;
+      }
     }
   }
+
   .element-product-grid {
     .top-block {
       @include align-items(center);
