@@ -198,8 +198,6 @@ class cosmetics_widget_partners extends Widget_Base {
     protected function render() {
 
         $settings   =   $this->get_settings();
-//        $target     =   $settings['link']['is_external'] ? ' target="_blank"' : '';
-//        $nofollow   =   $settings['link']['nofollow'] ? ' rel="nofollow"' : '';
 
         $settings_data     =   [
             'margin_item'   =>  15,
@@ -223,10 +221,14 @@ class cosmetics_widget_partners extends Widget_Base {
             <?php if ( $settings['list'] ) : ?>
 
                 <div class="element-partners__logo owl-nav-middle owl-carousel owl-theme" data-settings='<?php echo esc_attr( wp_json_encode( $settings_data ) ); ?>'>
-                    <?php foreach ( $settings['list'] as $item ) : ?>
+                    <?php
+                    foreach ( $settings['list'] as $item ) :
+                        $target     =   $item['list_link_partner']['is_external'] ? ' target="_blank"' : '';
+                        $nofollow   =   $item['list_link_partner']['nofollow'] ? ' rel="nofollow"' : '';
+                    ?>
 
                         <div class="logo-item">
-                            <a href="<?php echo esc_url( $item['list_link_partner']['url'] ); ?>">
+                            <a href="<?php echo esc_url( $item['list_link_partner']['url'] ); ?>"<?php echo $target . $nofollow ?>>
                                 <?php echo wp_get_attachment_image( $item['list_logo']['id'], 'full' ); ?>
                             </a>
                         </div>
@@ -238,6 +240,63 @@ class cosmetics_widget_partners extends Widget_Base {
         </div>
 
     <?php
+    }
+
+    protected function _content_template() {
+
+    ?>
+        <#
+        var number_item =  settings.item_desktop,
+            item_tablet =  settings.item_tablet,
+            item_mobile =  settings.item_mobile,
+            loop        =  ( 'yes' === settings.loop ),
+            autoplay    =  ( 'yes' === settings.autoplay ),
+            nav         =  ( 'yes' === settings.nav ),
+            sliderOptions = {
+                "margin_item": 15,
+                "number_item": number_item,
+                "item_tablet": item_tablet,
+                "item_mobile": item_mobile,
+                "loop": loop,
+                "autoplay": autoplay,
+                "nav": nav,
+            }
+
+        sliderOptionsStr = JSON.stringify( sliderOptions );
+        #>
+
+        <div class="element-partners">
+            <h4 class="element-heading-global">
+                <span>
+                    {{{ settings.heading }}}
+                </span>
+            </h4>
+
+            <# if ( settings.list.length ) { #>
+
+                <div class="element-partners__logo owl-nav-middle owl-carousel owl-theme" data-settings="{{ sliderOptionsStr }}">
+                    <#
+                    _.each( settings.list, function( item ) {
+
+                        var target = item.list_link_partner.is_external ? ' target="_blank"' : '';
+                        var nofollow = item.list_link_partner.nofollow ? ' rel="nofollow"' : '';
+
+                    #>
+
+                        <div class="logo-item">
+                            <a href="{{ item.list_link_partner.url }}"{{ target }}{{ nofollow }}>
+                                <img src="{{ item.list_logo.url }}">
+                            </a>
+                        </div>
+
+                    <# }); #>
+                </div>
+
+            <# } #>
+        </div>
+
+    <?php
+
     }
 
 }
