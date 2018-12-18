@@ -195,6 +195,7 @@ class cosmetics_widget_products_carousel extends Widget_Base {
                 'default'       =>  'yes',
             ]
         );
+
         $this->add_control(
             'autoplay',
             [
@@ -216,6 +217,65 @@ class cosmetics_widget_products_carousel extends Widget_Base {
                 'label_off'     => esc_html__('Không', 'event_conference'),
                 'return_value'  => 'yes',
                 'default'       => 'yes',
+            ]
+        );
+
+        $this->end_controls_section();
+
+        /*STYLE TAB*/
+        $this->start_controls_section('style', array(
+            'label' =>  esc_html__( 'Tiêu đề', 'cosmetics' ),
+            'tab'   =>  Controls_Manager::TAB_STYLE,
+        ));
+
+        $this->add_control(
+            'title_color',
+            [
+                'label'     =>  __( 'Màu tiêu đề', 'cosmetics' ),
+                'type'      =>  Controls_Manager::COLOR,
+                'selectors' =>  [
+                    '{{WRAPPER}} .element-products-carousel .title' => 'color: {{VALUE}}',
+                ],
+            ]
+        );
+
+        $this->add_control(
+            'title_border_color',
+            [
+                'label'     =>  __( 'Border color', 'cosmetics' ),
+                'type'      =>  Controls_Manager::COLOR,
+                'selectors' =>  [
+                    '{{WRAPPER}} .element-products-carousel .title' => 'border-bottom-color: {{VALUE}}',
+                ],
+            ]
+        );
+
+        $this->end_controls_section();
+
+        $this->start_controls_section('style_product', array(
+            'label' =>  esc_html__( 'Sản phẩm', 'cosmetics' ),
+            'tab'   =>  Controls_Manager::TAB_STYLE,
+        ));
+
+        $this->add_control(
+            'title_product_color',
+            [
+                'label'     =>  __( 'Màu tên sản phẩm', 'cosmetics' ),
+                'type'      =>  Controls_Manager::COLOR,
+                'selectors' =>  [
+                    '{{WRAPPER}} .element-product-style .item-product .item-title' => 'color: {{VALUE}}',
+                ],
+            ]
+        );
+
+        $this->add_control(
+            'price_product_color',
+            [
+                'label'     =>  __( 'Màu giá sản phẩm', 'cosmetics' ),
+                'type'      =>  Controls_Manager::COLOR,
+                'selectors' =>  [
+                    '{{WRAPPER}} .element-product-style .item-product .price' => 'color: {{VALUE}}',
+                ],
             ]
         );
 

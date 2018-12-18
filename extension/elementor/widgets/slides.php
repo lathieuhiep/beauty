@@ -59,10 +59,10 @@ class cosmetics_widget_slides extends Widget_Base {
             [
                 'label' => _x( 'Size', 'Background Control', 'cosmetics' ),
                 'type' => Controls_Manager::SELECT,
-                'default' => 'cover',
+                'default' => 'contain',
                 'options' => [
-                    'cover' => _x( 'Cover', 'Background Control', 'cosmetics' ),
                     'contain' => _x( 'Contain', 'Background Control', 'cosmetics' ),
+                    'cover' => _x( 'Cover', 'Background Control', 'cosmetics' ),
                     'auto' => _x( 'Auto', 'Background Control', 'cosmetics' ),
                 ],
                 'selectors' => [
@@ -337,10 +337,10 @@ class cosmetics_widget_slides extends Widget_Base {
                     'size' => 450,
                 ],
                 'tablet_default' => [
-                    'size' => 350,
+                    'size' => 290,
                 ],
                 'mobile_default' => [
-                    'size' => 250,
+                    'size' => 135,
                 ],
                 'size_units' => [ 'px', 'vh', 'em' ],
                 'selectors' => [
