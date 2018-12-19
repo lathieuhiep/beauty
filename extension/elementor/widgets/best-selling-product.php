@@ -262,7 +262,7 @@ class cosmetics_widget_products_best_selling extends Widget_Base {
            <div class="row">
                <?php while ( $query->have_posts() ): $query->the_post(); ?>
 
-                   <div class="item-col <?php echo esc_attr( $class_column_number ); ?> col-lg-3 col-md-4 col-sm-6 col-12">
+                   <div class="item-col <?php echo esc_attr( $class_column_number ); ?> col-lg-3 col-md-4 col-sm-6 col-6">
                        <div class="item-product">
                            <a class="item-link-product" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">&nbsp;</a>
 

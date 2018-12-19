@@ -177,7 +177,7 @@ class cosmetics_widget_products_carousel extends Widget_Base {
             [
                 'label'     =>  esc_html__( 'Sản phẩm trên một hàng( Mobile )', 'event_conference' ),
                 'type'      =>  Controls_Manager::NUMBER,
-                'default'   =>  1,
+                'default'   =>  2,
                 'min'       =>  1,
                 'max'       =>  100,
                 'step'      =>  1,

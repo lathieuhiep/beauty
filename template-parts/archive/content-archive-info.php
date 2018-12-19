@@ -17,7 +17,7 @@
         <p>
             <?php
             if ( has_excerpt() ) :
-                echo esc_html( get_the_excerpt() );
+                echo wp_kses_post( get_the_excerpt() );
             else:
                 echo wp_trim_words( get_the_content(), 15, '...' );
             endif;

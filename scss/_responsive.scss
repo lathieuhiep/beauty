@@ -124,6 +124,10 @@
   }
   .header-logo {
     padding: 15px 0;
+
+    .search-warp {
+      display: none;
+    }
   }
   .site-logo {
     text-align: center;
@@ -209,6 +213,15 @@
       visibility: visible;
       -ms-flex-order: 1;
       order: 1;
+
+      .item {
+        background-color: transparent;
+        padding: 0 15px;
+
+        &:first-child {
+          padding-left: 6px;
+        }
+      }
     }
     .site-menu__search {
       .site-menu-form__search {
@@ -221,6 +234,9 @@
     #mega-menu-wrap-primary {
       position: static;
 
+      .mega-menu-toggle {
+        background-color: transparent;
+      }
       #mega-menu-primary  {
         position: absolute;
         top: 100%;
@@ -230,7 +246,6 @@
       }
     }
   }
-
   .element-product-grid {
     .top-block {
       @include align-items(center);
@@ -282,6 +297,13 @@
         &:first-child {
           padding-left: 0;
         }
+      }
+    }
+  }
+  .information {
+    span {
+      &.item-address {
+        display: none;
       }
     }
   }

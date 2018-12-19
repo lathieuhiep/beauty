@@ -541,10 +541,11 @@ if ( ! function_exists( 'cosmetics_upsell_products' ) ) :
 
             $settings_data     =   [
                 'margin_item'   =>  30,
+                'margin_item_mobile' => 15,
                 'number_item'   =>  4,
                 'item_tablet_2' =>  3,
                 'item_tablet'   =>  2,
-                'item_mobile'   =>  1,
+                'item_mobile'   =>  2,
                 'nav'           =>  true,
             ];
 
@@ -604,10 +605,11 @@ if ( ! function_exists( 'cosmetics_crosssell_products' ) ) :
 
             $settings_data     =   [
                 'margin_item'   =>  30,
+                'margin_item_mobile' => 15,
                 'number_item'   =>  4,
                 'item_tablet_2' =>  3,
                 'item_tablet'   =>  2,
-                'item_mobile'   =>  1,
+                'item_mobile'   =>  2,
                 'nav'           =>  true,
             ];
 
@@ -677,10 +679,11 @@ if ( ! function_exists( 'cosmetics_related_products' ) ) :
 
                 $settings_data     =   [
                     'margin_item'   =>  30,
+                    'margin_item_mobile' => 15,
                     'number_item'   =>  4,
                     'item_tablet_2' =>  3,
                     'item_tablet'   =>  2,
-                    'item_mobile'   =>  1,
+                    'item_mobile'   =>  2,
                     'nav'           =>  true,
                 ];
 

@@ -5,11 +5,7 @@
 
     <div class="site-footer__multi--column">
         <div class="container">
-            <?php
-            get_template_part( 'template-parts/footer/inc','multi-column' );
-
-            get_template_part( 'template-parts/footer/inc','multi-column-2' );
-            ?>
+            <?php get_template_part( 'template-parts/footer/inc','multi-column' ); ?>
         </div>
     </div>
 
