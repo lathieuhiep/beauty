@@ -12,7 +12,7 @@ $cosmetics_information_phone     =   $cosmetics_options['cosmetics_information_p
             <div class="col-12 col-md-12 col-lg-7">
                 <?php if ( $cosmetics_information_address != '' ) : ?>
 
-                    <span>
+                    <span class="item-address">
                         <i class="fa fa-map-marker" aria-hidden="true"></i>
                         <?php echo esc_html( $cosmetics_information_address ); ?>
                     </span>
@@ -23,7 +23,7 @@ $cosmetics_information_phone     =   $cosmetics_options['cosmetics_information_p
                 if ( $cosmetics_information_mail != '' ) :
                 ?>
 
-                    <span>
+                    <span class="item-mail">
                         <i class="fa fa-envelope-o" aria-hidden="true"></i>
                         <?php echo esc_html( $cosmetics_information_mail ); ?>
                     </span>
@@ -34,7 +34,7 @@ $cosmetics_information_phone     =   $cosmetics_options['cosmetics_information_p
                 if ( $cosmetics_information_phone != '' ) :
                 ?>
 
-                    <span>
+                    <span class="item-phone">
                         <i class="fas fa-mobile-alt"></i>
                         <?php echo esc_html( $cosmetics_information_phone ); ?>
                     </span>

@@ -3,7 +3,7 @@ function cosmetics_content_product_filter( $class_column_number, $class_animate 
 
 ?>
 
-    <div class="item-col <?php echo esc_attr( $class_animate . $class_column_number ); ?> col-md-3 col-sm-6 col-12">
+    <div class="item-col <?php echo esc_attr( $class_animate . $class_column_number ); ?> col-md-3 col-sm-6 col-6">
         <div class="item-product">
             <a class="item-link-product" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">&nbsp;</a>
 
