@@ -779,7 +779,7 @@ Redux::setSection( $cosmetics_opt_name, array(
 
 // Footer Sidebar Multi Column 1
 Redux::setSection( $cosmetics_opt_name, array(
-    'title'         =>  esc_html__( 'Sidebar Footer Multi Column 1', 'cosmetics' ),
+    'title'         =>  esc_html__( 'Sidebar Footer Multi Column', 'cosmetics' ),
     'id'            =>  'cosmetics_footer_sidebar_multi_column_1',
     'subsection'    =>  true,
     'fields'        =>  array(
@@ -886,123 +886,6 @@ Redux::setSection( $cosmetics_opt_name, array(
                 array( 'cosmetics_footer_multi_column_1', '!=', '2' ),
                 array( 'cosmetics_footer_multi_column_1', '!=', '3' ),
                 array( 'cosmetics_footer_multi_column_1', '!=', '0' ),
-            )
-        ),
-    )
-
-));
-
-// Footer multi column 2
-Redux::setSection($cosmetics_opt_name, array(
-    'title' => esc_html__('Sidebar Footer Multi Column 2', 'event_conference'),
-    'id' => 'cosmetics_footer_sidebar_multi_column_2',
-    'desc' => esc_html__('', 'event_conference'),
-    'subsection' => true,
-    'fields' => array(
-
-        array(
-            'id' => 'cosmetics_footer_multi_column_2',
-            'type' => 'image_select',
-            'title' => esc_html__('Number of Footer Columns', 'event_conference'),
-            'subtitle' => esc_html__('Controls the number of columns in the footer', 'event_conference'),
-            'default' => 0,
-            'options' => array(
-                '0' => array(
-                    'alt' => 'No Footer',
-                    'img' => get_theme_file_uri('/extension/assets/images/no-footer.png')
-                ),
-
-                '1' => array(
-                    'alt' => '1 Columnn',
-                    'img' => get_theme_file_uri('/extension/assets/images/1column.png')
-                ),
-
-                '2' => array(
-                    'alt' => '2 Columnn',
-                    'img' => get_theme_file_uri('/extension/assets/images/2column.png')
-                ),
-                '3' => array(
-                    'alt' => '3 Columnn',
-                    'img' => get_theme_file_uri('/extension/assets/images/3column.png')
-                ),
-                '4' => array(
-                    'alt' => '4 Columnn',
-                    'img' => get_theme_file_uri('/extension/assets/images/4column.png')
-                ),
-            ),
-        ),
-
-        array(
-            'id' => 'cosmetics_footer_multi_column_2_1',
-            'type' => 'slider',
-            'title' => esc_html__('Column width 1', 'event_conference'),
-            'subtitle' => esc_html__('Select the number of columns to display in the footer', 'event_conference'),
-            'desc' => esc_html__('Min: 1, max: 12, default value: 1', 'event_conference'),
-            'default' => 1,
-            'min' => 1,
-            'step' => 1,
-            'max' => 12,
-            'display_value' => 'label',
-            'required' => array(
-                array('cosmetics_footer_multi_column_2', 'equals', '1', '2', '3', '4'),
-                array('cosmetics_footer_multi_column_2', '!=', '0'),
-            )
-        ),
-
-        array(
-            'id' => 'cosmetics_footer_multi_column_2_2',
-            'type' => 'slider',
-            'title' => esc_html__('Column width 2', 'event_conference'),
-            'subtitle' => esc_html__('Select the number of columns to display in the footer', 'event_conference'),
-            'desc' => esc_html__('Min: 1, max: 12, default value: 1', 'event_conference'),
-            'default' => 1,
-            'min' => 1,
-            'step' => 1,
-            'max' => 12,
-            'display_value' => 'label',
-            'required' => array(
-                array('cosmetics_footer_multi_column_2', 'equals', '2', '3', '4'),
-                array('cosmetics_footer_multi_column_2', '!=', '1'),
-                array('cosmetics_footer_multi_column_2', '!=', '0'),
-            )
-        ),
-
-        array(
-            'id' => 'cosmetics_footer_multi_column_2_3',
-            'type' => 'slider',
-            'title' => esc_html__('Column width 3', 'event_conference'),
-            'subtitle' => esc_html__('Select the number of columns to display in the footer', 'event_conference'),
-            'desc' => esc_html__('Min: 1, max: 12, default value: 1', 'event_conference'),
-            'default' => 1,
-            'min' => 1,
-            'step' => 1,
-            'max' => 12,
-            'display_value' => 'label',
-            'required' => array(
-                array('cosmetics_footer_multi_column_2', 'equals', '3', '4'),
-                array('cosmetics_footer_multi_column_2', '!=', '1'),
-                array('cosmetics_footer_multi_column_2', '!=', '2'),
-                array('cosmetics_footer_multi_column_2', '!=', '0'),
-            )
-        ),
-
-        array(
-            'id' => 'cosmetics_footer_multi_column_2_4',
-            'type' => 'slider',
-            'title' => esc_html__('Column width 4', 'event_conference'),
-            'subtitle' => esc_html__('Select the number of columns to display in the footer', 'event_conference'),
-            'desc' => esc_html__('Min: 1, max: 12, default value: 1', 'event_conference'),
-            'default' => 1,
-            'min' => 1,
-            'step' => 1,
-            'max' => 12,
-            'display_value' => 'label',
-            'required' => array(
-                array('cosmetics_footer_multi_column_2', 'equals', '4'),
-                array('cosmetics_footer_multi_column_2', '!=', '1'),
-                array('cosmetics_footer_multi_column_2', '!=', '2'),
-                array('cosmetics_footer_multi_column_2', '!=', '3'),
-                array('cosmetics_footer_multi_column_2', '!=', '0'),
             )
         ),
     )

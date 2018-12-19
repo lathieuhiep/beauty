@@ -86,6 +86,16 @@ function cosmetics_post_formats() {
 */
 require get_parent_theme_file_path( '/extension/process-option.php' );
 
+/**
+ * Required Register Sidebar
+ */
+require get_parent_theme_file_path( '/extension/register-sidebar.php' );
+
+/* Require Widgets */
+foreach(glob( get_parent_theme_file_path( '/extension/widgets/*.php' ) ) as $cosmetics_file_widgets ) {
+    require $cosmetics_file_widgets;
+}
+
 if ( class_exists( 'ReduxFramework' ) ) {
     /*
      * Required: Redux Framework
@@ -120,11 +130,6 @@ if ( did_action( 'elementor/loaded' ) ) :
 
 endif;
 
-/* Require Widgets */
-foreach(glob( get_parent_theme_file_path( '/extension/widgets/*.php' ) ) as $cosmetics_file_widgets ) {
-    require $cosmetics_file_widgets;
-}
-
 if ( class_exists('Woocommerce') ) :
     /*
      * Required: Woocommerce
@@ -135,124 +140,6 @@ if ( class_exists('Woocommerce') ) :
 
 endif;
 
-/**
- * Register Sidebar
- */
-add_action( 'widgets_init', 'cosmetics_widgets_init');
-
-function cosmetics_widgets_init() {
-
-        register_sidebar( array(
-            'name'          =>  esc_html__( 'Sidebar Main', 'cosmetics' ),
-            'id'            =>  'cosmetics-sidebar-main',
-            'description'   =>  esc_html__( 'Display sidebar right or left on all page.', 'cosmetics' ),
-            'before_widget' =>  '<section id="%1$s" class="widget %2$s">',
-            'after_widget'  =>  '</section>',
-            'before_title'  =>  '<h2 class="widget-title">',
-            'after_title'   =>  '</h2>'
-        ));
-
-         register_sidebar( array(
-             'name'          =>  esc_html__( 'Sidebar Woocommerce', 'cosmetics' ),
-             'id'            =>  'cosmetics-sidebar-wc',
-             'description'   =>  esc_html__( 'Display sidebar on page shop.', 'cosmetics' ),
-             'before_widget' =>  '<section id="%1$s" class="widget %2$s">',
-             'after_widget'  =>  '</section>',
-             'before_title'  =>  '<h2 class="widget-title">',
-             'after_title'   =>  '</h2>'
-         ));
-
-        register_sidebar( array(
-            'name'          =>  esc_html__( 'Sidebar Single Woocommerce', 'cosmetics' ),
-            'id'            =>  'cosmetics-sidebar-single-wc',
-            'description'   =>  esc_html__( 'Display sidebar on page shop single.', 'cosmetics' ),
-            'before_widget' =>  '<section id="%1$s" class="widget %2$s">',
-            'after_widget'  =>  '</section>',
-            'before_title'  =>  '<h2 class="widget-title">',
-            'after_title'   =>  '</h2>'
-        ));
-
-        register_sidebar( array(
-            'name'          =>  esc_html__( 'Sidebar Footer Multi Column 1-1', 'cosmetics' ),
-            'id'            =>  'cosmetics-sidebar-footer-multi-column-1-1',
-            'description'   =>  esc_html__( 'Display footer column 1 on all page.', 'cosmetics' ),
-            'before_widget' =>  '<section id="%1$s" class="widget %2$s">',
-            'after_widget'  =>  '</section>',
-            'before_title'  =>  '<p class="widget-title">',
-            'after_title'   =>  '</p>'
-        ));
-
-        register_sidebar( array(
-            'name'          =>  esc_html__( 'Sidebar Footer Multi Column 1-2', 'cosmetics' ),
-            'id'            =>  'cosmetics-sidebar-footer-multi-column-1-2',
-            'description'   =>  esc_html__( 'Display footer column 2 on all page.', 'cosmetics' ),
-            'before_widget' =>  '<section id="%1$s" class="widget %2$s">',
-            'after_widget'  =>  '</section>',
-            'before_title'  =>  '<p class="widget-title">',
-            'after_title'   =>  '</p>'
-        ));
-
-        register_sidebar( array(
-            'name'          =>  esc_html__( 'Sidebar Footer Multi Column 1-3', 'cosmetics' ),
-            'id'            =>  'cosmetics-sidebar-footer-multi-column-1-3',
-            'description'   =>  esc_html__( 'Display footer column 3 on all page.', 'cosmetics' ),
-            'before_widget' =>  '<section id="%1$s" class="widget %2$s">',
-            'after_widget'  =>  '</section>',
-            'before_title'  =>  '<p class="widget-title">',
-            'after_title'   =>  '</p>'
-        ));
-
-        register_sidebar( array(
-            'name'          =>  esc_html__( 'Sidebar Footer Multi Column 1-4', 'cosmetics' ),
-            'id'            =>  'cosmetics-sidebar-footer-multi-column-1-4',
-            'description'   =>  esc_html__( 'Display footer column 4 on all page.', 'cosmetics' ),
-            'before_widget' =>  '<section id="%1$s" class="widget %2$s">',
-            'after_widget'  =>  '</section>',
-            'before_title'  =>  '<p class="widget-title">',
-            'after_title'   =>  '</p>'
-        ));
-
-        register_sidebar( array(
-            'name'          =>  esc_html__( 'Sidebar Footer Multi Column 2-1', 'cosmetics' ),
-            'id'            =>  'cosmetics-sidebar-footer-multi-column-2-1',
-            'description'   =>  esc_html__( 'Display footer column 2-1 on all page.', 'cosmetics' ),
-            'before_widget' =>  '<section id="%1$s" class="widget %2$s">',
-            'after_widget'  =>  '</section>',
-            'before_title'  =>  '<p class="widget-title">',
-            'after_title'   =>  '</p>'
-        ));
-
-        register_sidebar( array(
-            'name'          =>  esc_html__( 'Sidebar Footer Multi Column 2-2', 'cosmetics' ),
-            'id'            =>  'cosmetics-sidebar-footer-multi-column-2-2',
-            'description'   =>  esc_html__( 'Display footer column 2-2 on all page.', 'cosmetics' ),
-            'before_widget' =>  '<section id="%1$s" class="widget %2$s">',
-            'after_widget'  =>  '</section>',
-            'before_title'  =>  '<p class="widget-title">',
-            'after_title'   =>  '</p>'
-        ));
-
-        register_sidebar( array(
-            'name'          =>  esc_html__( 'Sidebar Footer Multi Column 2-3', 'cosmetics' ),
-            'id'            =>  'cosmetics-sidebar-footer-multi-column-2-3',
-            'description'   =>  esc_html__( 'Display footer column 2-3 on all page.', 'cosmetics' ),
-            'before_widget' =>  '<section id="%1$s" class="widget %2$s">',
-            'after_widget'  =>  '</section>',
-            'before_title'  =>  '<p class="widget-title">',
-            'after_title'   =>  '</p>'
-        ));
-
-        register_sidebar( array(
-            'name'          =>  esc_html__( 'Sidebar Footer Multi Column 2-4', 'cosmetics' ),
-            'id'            =>  'cosmetics-sidebar-footer-multi-column-2-4',
-            'description'   =>  esc_html__( 'Display footer column 2-4 on all page.', 'cosmetics' ),
-            'before_widget' =>  '<section id="%1$s" class="widget %2$s">',
-            'after_widget'  =>  '</section>',
-            'before_title'  =>  '<p class="widget-title">',
-            'after_title'   =>  '</p>'
-        ));
-
-}
 
 // Remove jquery migrate
 add_action( 'wp_default_scripts', 'cosmetics_remove_jquery_migrate' );
@@ -776,3 +663,23 @@ function cosmetics_comment_form() {
     endif;
 }
 /* End comment */
+
+/* Comment facebook jdk */
+function cosmetics_chat_sdk_facebook() {
+
+?>
+
+    
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = 'https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v3.2';
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+
+<?php
+
+}
+add_action( 'wp_footer', 'cosmetics_chat_sdk_facebook' );
