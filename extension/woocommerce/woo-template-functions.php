@@ -211,6 +211,7 @@ if ( ! function_exists( 'cosmetics_woo_product_thumbnail_open' ) ) :
     function cosmetics_woo_product_thumbnail_open() {
     ?>
         <div class="site-shop__product--item-image">
+            <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
     <?php
     }
 
@@ -225,6 +226,7 @@ if ( ! function_exists( 'cosmetics_woo_product_thumbnail_close' ) ) :
 
     function cosmetics_woo_product_thumbnail_close() {
     ?>
+            </a>
         </div><!-- .site-shop__product--item-image -->
 
         <div class="site-shop__product--item-content">

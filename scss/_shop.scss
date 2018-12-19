@@ -580,6 +580,10 @@
   .site-shop__product--item-image {
     position: relative;
     overflow: hidden;
+
+    a {
+      display: block;
+    }
   }
   .site-shop__product-add-to-cart {
     position: absolute;
