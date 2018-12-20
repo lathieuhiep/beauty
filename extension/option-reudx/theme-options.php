@@ -916,6 +916,21 @@ Redux::setSection( $cosmetics_opt_name, array(
     )
 ));
 
+//Copyright
+Redux::setSection( $cosmetics_opt_name, array(
+    'title'         =>  esc_html__( 'Footer Scripts', 'cosmetics' ),
+    'id'            =>  'cosmetics_footer_scripts',
+    'subsection'    =>  true,
+    'fields'        =>  array(
+        array(
+            'id'    =>  'cosmetics_footer_scripts_editor',
+            'type'  =>  'ace_editor',
+            'title' =>  esc_html__( 'Footer Scripts', 'cosmetics' ),
+            'mode'  =>  'javascript'
+        ),
+    )
+));
+
 /* End Footer Options */
 
 

@@ -2,7 +2,11 @@
 
 /**
  * Shop WooCommerce Hooks
+ *
+ * @see cosmetics_recently_viewed_product
  */
+
+add_action( 'cosmetics_get_recently_viewed_product', 'cosmetics_recently_viewed_product', 5 );
 
 /**
  * Layout

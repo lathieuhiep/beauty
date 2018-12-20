@@ -664,28 +664,13 @@ function cosmetics_comment_form() {
 }
 /* End comment */
 
-/* Comment facebook jdk */
-function cosmetics_chat_sdk_facebook() {
+/* Footer scripts */
+function cosmetics_footer_scripts() {
+    global $cosmetics_options;
+    $cosmetics_footer_scripts = $cosmetics_options['cosmetics_footer_scripts_editor'];
 
-?>
-
-    <!-- Load Facebook SDK for JavaScript -->
-    <div id="fb-root"></div>
-    <script>(function(d, s, id) {
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) return;
-            js = d.createElement(s); js.id = id;
-            js.src = 'https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js';
-            fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));</script>
-
-    <!-- Your customer chat code -->
-    <div class="fb-customerchat"
-         attribution=setup_tool
-         page_id="354294548440834">
-    </div>
-
-<?php
-
+    if ( !empty( $cosmetics_footer_scripts ) ) :
+        echo $cosmetics_footer_scripts;
+    endif;
 }
-add_action( 'wp_footer', 'cosmetics_chat_sdk_facebook' );
+add_action( 'wp_footer', 'cosmetics_footer_scripts' );

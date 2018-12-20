@@ -177,7 +177,7 @@ pre {
   bottom: 0;
   cursor: pointer;
   position: fixed;
-  right: 15px;
+  right: 100px;
   z-index: 1000;
   -webkit-transition: all 400ms ease-in-out;
   -moz-transition: all 400ms ease-in-out;
@@ -681,6 +681,69 @@ form.post-password-form p input[type='submit'] {
 
 .information span i.fa {
   margin-right: 5px;
+}
+
+.information .information-item {
+  margin-right: 12px;
+  padding-right: 20px;
+  border-right: 1px solid #ccc;
+}
+
+.information .information-item:last-child {
+  margin-right: 0;
+  padding-right: 0;
+  border-right: 0;
+}
+
+.information__recently-viewed-product {
+  position: relative;
+}
+
+.information__recently-viewed-product .site-recently-viewed-product {
+  padding: 15px;
+  position: absolute;
+  top: 120%;
+  right: 0;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 10;
+  background-color: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.5);
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.5);
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+.information__recently-viewed-product .site-recently-viewed-product .item {
+  -webkit-flex: 0 0 10%;
+  -ms-flex: 0 0 10%;
+  flex: 0 0 10%;
+  max-width: 10%;
+}
+
+.information__recently-viewed-product .site-recently-viewed-product:before {
+  content: "";
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 8px solid #fff;
+  border-top: 8px solid transparent;
+  position: absolute;
+  top: -15px;
+  right: 70px;
+}
+
+.information__recently-viewed-product .text-recently-viewed i {
+  margin-right: 5px;
+}
+
+.information__recently-viewed-product:hover .site-recently-viewed-product {
+  top: 100%;
+  opacity: 1;
+  visibility: visible;
 }
 
 .information__social-network .social-network-item {
@@ -4091,6 +4154,15 @@ form.wpcf7-form .wpcf7-submit {
   .container {
     max-width: 1200px;
   }
+  .information__recently-viewed-product .site-recently-viewed-product {
+    min-width: 1170px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .information span.item-address {
+    display: none;
+  }
 }
 
 @media (min-width: 992px) and (max-width: 1400px) {
@@ -4316,8 +4388,17 @@ form.wpcf7-form .wpcf7-submit {
   .site-footer__menu ul li:first-child {
     padding-left: 0;
   }
-  .information span.item-address {
-    display: none;
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+  .information__recently-viewed-product .site-recently-viewed-product {
+    min-width: 600px;
+  }
+  .information__recently-viewed-product .site-recently-viewed-product .item {
+    -webkit-flex: 0 0 16.66667%;
+    -ms-flex: 0 0 16.66667%;
+    flex: 0 0 16.66667%;
+    max-width: 16.666667%;
   }
 }
 
@@ -4489,4 +4570,4 @@ form.wpcf7-form .wpcf7-submit {
   }
 }
 
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=maps/style.css.map */

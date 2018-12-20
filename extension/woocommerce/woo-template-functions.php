@@ -791,6 +791,104 @@ function woo_rename_tabs( $tabs ) {
 
 }
 
+/*
+ * Recently viewed product
+ * */
+function custom_track_product_view() {
+
+    if ( ! is_singular( 'product' ) ) {
+        return;
+    }
+
+    global $post;
+
+    if ( empty( $_COOKIE['woocommerce_recently_viewed'] ) ) { // @codingStandardsIgnoreLine.
+        $viewed_products = array();
+    } else {
+        $viewed_products = wp_parse_id_list( (array) explode( '|', wp_unslash( $_COOKIE['woocommerce_recently_viewed'] ) ) ); // @codingStandardsIgnoreLine.
+    }
+
+    // Unset if already in viewed products list.
+    $keys = array_flip( $viewed_products );
+
+    if ( isset( $keys[ $post->ID ] ) ) {
+        unset( $viewed_products[ $keys[ $post->ID ] ] );
+    }
+
+    $viewed_products[] = $post->ID;
+
+    if ( count( $viewed_products ) > 15 ) {
+        array_shift( $viewed_products );
+    }
+
+    // Store for session only.
+    wc_setcookie( 'woocommerce_recently_viewed', implode( '|', $viewed_products ) );
+
+}
+add_action( 'template_redirect', 'custom_track_product_view', 20 );
+
+if ( ! function_exists( 'cosmetics_recently_viewed_product' ) ) :
+
+    function cosmetics_recently_viewed_product() {
+
+        $viewed_products = ! empty( $_COOKIE['woocommerce_recently_viewed'] ) ? (array) explode( '|', wp_unslash( $_COOKIE['woocommerce_recently_viewed'] ) ) : array();
+        $viewed_products = array_reverse( array_filter( array_map( 'absint', $viewed_products ) ) );
+
+        if ( empty( $viewed_products ) ) {
+            return;
+        }
+
+        $recently_viewed_product_args = array(
+            'posts_per_page' => 6,
+            'no_found_rows'  => 1,
+            'post_status'    => 'publish',
+            'post_type'      => 'product',
+            'post__in'       => $viewed_products,
+            'orderby'        => 'rand',
+        );
+
+        $recently_viewed_product_query = new WP_Query( $recently_viewed_product_args );
+
+    ?>
+
+        <div class="site-recently-viewed-product">
+            <?php if ( $recently_viewed_product_query->have_posts() ) : ?>
+
+                <div class="row">
+                    <?php
+                    while ( $recently_viewed_product_query->have_posts() ) :
+                        $recently_viewed_product_query->the_post();
+                    ?>
+
+                    <div class="col-md-2 item">
+                        <div class="item-thumbnail">
+                            <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+                                <?php the_post_thumbnail( 'medium_large' ); ?>
+                            </a>
+                        </div>
+                    </div>
+
+                    <?php
+                    endwhile;
+                    wp_reset_postdata();
+                    ?>
+                </div>
+
+            <?php else: ?>
+
+                <span class="none-viewed-product d-block text-center">
+                    <?php esc_html_e( 'Bạn chưa xem sản phẩm nào', 'cosmetics' ); ?>
+                </span>
+
+            <?php endif; ?>
+        </div>
+
+    <?php
+
+    }
+
+endif;
+
 function cosmetics_comment_facebook_product() {
 ?>
 
