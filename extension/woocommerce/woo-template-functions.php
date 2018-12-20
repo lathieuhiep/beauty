@@ -834,25 +834,24 @@ if ( ! function_exists( 'cosmetics_recently_viewed_product' ) ) :
         $viewed_products = ! empty( $_COOKIE['woocommerce_recently_viewed'] ) ? (array) explode( '|', wp_unslash( $_COOKIE['woocommerce_recently_viewed'] ) ) : array();
         $viewed_products = array_reverse( array_filter( array_map( 'absint', $viewed_products ) ) );
 
-        if ( empty( $viewed_products ) ) {
-            return;
-        }
-
-        $recently_viewed_product_args = array(
-            'posts_per_page' => 6,
-            'no_found_rows'  => 1,
-            'post_status'    => 'publish',
-            'post_type'      => 'product',
-            'post__in'       => $viewed_products,
-            'orderby'        => 'rand',
-        );
-
-        $recently_viewed_product_query = new WP_Query( $recently_viewed_product_args );
-
     ?>
 
         <div class="site-recently-viewed-product">
-            <?php if ( $recently_viewed_product_query->have_posts() ) : ?>
+            <?php
+
+            if ( !empty( $viewed_products ) ) :
+
+                $recently_viewed_product_args = array(
+                    'posts_per_page' => 6,
+                    'no_found_rows'  => 1,
+                    'post_status'    => 'publish',
+                    'post_type'      => 'product',
+                    'post__in'       => $viewed_products,
+                    'orderby'        => 'rand',
+                );
+
+                $recently_viewed_product_query = new WP_Query( $recently_viewed_product_args );
+            ?>
 
                 <div class="row">
                     <?php
@@ -860,13 +859,13 @@ if ( ! function_exists( 'cosmetics_recently_viewed_product' ) ) :
                         $recently_viewed_product_query->the_post();
                     ?>
 
-                    <div class="col-md-2 item">
-                        <div class="item-thumbnail">
-                            <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-                                <?php the_post_thumbnail( 'medium_large' ); ?>
-                            </a>
+                        <div class="col-md-2 item">
+                            <div class="item-thumbnail">
+                                <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+                                    <?php the_post_thumbnail( 'medium_large' ); ?>
+                                </a>
+                            </div>
                         </div>
-                    </div>
 
                     <?php
                     endwhile;

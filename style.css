@@ -1375,6 +1375,12 @@ body #mega-menu-wrap-primary .mega-menu-toggle {
   border-radius: 5px;
 }
 
+.search-form .search-select-post-type {
+  border-width: 0 0 0 1px;
+  border-style: solid;
+  border-color: #eeeeee;
+}
+
 .search-field {
   border: transparent;
   height: auto;
@@ -4570,4 +4576,4 @@ form.wpcf7-form .wpcf7-submit {
   }
 }
 
-/*# sourceMappingURL=maps/style.css.map */
+/*# sourceMappingURL=style.css.map */
