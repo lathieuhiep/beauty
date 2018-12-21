@@ -1340,6 +1340,10 @@ body #mega-menu-wrap-primary .mega-menu-toggle {
   margin-left: 0;
 }
 
+.elementor-element .site-breadcrumb {
+  margin-bottom: 0;
+}
+
 /**
 # Page
 -----------------------------------------------------------------------------*/
@@ -1810,17 +1814,20 @@ section.widget.cosmetics_recent_product_widget .item:hover .item-image img {
   transform: scale(1.15);
 }
 
-aside.site-sidebar section.widget {
+aside section.widget,
+.elementor-widget-wrap section.widget {
   border: 1px solid #f1f1f1;
   padding: 15px;
 }
 
-aside.site-sidebar section.widget.widget_media_image {
+aside section.widget.widget_media_image,
+.elementor-widget-wrap section.widget.widget_media_image {
   border: none;
   padding: 0;
 }
 
-aside.site-sidebar section.widget .widget-title {
+aside section.widget .widget-title,
+.elementor-widget-wrap section.widget .widget-title {
   color: #ed2d24;
   margin-left: -15px;
   margin-right: -15px;
@@ -1828,12 +1835,14 @@ aside.site-sidebar section.widget .widget-title {
   border-bottom: 1px solid #f1f1f1;
 }
 
-aside.site-sidebar section.widget.widget_product_categories ul li {
+aside section.widget.widget_product_categories ul li,
+.elementor-widget-wrap section.widget.widget_product_categories ul li {
   position: relative;
   padding-bottom: 0;
 }
 
-aside.site-sidebar section.widget.widget_product_categories ul li:before {
+aside section.widget.widget_product_categories ul li:before,
+.elementor-widget-wrap section.widget.widget_product_categories ul li:before {
   position: relative;
   top: -1px;
   content: "\f054";
@@ -1844,11 +1853,13 @@ aside.site-sidebar section.widget.widget_product_categories ul li:before {
   margin-right: 10px;
 }
 
-aside.site-sidebar section.widget.widget_product_categories ul li a {
+aside section.widget.widget_product_categories ul li a,
+.elementor-widget-wrap section.widget.widget_product_categories ul li a {
   text-transform: capitalize;
 }
 
-aside.site-sidebar section.widget.widget_product_categories ul li ul.children {
+aside section.widget.widget_product_categories ul li ul.children,
+.elementor-widget-wrap section.widget.widget_product_categories ul li ul.children {
   display: none;
   padding: 5px 0 0 15px;
   -webkit-transition: all 0.4s ease-in-out;
@@ -1857,24 +1868,28 @@ aside.site-sidebar section.widget.widget_product_categories ul li ul.children {
   transition: all 0.4s ease-in-out;
 }
 
-aside.site-sidebar section.widget.widget_product_categories ul li ul li {
+aside section.widget.widget_product_categories ul li ul li,
+.elementor-widget-wrap section.widget.widget_product_categories ul li ul li {
   padding-bottom: 5px;
   margin-bottom: 5px;
   border-bottom: 1px dotted #eee;
 }
 
-aside.site-sidebar section.widget.widget_product_categories ul li ul li:before {
+aside section.widget.widget_product_categories ul li ul li:before,
+.elementor-widget-wrap section.widget.widget_product_categories ul li ul li:before {
   content: "\f0da";
   font-size: 12px;
 }
 
-aside.site-sidebar section.widget.widget_product_categories ul li ul li:last-child {
+aside section.widget.widget_product_categories ul li ul li:last-child,
+.elementor-widget-wrap section.widget.widget_product_categories ul li ul li:last-child {
   padding-bottom: 0;
   margin-bottom: 0;
   border-bottom: none;
 }
 
-aside.site-sidebar section.widget.widget_product_categories ul li:hover ul.children {
+aside section.widget.widget_product_categories ul li:hover ul.children,
+.elementor-widget-wrap section.widget.widget_product_categories ul li:hover ul.children {
   display: block;
 }
 
@@ -4335,7 +4350,7 @@ form.wpcf7-form .wpcf7-submit {
   }
   .header-bottom .site-menu__search .site-menu-form__search {
     right: auto;
-    left: 0;
+    left: -15px;
   }
   body #mega-menu-wrap-primary {
     position: static;
@@ -4576,4 +4591,4 @@ form.wpcf7-form .wpcf7-submit {
   }
 }
 
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=maps/style.css.map */

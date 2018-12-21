@@ -48,6 +48,24 @@
         }
         /* btn mobile End */
 
+        /* Start search select */
+        let search_select_post_type = $( '.search-select-post-type' );
+
+        if ( search_select_post_type.length ) {
+
+            search_select_post_type.each( function () {
+
+                $(this).on('change', function() {
+                    let value_post_type = this.value;
+
+                    $(this).parent().find( 'input[name="post_type"]' ).val(value_post_type);
+                });
+
+            } );
+
+        }
+        /* End search select */
+
         /* Start click menu icon */
         let btn_menu_icon = $( '.btn-menu-icon' );
 
