@@ -103,6 +103,19 @@
   .site-shop__product-add-to-cart {
     .add_to_cart_button {
       color: #ffffff;
+
+      &.loading {
+        &:after {
+          position: absolute;
+          content: "\f013";
+          top: 5px;
+          left: 50%;
+          font-weight: 900;
+          font-family: 'Font Awesome 5 Free';
+          -webkit-animation: fa-spin 2s infinite linear;
+          animation: fa-spin 2s infinite linear;
+        }
+      }
     }
   }
   .site-shop__product--item-content {

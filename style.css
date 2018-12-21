@@ -2733,7 +2733,7 @@ aside section.widget.widget_product_categories ul li:hover ul.children,
 .element-product-style .item-product .item-add-cart a.add_to_cart_button.loading:after {
   position: absolute;
   content: "\f013";
-  top: 0;
+  top: 5px;
   left: 50%;
   font-weight: 900;
   font-family: 'Font Awesome 5 Free';
@@ -2941,6 +2941,17 @@ aside section.widget.widget_product_categories ul li:hover ul.children,
 
 .element-recently-viewed-product .site-shop__product-add-to-cart .add_to_cart_button {
   color: #ffffff;
+}
+
+.element-recently-viewed-product .site-shop__product-add-to-cart .add_to_cart_button.loading:after {
+  position: absolute;
+  content: "\f013";
+  top: 5px;
+  left: 50%;
+  font-weight: 900;
+  font-family: 'Font Awesome 5 Free';
+  -webkit-animation: fa-spin 2s infinite linear;
+  animation: fa-spin 2s infinite linear;
 }
 
 .element-recently-viewed-product .site-shop__product--item-content .price {
@@ -3411,6 +3422,7 @@ aside section.widget.widget_product_categories ul li:hover ul.children,
   display: inline-block;
   font-size: 12px;
   color: #666666;
+  opacity: 1;
 }
 
 .woocommerce ul.products li.product .price ins {
@@ -4625,4 +4637,4 @@ form.wpcf7-form .wpcf7-submit {
   }
 }
 
-/*# sourceMappingURL=maps/style.css.map */
+/*# sourceMappingURL=style.css.map */
