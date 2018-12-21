@@ -4,7 +4,7 @@ namespace Elementor;
 
 if ( ! defined( 'ABSPATH' ) ) exit;
 
-class cosmetics_store extends Widget_Base {
+class cosmetics_widget_store extends Widget_Base {
 
     public function get_categories() {
         return array( 'cosmetics_widgets' );
@@ -249,4 +249,4 @@ class cosmetics_store extends Widget_Base {
 
 }
 
-Plugin::instance()->widgets_manager->register_widget_type( new cosmetics_store );
+Plugin::instance()->widgets_manager->register_widget_type( new cosmetics_widget_store );

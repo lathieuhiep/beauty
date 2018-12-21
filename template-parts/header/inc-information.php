@@ -1,10 +1,11 @@
 <?php
 global $cosmetics_options;
 
-$cosmetics_information_show_hide    =  $cosmetics_options['cosmetics_information_show_hide'] == '' ? 1 : $cosmetics_options['cosmetics_information_show_hide'];
-$cosmetics_information_address      =  $cosmetics_options['cosmetics_information_address'];
-$cosmetics_information_mail         =  $cosmetics_options['cosmetics_information_mail'];
-$cosmetics_information_phone        =  $cosmetics_options['cosmetics_information_phone'];
+$cosmetics_information_show_hide        =  $cosmetics_options['cosmetics_information_show_hide'] == '' ? 1 : $cosmetics_options['cosmetics_information_show_hide'];
+$cosmetics_information_address          =  $cosmetics_options['cosmetics_information_address'];
+$cosmetics_information_mail             =  $cosmetics_options['cosmetics_information_mail'];
+$cosmetics_information_phone            =  $cosmetics_options['cosmetics_information_phone'];
+$cosmetics_link_recently_viewed_product =  $cosmetics_options['cosmetics_link_recently_viewed_product'];
 ?>
 
 <div class="information">
@@ -55,10 +56,10 @@ $cosmetics_information_phone        =  $cosmetics_options['cosmetics_information
                 <?php if ( class_exists('Woocommerce') ) : ?>
 
                     <div class="information-item information__recently-viewed-product">
-                        <span class="text-recently-viewed">
+                        <a href="<?php echo esc_url( $cosmetics_link_recently_viewed_product ); ?>" class="text-recently-viewed" title="<?php esc_html_e( 'Sản phẩm đã xem', 'cosmetics' ); ?>">
                              <i class="fas fa-chevron-down"></i>
                             <?php esc_html_e( 'Sản phẩm đã xem', 'cosmetics' ); ?>
-                        </span>
+                        </a>
 
                         <?php do_action( 'cosmetics_get_recently_viewed_product' ); ?>
                     </div>

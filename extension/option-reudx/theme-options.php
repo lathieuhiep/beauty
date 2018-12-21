@@ -598,6 +598,23 @@ Redux::setSection( $cosmetics_opt_name, array(
 
     )
 ));
+
+Redux::setSection( $cosmetics_opt_name, array(
+    'title'         =>  esc_html__( 'Sản phẩm đã xem', 'cosmetics' ),
+    'id'            =>  'cosmetics_recently_viewed_product_option',
+    'desc'          =>  esc_html__( '', 'cosmetics' ),
+    'subsection'    =>  true,
+    'fields'        =>  array(
+
+        array(
+            'id'        =>  'cosmetics_link_recently_viewed_product',
+            'type'      =>  'text',
+            'title'     =>  __('Link sản phẩm đã xem', 'redux-framework-demo'),
+            'default'   =>  '#',
+        )
+
+    )
+));
 /* End Shop */
 
 /* Start Typography Options */
