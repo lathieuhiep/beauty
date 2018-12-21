@@ -148,18 +148,18 @@ class cosmetics_widget_recently_viewed_product extends Widget_Base {
 
                         <div class="<?php echo esc_attr( $class_column_number ); ?> col-lg-3 col-md-4 col-sm-6 col-6">
                             <div class="site-shop__product--item">
-                                <div class="site-shop__product--item-image">
+                                <div class="site-shop__product--item-image item-thumbnail">
+                                    <?php do_action( 'woo_elementor_product_sale_flash' ); ?>
+
                                     <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
                                         <?php the_post_thumbnail( 'medium_large' ); ?>
                                     </a>
 
-                                    <div class="site-shop__product-add-to-cart">
-                                        <?php woocommerce_template_loop_add_to_cart(); ?>
-                                    </div>
+                                    <?php cosmetics_woo_loop_add_to_cart(); ?>
                                 </div>
 
                                 <div class="site-shop__product--item-content">
-                                    <h3 class="woocommerce-loop-product__title">
+                                    <h3 class="title-product">
                                         <a href="<?php the_permalink() ?>" title="<?php the_title(); ?>">
                                             <?php the_title(); ?>
                                         </a>

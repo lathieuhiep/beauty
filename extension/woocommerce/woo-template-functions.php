@@ -275,7 +275,7 @@ if ( ! function_exists( 'cosmetics_woo_loop_add_to_cart' ) ) :
 
     function cosmetics_woo_loop_add_to_cart() {
     ?>
-        <div class="site-shop__product-add-to-cart">
+        <div class="site-shop__product-add-to-cart d-flex align-items-center justify-content-center">
             <?php woocommerce_template_loop_add_to_cart(); ?>
         </div>
     <?php

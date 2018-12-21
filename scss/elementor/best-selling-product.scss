@@ -86,3 +86,36 @@
     text-align: center;
   }
 }
+.element-recently-viewed-product {
+  .title-product {
+    padding: 0;
+    margin: 0 0 10px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.5em;
+    height: 3em;
+    overflow: hidden;
+
+    a {
+      display: block;
+    }
+  }
+  .site-shop__product-add-to-cart {
+    .add_to_cart_button {
+      color: #ffffff;
+    }
+  }
+  .site-shop__product--item-content {
+    .price {
+      color: $color-hover;
+      font-size: 18px;
+      font-weight: 700;
+
+      del {
+        display: inline-block;
+        font-size: 12px;
+        color: #666666;
+      }
+    }
+  }
+}
