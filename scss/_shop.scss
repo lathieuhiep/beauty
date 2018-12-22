@@ -499,7 +499,7 @@
         .panel {
           border: 1px solid #eeeeee;
           padding: 15px;
-          margin: 0 0 60px;
+          margin: 0 0 40px;
 
           &.woocommerce-Tabs-panel--description {
             p {
@@ -718,6 +718,19 @@
 
   &::before {
     color: $color-hover;
+  }
+}
+.site-reviews-product {
+  padding: 15px;
+  border: 1px solid #eeeeee;
+
+  #reviews {
+    #comments {
+      .woocommerce-Reviews-title {
+        font-weight: 500;
+        margin-bottom: 15px;
+      }
+    }
   }
 }
 .woocommerce {

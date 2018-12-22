@@ -788,10 +788,20 @@ function woo_rename_tabs( $tabs ) {
     // Rename the description tab
     $tabs['description']['title'] = esc_html__( 'Chi tiết sản phẩm' );
     // Remove the reviews tab
-    unset( $tabs['reviews'] );
+//    unset( $tabs['reviews'] );
 
     return $tabs;
 
+}
+
+function cosmetics_custom_comments_template() {
+?>
+
+    <div class="site-reviews-product">
+        <?php comments_template(); ?>
+    </div>
+
+<?php
 }
 
 /*

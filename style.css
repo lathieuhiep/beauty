@@ -3795,7 +3795,7 @@ aside section.widget.widget_product_categories ul li:hover ul.children,
 .woocommerce div.product .woocommerce-tabs .panel {
   border: 1px solid #eeeeee;
   padding: 15px;
-  margin: 0 0 60px;
+  margin: 0 0 40px;
 }
 
 .woocommerce div.product .woocommerce-tabs .panel.woocommerce-Tabs-panel--description p {
@@ -4039,6 +4039,16 @@ aside section.widget.widget_product_categories ul li:hover ul.children,
 .woocommerce-info::before,
 .woocommerce-message::before {
   color: #ed2d24;
+}
+
+.site-reviews-product {
+  padding: 15px;
+  border: 1px solid #eeeeee;
+}
+
+.site-reviews-product #reviews #comments .woocommerce-Reviews-title {
+  font-weight: 500;
+  margin-bottom: 15px;
 }
 
 .woocommerce #respond input#submit,
