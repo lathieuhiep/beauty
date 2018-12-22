@@ -785,7 +785,10 @@ function cosmetics_change_text_product_description_heading() {
 add_filter( 'woocommerce_product_tabs', 'woo_rename_tabs', 98 );
 function woo_rename_tabs( $tabs ) {
 
-    $tabs['description']['title'] = esc_html__( 'Chi tiết sản phẩm' );		// Rename the description tab
+    // Rename the description tab
+    $tabs['description']['title'] = esc_html__( 'Chi tiết sản phẩm' );
+    // Remove the reviews tab
+    unset( $tabs['reviews'] );
 
     return $tabs;
 

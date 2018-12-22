@@ -101,6 +101,8 @@ add_action( 'woocommerce_after_single_product_summary', 'cosmetics_woo_after_sin
 
 add_action( 'woocommerce_after_single_product_summary', 'cosmetics_upsell_products', 5 );
 
+add_action( 'woocommerce_after_single_product_summary', 'comments_template', 15 );
+
 add_action( 'woocommerce_after_single_product_summary', 'cosmetics_comment_facebook_product', 16 );
 
 add_action( 'woocommerce_after_single_product_summary', 'cosmetics_crosssell_products', 18 );
