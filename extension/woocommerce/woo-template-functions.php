@@ -788,7 +788,7 @@ function woo_rename_tabs( $tabs ) {
     // Rename the description tab
     $tabs['description']['title'] = esc_html__( 'Chi tiết sản phẩm' );
     // Remove the reviews tab
-//    unset( $tabs['reviews'] );
+    unset( $tabs['reviews'] );
 
     return $tabs;
 

@@ -104,6 +104,22 @@
         }
         /* End click mobile list item */
 
+        let woocommerce_review_link =   $( '.woocommerce-review-link' );
+
+        if ( woocommerce_review_link.length ) {
+
+            woocommerce_review_link.on( 'click',  function () {
+
+                $('html, body').animate({
+                    scrollTop: $( $.attr(this, 'href') ).offset().top
+                }, 500);
+
+                return false;
+
+            } )
+
+        }
+
         /* Start Gallery Single */
         $( document ).general_owlCarousel_item( '.site-post-slides' );
         /* End Gallery Single */

@@ -3332,9 +3332,10 @@ aside section.widget.widget_product_categories ul li:hover ul.children,
 }
 
 .woocommerce span.onsale {
+  top: 10px;
+  left: auto;
   min-width: auto;
   min-height: auto;
-  line-height: inherit;
   padding: 0;
   font-weight: 400;
   width: 30px;
@@ -4043,6 +4044,7 @@ aside section.widget.widget_product_categories ul li:hover ul.children,
 
 .site-reviews-product {
   padding: 15px;
+  margin-bottom: 30px;
   border: 1px solid #eeeeee;
 }
 
